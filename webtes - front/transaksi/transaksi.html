@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap V4.6 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="transaksi.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <a href="#">Profile</a>
+            <a href="#">Membership</a>
+            <a class="active" href="#">Transaksi</a>
+        </div>
+
+
+        <div class="container-content">
+            <!-- AKUN NAVBAR -->
+            <div class="akun-navbar">
+                <a id="profil" class="active" href="">Akun Member Anda</a>
+            </div>
+
+            <div class="container-card">
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="envelope"><img src="Envelope.png" alt=""></div>
+                        <div class="red-round"></div>
+                        <h5 class="card-title">Upgrade Membership ke Entrepreneur</h5>
+                        <p class="card-text">IDR 4.000.000</p>
+                        <p class="card-text">Tanggal Transaksi: 28 Januari 2021</p>
+                        <p class="card-text">Tanggal Berakhir: 28 Januari 2022</p>
+                        <a href="#" class="btn btn-transaksi">Lihat</a>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-body">
+                        <div class="envelope"><img src="Envelope.png" alt=""></div>
+                        <div class="red-round"></div>
+                        <h5 class="card-title">Event: Bisnis di Masa Pandemi</h5>
+                        <p class="card-text">IDR 4.000.000</p>
+                        <p class="card-text">Tanggal Transaksi: 28 Januari 2021</p>
+                        <p class="card-text">Tanggal Berakhir: 28 Januari 2022</p>
+                        <a href="#" class="btn btn-transaksi">Lihat</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-background">
+        <div class="modal-transaksi">
+            <img class="bukti-trans" src="image 49.png" alt="">
+            <div class="detail-transaksi">
+                
+                <h2 class="trans-title">Upgrade Membership ke Entrepreneur</h2>
+                <h3 class="detail-trans-title">Biaya</h3>
+                <h3 class="detail-trans">IDR 4.000.000</h3>
+    
+                <h3 class="detail-trans-title">No. Rekening yang digunakan</h3>
+                <h3 class="detail-trans">123456789</h3>
+    
+                <h3 class="detail-trans-title">Nama Rekening</h3>
+                <h3 class="detail-trans">Evania Joycelin</h3>
+    
+                <h3 class="detail-trans-title">Bank</h3>
+                <h3 class="detail-trans">BCA</h3>
+    
+                <h3 class="detail-trans-title">Dibayarkan Pada</h3>
+                <h3 class="detail-trans">BCA</h3>
+    
+                <h3 class="detail-trans-title">Status</h3>
+                <h3 class="detail-trans-status">Sukses</h3>
+            </div>
+            <a class="btn btn-modal-close" href="">Tutup</a>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="transaksi.js"></script>
+</body>
+
+</html>

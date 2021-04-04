@@ -1,0 +1,437 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    color: #FFFFFF;
+    
+}
+
+.container{
+    display: block;
+    max-width: 1519px;
+    margin: auto;
+
+    padding-right: 0px;
+    padding-left: 0px;
+    background: rgba(0, 0, 0, 0.90);
+}
+
+/* SIDEBAR */ 
+.sidebar {
+    margin: 0;
+    padding: 0;
+    padding-right: 35px;
+    padding-top: 100px;
+    width: 20.5%;
+    height: 1008px;
+    background-color:#333333;
+
+    display: inline-block;
+}
+  
+.sidebar a {
+    display: block;
+    color:#FFFFFF;
+    padding: 16px;
+    padding-left: 50px;
+    text-decoration: none;
+
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 30px;
+
+    text-align: left;
+    border-radius: 0  5px 5px 0;
+
+    margin-bottom: 10px;
+}
+  
+.sidebar a.active {
+    background-color: #C89E35;
+    color: white;
+}
+  
+.sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+}
+
+/*CONTENT*/ 
+.container-content{
+    display: inline-block;
+    vertical-align: top;
+    width: 79%;
+}
+/* 1. NAVBAR */
+.akun-navbar{
+    width: 100%;
+    vertical-align: top;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.akun-navbar .active{
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 50px;
+    padding-bottom: 5px;
+    border-bottom: solid #FECC5D 3px;
+    
+
+    color: #FECC5D;
+}
+
+.akun-navbar a{
+    display: inline-block;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 50px;
+    color: #FFFFFF;
+
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.akun-navbar a:hover{
+    text-decoration: none;
+}
+
+.akun-navbar a:hover:not(.active){
+    color: #fff;
+    text-decoration: none;
+}
+
+/*2. AKUN PROFILE*/
+.akun-profil{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    text-align: center;
+}
+
+.content-row-1{
+    display: inline-block;
+    vertical-align: top;
+}
+
+/*Row Pertama*/
+/*1. Buat ngatur kotak akun data*/ 
+.akun-data{
+    width: 300px;
+    height: 400px;
+    margin-bottom: 45px;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 45px;
+    padding-right: 45px;
+
+    border-radius: 5px;
+    background-color: #2F2F2F;
+
+    text-align: center;
+}
+
+.akun-data img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: solid 10px rgba(0, 0, 0, 0.35);
+    margin-bottom: 50px;
+}
+
+.akun-data p{
+    font-weight: normal;
+    font-size: 14px;
+    
+    text-decoration-line: underline;
+
+    color: #CF3737;
+}
+
+.akun-data h4{
+    font-weight: bold;
+    line-height: 20px;
+    font-size: 18px;
+}
+
+/*2. Buat ngatur kotak membership*/
+
+.status-membership{
+    width: 300px;
+    height: 400px;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 45px;
+    padding-right: 45px;
+
+    border-radius: 5px;
+    background-color: #2F2F2F;
+
+    text-align: center;
+}
+
+.status-membership h6{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+.status-membership h3{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.status-membership img{
+    display: block;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    height: auto;
+    width: 100%;
+}
+
+.status-membership .btn{
+    display: block;
+
+    border: solid 2px #C89E35;
+    border-radius: 5px;
+
+    color: white;
+}
+
+/*Row Ke dua*/
+/*Buat ngatur data yg udh di submit*/
+.content-row-2{
+
+    width: 50%;
+
+    vertical-align: top;
+    padding: 20px 50px;
+    margin-left: 40px;
+    text-align: left;
+
+    background-color: #2F2F2F;
+    border-radius: 5px;
+}
+
+.non-edit{
+    position: relative;
+    display: inline-block;
+}
+
+.editing{
+    position: relative;
+    display: none;
+}
+
+.content-row-2 h2{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+
+    margin-bottom: 30px;
+}
+
+.container-data-profile{
+    margin-bottom: 27px;
+    margin-top: 10px;
+    height: 50px;
+
+    background:rgba(0, 0, 0, 0.35);
+
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-top: 10px;
+    color: white;
+  
+}
+
+.content-row-2 h3{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 19px;
+}
+
+.content-row-2 .btn{
+    width: 100%;
+    height: 48px;
+
+    margin-top: 40px;
+
+    color: #fff;
+    background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*Buat ngatur yg edit*/
+.content-row-2 label{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 19px;
+    display: block;
+    margin-bottom: 0;
+}
+
+.content-row-2 .input-data-profile{
+    margin-bottom: 27px;
+    margin-top: 10px;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    padding-left: 15px;
+    color: black;
+}
+
+/* INI UNTUK AKUN BISNIS*/ 
+/*1. LIST BISNIS*/ 
+.akun-bisnis-list{
+    position: relative;
+    display: none;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    text-align: center;
+}
+.card{
+    background-color: #2F2F2F;
+    display: inline-block;
+    width: 80%;
+    text-align: left;
+
+    padding: 20px 50px;
+    margin-bottom: 50px;
+}
+
+.img-card{
+    display: inline-block;
+    vertical-align:top;
+    width: 235px;
+    height: 235px;
+    border-radius: 50%;
+    border: solid 10px rgba(0, 0, 0, 0.35);
+}
+
+.card-body{
+    display: inline-block;
+    width: 70%;
+}
+
+.btn-card{
+    border-color: #C89E35;
+    color: #C89E35;
+    border-radius: 5px;
+
+    width: 140px;
+    height: 29px;
+    line-height: 15px;
+
+    margin-right: 350px;
+}
+
+.btn-card:hover{
+
+    color: #FFFFFF;
+}
+
+.card-title{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.card-text{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+}
+
+.btn-tambah{
+    display: block;
+    width: 520px;
+    height: 50px;
+
+    background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
+    border-radius: 5px;
+
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 35px;
+}
+
+.bisnis-list-title{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 50px;
+
+    text-align: left;
+    margin-bottom: 50px;
+    display: inline-block;
+    width: 80%;
+}
+
+/*2. AKUN BISNIS*/
+.akun-bisnis{
+    position: relative;
+    display: none;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    text-align: center;
+}
+
+.akun-bisnis .akun-data{
+    height: 1263px;
+}
+
+.akun-bisnis h4{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 50px;
+    margin-bottom: 80px;
+}
+
+.akun-bisnis h5{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.akun-bisnis .desc-bisnis{
+    margin-bottom: 50px;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.akun-bisnis .akun-data .container-data-profile{
+    padding: 5px;
+    height: 40px;
+}
+
+.akun-bisnis .content-row-2 .btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.back-to-list{
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration-line: underline;
+    display: block;
+    text-align: center;
+}
+
+
