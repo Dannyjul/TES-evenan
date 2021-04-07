@@ -100,34 +100,12 @@ foreach ($kelasCari as $kel) {
                 $kepilar = $pel['id_pilar'];
                 $paketan = $pel['id_paket'];
 
-                //$paketKelas = "SELECT * FROM `paket_kelas` 
-                 //       INNER JOIN paket_member ON paket_member.id_paket = paket_kelas.id_paket INNER JOIN kelas ON kelas.id_kelas = paket_kelas.id_kelas INNER JOIN pilar ON pilar.id_kelas = kelas.id_kelas INNER JOIN kursus ON kursus.id_pilar = pilar.id_pilar WHERE paket_kelas.id_kelas='3' AND paket_kelas.id_paket='5'";
-
-                //SELECT * FROM `paket_kelas` INNER JOIN paket_member ON paket_member.id_paket = paket_kelas.id_paket INNER JOIN kelas ON kelas.id_kelas = paket_kelas.id_kelas WHERE paket_member.id_paket='7'
-
                 
-                $paketMkeUstus = joinTabel("paket_member", 
-                                        "paket_member.id_paket", "user_status.id_paket");
-                $kursusKpaket  = joinTabel("kursus", "kursus.id_paket", "paket_member.id_paket");
-                $pilarKkursus  = joinTabel("pilar", "pilar.id_pilar", "kursus.id_pilar");
-
-                
-               /* $cekSetatus = $crud->eksekusiSQL("SELECT *FROM user_status
-                                    $paketMkeUstus
-                                    $kursusKpaket
-                                    $pilarKkursus
-                                    WHERE user_status.id_paket 
-                                    NOT IN
-                                    (SELECT id_paket FROM user_status WHERE id_paket='$idpaket')");
-                */
-                 
-                $kursusan = joinTabel("kursus", "paket_member.id_paket", "kursus.id_paket");
                 $paketKel = "SELECT * FROM `paket_kelas` 
                                 INNER JOIN paket_member ON paket_member.id_paket = paket_kelas.id_paket
                                 INNER JOIN kursus ON kursus.id_paket = paket_member.id_paket
-                                WHERE kursus.id_paket
-                                NOT IN
-                                (SELECT id_paket FROM kursus WHERE id_paket='$paket' AND id_kelas='$kelas')
+                                INNER JOIN kelas ON kelas.id_kelas = paket_kelas.id_kelas
+                                WHERE paket_kelas.id_paket>$paket
                             ";
                 
                 $cekSetatus = $crud->eksekusiSQL($paketKel);
