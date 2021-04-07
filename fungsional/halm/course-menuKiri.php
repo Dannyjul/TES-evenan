@@ -1,3 +1,15 @@
+<style>
+    .disabled
+    {
+        color: dimgray;
+    }
+
+    .disabled:hover
+    {
+        transition: 2s;
+        color: grey;
+    }
+</style>
 <?php
 $statuser = $crud->eksekusiSQl("SELECT *FROM user_status
                                                 INNER JOIN paket_member
@@ -78,10 +90,7 @@ foreach ($kelasCari as $kel) {
                 
             ";
 
-            $sqlPel = "SELECT * FROM `kursus` 
-                                    
-                                    
-                                WHERE kursus.id_pilar='$idPilar'";
+            $sqlPel = "SELECT * FROM `kursus` WHERE kursus.id_pilar='$idPilar'";
 
             $pelajaran = $crud->eksekusiSQL($sqlPel);
 
@@ -91,11 +100,38 @@ foreach ($kelasCari as $kel) {
                 $kepilar = $pel['id_pilar'];
                 $paketan = $pel['id_paket'];
 
+                //$paketKelas = "SELECT * FROM `paket_kelas` 
+                 //       INNER JOIN paket_member ON paket_member.id_paket = paket_kelas.id_paket INNER JOIN kelas ON kelas.id_kelas = paket_kelas.id_kelas INNER JOIN pilar ON pilar.id_kelas = kelas.id_kelas INNER JOIN kursus ON kursus.id_pilar = pilar.id_pilar WHERE paket_kelas.id_kelas='3' AND paket_kelas.id_paket='5'";
 
-                $cekSetatus = $crud->eksekusiSQL("SELECT *FROM user_status WHERE 
-                                        id_paket 
+                //SELECT * FROM `paket_kelas` INNER JOIN paket_member ON paket_member.id_paket = paket_kelas.id_paket INNER JOIN kelas ON kelas.id_kelas = paket_kelas.id_kelas WHERE paket_member.id_paket='7'
+
+                
+                $paketMkeUstus = joinTabel("paket_member", 
+                                        "paket_member.id_paket", "user_status.id_paket");
+                $kursusKpaket  = joinTabel("kursus", "kursus.id_paket", "paket_member.id_paket");
+                $pilarKkursus  = joinTabel("pilar", "pilar.id_pilar", "kursus.id_pilar");
+
+                
+               /* $cekSetatus = $crud->eksekusiSQL("SELECT *FROM user_status
+                                    $paketMkeUstus
+                                    $kursusKpaket
+                                    $pilarKkursus
+                                    WHERE user_status.id_paket 
                                     NOT IN
                                     (SELECT id_paket FROM user_status WHERE id_paket='$idpaket')");
+                */
+                 
+                $kursusan = joinTabel("kursus", "paket_member.id_paket", "kursus.id_paket");
+                $paketKel = "SELECT * FROM `paket_kelas` 
+                                INNER JOIN paket_member ON paket_member.id_paket = paket_kelas.id_paket
+                                INNER JOIN kursus ON kursus.id_paket = paket_member.id_paket
+                                WHERE kursus.id_paket
+                                NOT IN
+                                (SELECT id_paket FROM kursus WHERE id_paket='$paket' AND id_kelas='$kelas')
+                            ";
+                
+                $cekSetatus = $crud->eksekusiSQL($paketKel);
+                
                 $hitungCS   = $crud->hitungData($cekSetatus);
 
                 if ($hitungCS>0) 
@@ -103,11 +139,13 @@ foreach ($kelasCari as $kel) {
                     foreach ($cekSetatus as $c) 
                     {
                         $idPkt = $c['id_paket'];
+                       // $pilr  = $c['id_pilar'];
+                        //$kurss = $c['id_kursus'];
                         
                         if ($idPkt==$paketan) 
                         {
-                            $dis = "disable";
-                            $link = "#";
+                            $dis = "disabled";
+                            $link = "href='#' class='btn' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
                         } 
                         else 
                         {
@@ -122,12 +160,11 @@ foreach ($kelasCari as $kel) {
                     $dis="";
                     $link = "?hal=course-detail&pl=$idKursus&k=$kelas";
                 }
+                
 
 
                 echo
-                "
-                            
-                                
+                "        
                     <a id='gem$idPilar' class='drop-item $dis tampil$idPilar' href='$link'>
                         <img src='./img/Circled Play.png'>
                         <div class='drop-text'>
@@ -136,8 +173,6 @@ foreach ($kelasCari as $kel) {
                         </div>
 
                     </a>
-                        
-                    
                 ";
             }
 
