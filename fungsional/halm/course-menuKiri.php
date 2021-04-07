@@ -78,7 +78,7 @@ foreach ($kelasCari as $kel) {
             "
                         
                             
-                <a id='gem$idPilar' class='drop-item tampil$idPilar' href='?hal=course-pilar&pil=$idPilar&k=$kelas'>
+                <a id='gem$idPilar' class='drop-item tampil$idPilar' href='?hal=course-pilar&pilid=$idPilar&k=$kelas&p=$paket'>
                     <img src='./img/Circled Play.png'>
                     <div class='drop-text'>
                         <p class='drop-item-title'>$nmPilar</p>
@@ -128,7 +128,7 @@ foreach ($kelasCari as $kel) {
                         else 
                         {
                             $dis ="";
-                            $link = "?hal=course-detail&pl=$idKursus&k=$kelas";
+                            $link = "?hal=course-detail&pl=$idKursus&k=$kelas&p=$paket&pilid=$idPilar";
                         }
                         
                     }
@@ -136,7 +136,7 @@ foreach ($kelasCari as $kel) {
                 else 
                 {
                     $dis="";
-                    $link = "?hal=course-detail&pl=$idKursus&k=$kelas";
+                    $link = "?hal=course-detail&pl=$idKursus&k=$kelas&p=$paket&pilid=$idPilar";
                 }
                 
 

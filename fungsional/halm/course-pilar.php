@@ -2,6 +2,16 @@
 <?php
 include './fungsional/konfig/header.php';
 
+    $pilid = @$_GET['pilid'];
+
+    $pilarData = $crud->eksekusiSQL("SELECT *FROM pilar WHERE id_pilar='$pilid'");
+
+    foreach ($pilarData as $pd) 
+    {
+        $nmPilar  = $pd['nama_pilar'];
+        $deskPilar = $pd['desk_pilar'];
+    }
+
 ?>
 
 <div class="container container-course-info">
@@ -37,18 +47,15 @@ include './fungsional/konfig/header.php';
 
         <div class='card'>
             <div class='card-header'>
-                <?php echo $nmKel; ?>
+                <?php echo $nmPilar; ?>
             </div>
             <div class='card-body'>
 
 
-                <br>
-                <center>
-                    <img src='<?php echo $folderFotoKel; ?>' alt='<?php echo $nmKel; ?>' width='55%'>
-                </center>
+                
 
                 <div class='drop-text-content'>
-                    <?php echo $desKel; ?>
+                    <?php echo $deskPilar; ?>
                 </div>
 
             </div>
@@ -57,6 +64,7 @@ include './fungsional/konfig/header.php';
         <div class="footer-content-btn">
             <!--<a class="btn btn-next-content" href="">&lt; Sebelumnya</a>-->
             <?php
+            /*
                 $kelasPrev = $crud->eksekusiSQL("SELECT *FROM kelas WHERE id_kelas<$kelas ORDER BY id_kelas DESC LIMIT 1");
                 $cariPrev  = $crud->hitungData($kelasPrev);
 
@@ -78,6 +86,7 @@ include './fungsional/konfig/header.php';
                     $tombolPrev = "";
                 }
                 echo $tombolPrev;
+
             ?>
 
             <!--
@@ -105,6 +114,7 @@ include './fungsional/konfig/header.php';
                     $tombolNext = "";
                 }
                 echo $tombolNext;
+            */
             ?>
             
         </div>
