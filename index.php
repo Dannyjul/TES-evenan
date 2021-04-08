@@ -90,6 +90,10 @@
                   e.preventDefault();
                   if($('.tampil$idPilar').css('display') == 'none')
                   {
+                    $('.drop-menu').css('display', 'none');
+                    //$('.btn-dropdown img').attr('src', './img/Collapse Arrow Up.png');
+                    $('.gambar').attr('src', 'img/Collapse Arrow Down.png');
+
                       $('.tampil$idPilar').css('display', 'block');
                       $('.turunin$idPilar .imeg$idPilar').attr('src', 'img/Collapse Arrow Up.png');
                   }

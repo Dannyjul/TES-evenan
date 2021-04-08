@@ -64,7 +64,7 @@ foreach ($kelasCari as $kel) {
         "
             <div class='pilar-dropdown'>
                 <a class='btn btn-dropdown turunin$idPilar' href='#' id='pilar$idPilar' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                    $nmPilar <img class='imeg$idPilar' src='./img/Collapse Arrow Down.png'>
+                    $nmPilar <img class='gambar imeg$idPilar' src='./img/Collapse Arrow Down.png'>
                 </a>
                 <div class='drop-menu tampil$idPilar' aria-labelledby='#pilar$idPilar'>
         ";
@@ -103,8 +103,9 @@ foreach ($kelasCari as $kel) {
                                 INNER JOIN paket_member ON paket_member.id_paket = paket_kelas.id_paket
                                 INNER JOIN kursus ON kursus.id_paket = paket_member.id_paket
                                 INNER JOIN kelas ON kelas.id_kelas = paket_kelas.id_kelas
-                                WHERE paket_kelas.id_paket>$paket
-                            ";
+                                WHERE paket_kelas.id_kelas='$kelas' 
+                                AND paket_kelas.id_paket>$paket ORDER BY paket_kelas.id_paket ASC LIMIT 1
+                        ";
 
             $cekSetatus = $crud->eksekusiSQL($paketKel);
 
@@ -116,7 +117,7 @@ foreach ($kelasCari as $kel) {
                     // $pilr  = $c['id_pilar'];
                     //$kurss = $c['id_kursus'];
 
-                    if ($idPkt == $paket) {
+                    if ($idPkt == $paketan) {
                         $dis = "disabled";
                         $link = "href='#' class='btn' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
                     } else {
