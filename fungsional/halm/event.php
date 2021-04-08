@@ -242,7 +242,7 @@
                     echo
                     "
                         <!-- LINK FIRST AND PREV -->
-                        <a href='?hal=event&halaman=1'>&gt;</a>
+                        <a href='?hal=event&halaman=1'>hshjahsja&gt;</a>
                         <a href='?hal=event&halaman=$link_prev'>&gt;&gt;</a>
                     ";
                     

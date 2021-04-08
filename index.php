@@ -66,7 +66,7 @@
   
   <!--fancybox-->
   <script src="./vendor/fancybox/jquery.fancybox.min.js"></script>
-  <script src="./vendor/tambahan/perKelasan.js"></script>
+  <!--<script src="./vendor/tambahan/perKelasan.js"></script>-->
   <script src="./vendor/tambahan/tools.js"></script>
   <script>
     $(document).ready(function () 
@@ -91,12 +91,12 @@
                   if($('.tampil$idPilar').css('display') == 'none')
                   {
                       $('.tampil$idPilar').css('display', 'block');
-                      $('.turunin$idPilar img').attr('src', 'img/Collapse Arrow Up.png');
+                      $('.turunin$idPilar .imeg$idPilar').attr('src', 'img/Collapse Arrow Up.png');
                   }
                   else
                   {
                       $('.tampil$idPilar').css('display', 'none');
-                      $('.turunin$idPilar img').attr('src', 'img/Collapse Arrow Down.png');
+                      $('.turunin$idPilar .imeg$idPilar').attr('src', 'img/Collapse Arrow Down.png');
                   }
                 });
                 ";

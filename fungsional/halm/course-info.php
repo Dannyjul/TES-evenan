@@ -93,11 +93,29 @@ include './fungsional/konfig/header.php';
                     {
                         $idKelNext = $nextClass['id_kelas'];
 
+                        $paketNext = $crud->eksekusiSQL("SELECT *FROM paket_kelas 
                         
+                                        WHERE id_kelas='$idKelNext' ORDER BY id_paketkelas ASC LIMIT 1");
 
-                        $linkNext = "course-info&k=$idKelNext&p=$paket";
+                        foreach ($paketNext as $pn) 
+                        {
+                            $idPakNext = $pn['id_paket'];
+                        }
 
-                        $tombolNext = "<a class='btn btn-prev-content' href='?hal=$linkNext'>Selanjutnya &gt;</a>";
+                        if ($idPakNext>$paket) 
+                        {
+                            $atrNext ="href='#' class='btn btn-prev-content' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
+                        } 
+                        else 
+                        {
+                            $linkNext = "course-info&k=$idKelNext&p=$paket";
+                            $atrNext  = "class='btn btn-prev-content' href='?hal=$linkNext'";
+                        }
+
+                       
+                        
+                        
+                        $tombolNext = "<a $atrNext>Selanjutnya &gt;</a>";
                     }
                 }
                 else
