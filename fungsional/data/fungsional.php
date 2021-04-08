@@ -1,5 +1,11 @@
 <?php
 
+    function joinTabel( $nmTabel,$tabelAtr1, $tabelAtr2)
+    {
+        $join = "INNER JOIN $nmTabel ON $tabelAtr1=$tabelAtr2";
+        return $join;
+    }
+
     function pindahHalaman($hal)
     {
         echo

@@ -24,10 +24,10 @@
         
         <script>
             //var lokasi = window.location='index.php';
-            swal('Login Sukses!', 'Selamat Datang!', 'success')
-                .then((value)=> {
+            //swal('Login Sukses!', 'Selamat Datang!', 'success')
+              //  .then((value)=> {
                     window.location='index.php';
-                })
+                //})
           
         </script>
         ";

@@ -21,7 +21,7 @@ include './fungsional/konfig/header.php';
         <!-- MATERI CONTENT-->
         <?php
         $pl = @$_GET['pl'];
-        $pilar = @$_GET['pilar'];
+        $pilar = @$_GET['pilid'];
         if (!empty($pilar)) 
         {
            $x = "SELECT *FROM kursus
@@ -40,13 +40,7 @@ include './fungsional/konfig/header.php';
            $x = "SELECT *FROM kursus
                             INNER JOIN pilar ON pilar.id_pilar = kursus.id_pilar
                           WHERE kursus.id_kursus='$pl'";
-            $next = " SELECT *FROM kursus 
-            WHERE
-            id_kelas='$kelas' AND
-            id_pilar='$pilar' AND
-            id_kursus>$pl 
-            ORDER BY id_kursus ASC LIMIT 1
-            ;";
+            
         }
         
         
@@ -109,10 +103,58 @@ include './fungsional/konfig/header.php';
         </div> -->
 
         <div class="footer-content-btn">
-            <a class="btn btn-next-content bg-warning" href="">&lt; Sebelumnya</a>
+            <!--<a class="btn btn-next-content bg-warning" href="">&lt; Sebelumnya</a>-->
+            <!--prev kursus-->
             <?php
 
+                $prev = " SELECT *FROM kursus 
+                            WHERE
+                            id_kelas='$kelas' AND
+                            id_pilar='$pilar' AND
+                            id_kursus<$pl 
+                            ORDER BY id_kursus DESC LIMIT 1
+                        ";
+                $prevPel = $crud->eksekusiSQL($prev);
+                $cekPrev = $crud->hitungData($prevPel);
                 
+                if ($cekPrev>0) 
+                {
+                    foreach ($prevPel as $sbm) 
+                    {
+                        $idK = $sbm['id_kursus'];
+
+                        $parmeter = "pl=$idK&k=$kelas&p=$paket&pilid=$pilar";
+
+                        $linkP = "?hal=course-detail&$parmeter";
+                        $btn="<a class='btn btn-prev-content' href='$linkP'>&lt; Sebelumnya</a>";
+                        
+                    
+                        //echo "Hahahehe";
+                    }
+                }
+
+                else
+                {
+                    $btn="";
+                }
+
+                echo $btn;
+                
+
+            ?>
+
+            <!--next kursus-->
+            <?php
+
+                //$kursusPaket = joinTabel("paket_member", "paket_member.id_paket", "kursus.id_paket");
+                $next = " SELECT *FROM kursus 
+                            
+                            WHERE
+                            id_kelas='$kelas' AND
+                            id_pilar='$pilar' AND
+                            id_kursus>$pl 
+                            ORDER BY id_kursus ASC LIMIT 1
+                        ";
                 $nextPel = $crud->eksekusiSQL($next);
                 $cekNext = $crud->hitungData($nextPel);
                 
@@ -121,15 +163,36 @@ include './fungsional/konfig/header.php';
                     foreach ($nextPel as $ljt) 
                     {
                         $idK = $ljt['id_kursus'];
+                        $idPket = $ljt['id_paket'];
 
-                        $linkN = "?hal=course-detail&pl=$idK&k=$kelas&pilar=$pilar";
-                        $btn="<a class='btn btn-prev-content bg-warning' href='$linkN'>Selanjutnya &gt;</a>";
-                        echo
-                        "
-                            $btn
-                        ";
+                        if ($idPket>$paket) 
+                        {
+                            $atrNext="href='#' class='btn btn-prev-content' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
+                        } 
+                        else 
+                        {
+                            $parmet = "pl=$idK&k=$kelas&p=$paket&pilid=$pilar";
+
+                            $linkN = "?hal=course-detail&$parmet";
+
+                            $atrNext = "class='btn btn-prev-content' href='$linkN'";
+                        }
+                        
+
+                        
+                        $btn="<a $atrNext>Selanjutnya &gt;</a>";
+                        
+                    
+                        //echo "Hahahehe";
                     }
                 }
+
+                else
+                {
+                    $btn="";
+                }
+
+                echo $btn;
                 
 
             ?>

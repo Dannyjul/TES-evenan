@@ -1,3 +1,15 @@
+<style>
+    .disabled
+    {
+        color: dimgray;
+    }
+
+    .disabled:hover
+    {
+        transition: 2s;
+        color: grey;
+    }
+</style>
 <?php
 $statuser = $crud->eksekusiSQl("SELECT *FROM user_status
                                                 INNER JOIN paket_member
@@ -66,7 +78,7 @@ foreach ($kelasCari as $kel) {
             "
                         
                             
-                <a id='gem$idPilar' class='drop-item tampil$idPilar' href='?hal=course-pilar&pil=$idPilar&k=$kelas'>
+                <a id='gem$idPilar' class='drop-item tampil$idPilar' href='?hal=course-pilar&pilid=$idPilar&k=$kelas&p=$paket'>
                     <img src='./img/Circled Play.png'>
                     <div class='drop-text'>
                         <p class='drop-item-title'>$nmPilar</p>
@@ -78,10 +90,7 @@ foreach ($kelasCari as $kel) {
                 
             ";
 
-            $sqlPel = "SELECT * FROM `kursus` 
-                                    
-                                    
-                                WHERE kursus.id_pilar='$idPilar'";
+            $sqlPel = "SELECT * FROM `kursus` WHERE kursus.id_pilar='$idPilar'";
 
             $pelajaran = $crud->eksekusiSQL($sqlPel);
 
@@ -91,11 +100,16 @@ foreach ($kelasCari as $kel) {
                 $kepilar = $pel['id_pilar'];
                 $paketan = $pel['id_paket'];
 
-
-                $cekSetatus = $crud->eksekusiSQL("SELECT *FROM user_status WHERE 
-                                        id_paket 
-                                    NOT IN
-                                    (SELECT id_paket FROM user_status WHERE id_paket='$idpaket')");
+                
+                $paketKel = "SELECT * FROM `paket_kelas` 
+                                INNER JOIN paket_member ON paket_member.id_paket = paket_kelas.id_paket
+                                INNER JOIN kursus ON kursus.id_paket = paket_member.id_paket
+                                INNER JOIN kelas ON kelas.id_kelas = paket_kelas.id_kelas
+                                WHERE paket_kelas.id_paket>$paket
+                            ";
+                
+                $cekSetatus = $crud->eksekusiSQL($paketKel);
+                
                 $hitungCS   = $crud->hitungData($cekSetatus);
 
                 if ($hitungCS>0) 
@@ -103,16 +117,18 @@ foreach ($kelasCari as $kel) {
                     foreach ($cekSetatus as $c) 
                     {
                         $idPkt = $c['id_paket'];
+                       // $pilr  = $c['id_pilar'];
+                        //$kurss = $c['id_kursus'];
                         
                         if ($idPkt==$paketan) 
                         {
-                            $dis = "disable";
-                            $link = "#";
+                            $dis = "disabled";
+                            $link = "href='#' class='btn' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
                         } 
                         else 
                         {
                             $dis ="";
-                            $link = "?hal=course-detail&pl=$idKursus&k=$kelas";
+                            $link = "?hal=course-detail&pl=$idKursus&k=$kelas&p=$paket&pilid=$idPilar";
                         }
                         
                     }
@@ -120,14 +136,13 @@ foreach ($kelasCari as $kel) {
                 else 
                 {
                     $dis="";
-                    $link = "?hal=course-detail&pl=$idKursus&k=$kelas";
+                    $link = "?hal=course-detail&pl=$idKursus&k=$kelas&p=$paket&pilid=$idPilar";
                 }
+                
 
 
                 echo
-                "
-                            
-                                
+                "        
                     <a id='gem$idPilar' class='drop-item $dis tampil$idPilar' href='$link'>
                         <img src='./img/Circled Play.png'>
                         <div class='drop-text'>
@@ -136,8 +151,6 @@ foreach ($kelasCari as $kel) {
                         </div>
 
                     </a>
-                        
-                    
                 ";
             }
 
