@@ -1,10 +1,16 @@
 <style>
+    .drop-item:hover
+    {
+        background-color: dimgray;
+        transition: 1s;
+    }
+
     .disabled {
         color: dimgray;
     }
 
     .disabled:hover {
-        transition: 2s;
+        transition: 1s;
         color: grey;
     }
 </style>
@@ -56,6 +62,45 @@ foreach ($kelasCari as $kel) {
         $idPilar = $pil['id_pilar'];
         $nmPilar = $pil['nama_pilar'];
 
+        $pilarWarna = @$_GET['pilid'];
+
+        if (empty($pilarWarna)) 
+        {
+            $bgPilar = "";
+        } 
+        else 
+        {
+            if ($pilarWarna==$idPilar) 
+            {
+                $bgPilar = "border border-warning";
+            } 
+            else 
+            {
+                $bgPilar = "";
+            }
+            
+        }
+
+
+        $pilarDetail = @$_GET['pilSus'];
+
+        if (empty($pilarDetail)) 
+        {
+            $detailPilar = "";
+        } 
+        else 
+        {
+            if ($pilarDetail==$idPilar) 
+            {
+                $detailPilar = "bg-warning";
+            } 
+            else 
+            {
+                $detailPilar = "";
+            }
+            
+        }
+        
 
 
 
@@ -63,11 +108,13 @@ foreach ($kelasCari as $kel) {
         echo
         "
             <div class='pilar-dropdown'>
-                <a class='btn btn-dropdown turunin$idPilar' href='#' id='pilar$idPilar' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                <a class='btn btn-dropdown turunin$idPilar $bgPilar' href='#' id='pilar$idPilar' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
                     $nmPilar <img class='gambar imeg$idPilar' src='./img/Collapse Arrow Down.png'>
                 </a>
                 <div class='drop-menu tampil$idPilar' aria-labelledby='#pilar$idPilar'>
         ";
+
+       
 
 
 
@@ -76,7 +123,7 @@ foreach ($kelasCari as $kel) {
         "
                         
                             
-                <a id='gem$idPilar' class='drop-item' href='?hal=course-pilar&pilid=$idPilar&k=$kelas&p=$paket'>
+                <a id='gem$idPilar' class='drop-item $detailPilar' href='?hal=course-pilar&pilid=$idPilar&k=$kelas&p=$paket&pilSus=$idPilar'>
                     <img src='./img/Circled Play.png'>
                     <div class='drop-text'>
                         <p class='drop-item-title'>$nmPilar</p>
@@ -97,6 +144,22 @@ foreach ($kelasCari as $kel) {
             $nmKursus = $pel['nama_kursus'];
             $kepilar = $pel['id_pilar'];
             $paketan = $pel['id_paket'];
+
+            $kursusId = @$_GET['pl'];
+
+            if (empty($kursusId)) 
+            {
+                $bgKursus = "";
+            }
+
+            if ($kursusId==$idKursus) 
+            {
+                $bgKursus = "bg-warning";
+            }
+            else
+            {
+                $bgKursus = "";
+            }
 
 
             $paketKel = "SELECT * FROM `paket_kelas` 
@@ -119,14 +182,17 @@ foreach ($kelasCari as $kel) {
 
                     if ($idPkt == $paketan) {
                         $dis = "disabled";
+                        $spanUp = "<span class='badge badge-warning'>Upgrade</span>";
                         $link = "href='#' class='btn' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
                     } else {
                         $dis = "";
+                        $spanUp = "";
                         $link = "?hal=course-detail&pl=$idKursus&k=$kelas&p=$paket&pilid=$idPilar";
                     }
                 }
             } else {
                 $dis = "";
+                $spanUp = "";
                 $link = "?hal=course-detail&pl=$idKursus&k=$kelas&p=$paket&pilid=$idPilar";
             }
 
@@ -134,10 +200,10 @@ foreach ($kelasCari as $kel) {
 
             echo
             "        
-                <a id='gem$idPilar' class='drop-item $dis' href='$link'>
+                <a id='gem$idPilar' class='drop-item $dis $bgKursus' href='$link'>
                     <img src='./img/Circled Play.png'>
                     <div class='drop-text'>
-                        <p class='drop-item-title'>$nmPilar</p>
+                        <p class='drop-item-title'>$nmPilar $spanUp</p>
                         <p class='drop-item-desc'>$nmKursus</p>
                     </div>
 

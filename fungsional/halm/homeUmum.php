@@ -136,6 +136,7 @@ foreach ($event as $ev) {
                                   $namaKursus = $free['nama_kursus'];
                                   $idkur = $free['id_kursus'];
                                   $paketFree = $free['id_paket'];
+                                  $pilarFree = $free['id_pilar'];
 
                                   $fotoK = $free['foto_kursus'];
 
@@ -149,7 +150,7 @@ foreach ($event as $ev) {
                                   }
                                   else 
                                   {
-                                    $atrKelas = "href='?hal=course-detail&pl=$idkur&k=$idkel&p=$paketFree' class='btn'";
+                                    $atrKelas = "href='?hal=course-detail&pl=$idkur&k=$idkel&p=$paketFree&pilid=$pilarFree' class='btn'";
                                   }
                     
                                   echo
