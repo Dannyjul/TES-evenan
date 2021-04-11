@@ -68,17 +68,15 @@
   <script src="./vendor/fancybox/jquery.fancybox.min.js"></script>
   <!--<script src="./vendor/tambahan/perKelasan.js"></script>-->
   <script src="./vendor/tambahan/tools.js"></script>
+  <script src="./vendor/tambahan/rating.js"></script>
   <script>
     $(document).ready(function () 
     {
         <?php
 
-            if (!$pilarKelas) 
+            if (!empty($pilarKelas)) 
             {
-              $nowey="";
-            } 
-            else 
-            {
+              
               foreach ($pilarKelas as $pil) 
               {
                 $idPilar = $pil['id_pilar'];

@@ -1,4 +1,18 @@
 <link rel="stylesheet" href="./css/course-info.css">
+
+<style>
+    .star button
+    {
+        background: none;
+        border: none;
+        width: 19%;
+    }
+
+    .star img
+    {
+        width: 100%;
+    }
+</style>
 <?php
 include './fungsional/konfig/header.php';
 
@@ -24,11 +38,14 @@ include './fungsional/konfig/header.php';
                     <h1>Beri Rating Kelas</h1>
                     <form action='?hal=course-respon&k=$kelas&p=$paket' method='post'>
                     <div class='star'>
-                        <img src='./img/star.png' alt=''>
-                        <img src='./img/star.png' alt=''>
-                        <img src='./img/star.png' alt=''>
-                        <img src='./img/star.png' alt=''>
-                        <img src='./img/star.png' alt=''>
+                        
+                        <button class='bintang1'><img src='./img/Star_1.png' alt=''></button>
+                        <button class='bintang2'><img src='./img/Star_1.png' alt=''></button>
+                        <button class='bintang3'><img src='./img/Star_1.png' alt=''></button>
+                        <button class='bintang4'><img src='./img/Star_1.png' alt=''></button>
+                        <button class='bintang5'><img src='./img/Star_1.png' alt=''></button>
+
+                        <input type='hidden' name='bintang' class='bintang'>
                     </div>
                     <!--<h3 class='status-bintang'>Buruk/Kurang Baik/Cukup Baik/Baik/Sangat Baik</h3>-->
                     
