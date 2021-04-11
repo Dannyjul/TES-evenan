@@ -133,7 +133,7 @@ include './fungsional/konfig/headerUdahLogin.php';
                             $statuser = $crud->eksekusiSQL("SELECT *FROM user_status WHERE id_user='$userId' AND id_paket='$idpaket'");
                             $hitungUs = $crud->hitungData($statuser);
 
-       
+                            
                               
 
                             if ($hitungUs>0) 
@@ -141,18 +141,32 @@ include './fungsional/konfig/headerUdahLogin.php';
                                 $class='btn disabled';
                                 $kataTombol ='Anda sedang di Paket Ini';
 
-                                
+                                /* 
                                 foreach ($statuser as $k) 
                                 {
                                     $idp = $k['id_paket'];
-                                    $statuket = $crud->eksekusiSQL("SELECT *FROM paket_member WHERE id_paket='$idp'");
+                                    $statuket = $crud->eksekusiSQL("SELECT *FROM paket_member WHERE id_paket<$idp");
 
-                                    foreach ($statuket as $key) 
+                                   foreach ($statuket as $key) 
                                     {
                                         $jumket = $key['jumlah_kelas'];
                                         
                                     }
+
+                                    $hiTuKet = $crud->hitungData($statuket);
+
+                                    if ($hiTuKet>0) 
+                                    {
+                                        $class='btn disabled';
+                                        $kataTombol ='Anda sedang di Paket Ini';
+                                    }
+                                    else
+                                    {
+                                        $class='btn disabled';
+                                        $kataTombol ='Default';
+                                    }
                                 }
+                                */
                                 
                                 
                             }
@@ -162,7 +176,7 @@ include './fungsional/konfig/headerUdahLogin.php';
                                 //$kataTombol ='PILIH';
 
                                 $jumket = 1;
-
+                                
                                 if ($jumkel>$jumket) 
                                 {
                                     $kataTombol = "Upgrade";
@@ -173,20 +187,13 @@ include './fungsional/konfig/headerUdahLogin.php';
                                     $class='btn btn-primary disabled';
                                     $kataTombol ='Default';
                                 }
+                                
 
                                     
                                 $idp = "Gak ada"; 
 
-
-                               /* $paketan = $crud->eksekusiSQL("SELECT *FROM paket_member WHERE id_paket>$idpaket");
-                                $hitungP = $crud->hitungData($paketan);
-
-                                if ($hitungP==0) 
-                                {
-                                    $class='btn btn-primary disabled';
-                                    $kataTombol ='Default';
-                                } 
-                                */
+                               
+                        
                                 
                                 
 
