@@ -135,6 +135,8 @@ foreach ($event as $ev) {
                                   $idkel = $free['id_kelas'];
                                   $namaKursus = $free['nama_kursus'];
                                   $idkur = $free['id_kursus'];
+                                  $paketFree = $free['id_paket'];
+                                  $pilarFree = $free['id_pilar'];
 
                                   $fotoK = $free['foto_kursus'];
 
@@ -148,7 +150,7 @@ foreach ($event as $ev) {
                                   }
                                   else 
                                   {
-                                    $atrKelas = "href='?hal=course-detail&pl=$idkur&k=$idkel' class='btn'";
+                                    $atrKelas = "href='?hal=course-detail&pl=$idkur&k=$idkel&p=$paketFree&pilid=$pilarFree' class='btn'";
                                   }
                     
                                   echo
@@ -251,7 +253,8 @@ foreach ($event as $ev) {
                                   $namaKursus = $prem['nama_kursus'];
                                   $fotoK = $prem['foto_kursus'];
                                   $kelas = $prem['id_kelas'];
-
+                                  $paketPrem = $prem['id_paket'];
+                                  $pilarPrem = $prem['id_pilar'];
                                   $folKPrem = "./foto/kursus/$fotoK";
 
                                   
@@ -264,10 +267,13 @@ foreach ($event as $ev) {
                                   }
                                   else 
                                   {
-                                    $statusCarian = "SELECT *FROM user_status
-                                      INNER JOIN paket_member
-                                      ON paket_member.id_paket = user_status.id_paket
-                                      WHERE paket_member.nama_paket LIKE '%Enterpreneur%' OR paket_member.nama_paket='%Self Employee%' AND user_status.id_user='$userId';
+                                    $statusCarian = "SELECT * FROM `user_status` 
+                                      INNER JOIN user ON user.id_user = user_status.id_user 
+                                      INNER JOIN paket_member ON paket_member.id_paket = user_status.id_paket 
+                                      WHERE user_status.id_user = '$userId' 
+                                      AND user_status.id_paket = '$paketPrem'
+                                      AND paket_member.nama_paket NOT IN 
+                                      (SELECT nama_paket FROM paket_member WHERE nama_paket LIKE '%Free User%')
                                     ";
 
                                    
@@ -281,7 +287,46 @@ foreach ($event as $ev) {
                                     } 
                                     else 
                                     {
-                                      $userPreneurAtr = "href='?hal=course-detail&pl=$idKursus&k=$kelas' class='btn'";
+                                      /*foreach ($cekStatus as $pak) 
+                                      {
+                                        $paketStatus = $pak['id_paket'];
+                                        
+                                        $statusUp = $crud->eksekusiSQL("SELECT *FROM paket_member WHERE id_paket>$paketStatus");
+                                        $catusUp  = $crud->hitungData($statusUp);
+
+                                        if ($catusUp==0) 
+                                        {
+                                          $userPreneurAtr = "href='?hal=course-detail&pl=$idKursus&k=$kelas' class='btn'";
+                                        } 
+                                        else 
+                                        {
+                                          $userPreneurAtr = "href='#' class='btn' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
+                                        }
+                                        
+
+                                      
+
+                                        
+                                        
+                                      }*/
+
+                                      foreach ($cekStatus as $pak) 
+                                      {
+                                        $paketStatus = $pak['id_paket'];
+                                        
+                                        $statusUp = $crud->eksekusiSQL("SELECT *FROM paket_member WHERE id_paket>$paketStatus");
+                                        //$catusUp  = $crud->hitungData($statusUp);
+
+                                        foreach ($statusUp as $up) 
+                                        {
+                                          
+                                        }
+                                        
+
+                                      }
+
+                                      $userPreneurAtr = "href='?hal=course-detail&pl=$idKursus&k=$kelas&pilid=$pilarPrem&p=$paketPrem' class='btn'";
+                                      
                                     }
                                     
                                     $atrKelasPrem = $userPreneurAtr;

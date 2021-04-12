@@ -66,19 +66,17 @@
   
   <!--fancybox-->
   <script src="./vendor/fancybox/jquery.fancybox.min.js"></script>
-  <script src="./vendor/tambahan/perKelasan.js"></script>
+  <!--<script src="./vendor/tambahan/perKelasan.js"></script>-->
   <script src="./vendor/tambahan/tools.js"></script>
+  <script src="./vendor/tambahan/rating.js"></script>
   <script>
     $(document).ready(function () 
     {
         <?php
 
-            if (!$pilarKelas) 
+            if (!empty($pilarKelas)) 
             {
-              $nowey="";
-            } 
-            else 
-            {
+              
               foreach ($pilarKelas as $pil) 
               {
                 $idPilar = $pil['id_pilar'];
@@ -90,13 +88,18 @@
                   e.preventDefault();
                   if($('.tampil$idPilar').css('display') == 'none')
                   {
-                      $('.tampil$idPilar').css('display', 'block');
-                      $('.turunin$idPilar img').attr('src', 'img/Collapse Arrow Up.png');
+                    $('.drop-menu').css('display', 'none');
+                    //$('.btn-dropdown img').attr('src', './img/Collapse Arrow Up.png');
+                    $('.gambar').attr('src', 'img/Collapse Arrow Down.png');
+
+                     $('.tampil$idPilar').css('display', 'block');
+                    
+                      $('.turunin$idPilar .imeg$idPilar').attr('src', 'img/Collapse Arrow Up.png');
                   }
                   else
                   {
                       $('.tampil$idPilar').css('display', 'none');
-                      $('.turunin$idPilar img').attr('src', 'img/Collapse Arrow Down.png');
+                      $('.turunin$idPilar .imeg$idPilar').attr('src', 'img/Collapse Arrow Down.png');
                   }
                 });
                 ";
@@ -106,6 +109,8 @@
 
             
         ?>
+
+        //$(selector).slideDown();
         
     });
   </script>

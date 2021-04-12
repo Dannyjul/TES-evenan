@@ -169,10 +169,27 @@ include './fungsional/konfig/headerUdahLogin.php';
 
                     foreach ($statuser as $e) {
                         $jumlahKelas = $e['jumlah_kelas'];
+                        $idPaket     = $e['id_paket'];
                         $namaPaket   = $e['nama_paket'];
                         $fotoPaket   = $e['foto_paket'];
 
                         $tujuanPaket = "./foto/paket/$fotoPaket";
+
+                        $cekPaket = $crud->eksekusiSQL("SELECT *FROM paket_member
+                                                        WHERE id_paket>$idPaket ORDER BY id_paket ASC 
+                                                        LIMIT 1
+                                                        ");
+                        $hitCekPaket = $crud->hitungData($cekPaket);
+
+                        if ($hitCekPaket==0) 
+                        {
+                            $classTombol = "disabled";
+                        } 
+                        else 
+                        {
+                            $classTombol = "";
+                        }
+                        
                     }
 
                     ?>
@@ -181,7 +198,7 @@ include './fungsional/konfig/headerUdahLogin.php';
                         <h6>Status Membership</h6>
                         <h3><?php echo $namaPaket; ?></h3>
                         <img src="<?php echo $tujuanPaket; ?>" alt="<?php echo $namaPaket; ?>">
-                        <a class="btn" href="?hal=akun-membership">UPGRADE KELAS</a>
+                        <a class="btn <?php echo $classTombol; ?>" href="?hal=akun-membership">UPGRADE KELAS</a>
                     </div>
                 </div>
 
