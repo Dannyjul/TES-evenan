@@ -114,9 +114,9 @@
 
           <label class="gender" for="gender">Jenis Kelamin</label>
           <select class="text-input" id="gender" name="jekel" required>
-            <option selected="true" disabled="disabled">Pilih</option>
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
+            <option value ="none" selected="true" disabled="disabled">Pilih</option>
+            <option value ="Laki-laki">Laki-laki</option>
+            <option value ="Perempuan">Perempuan</option>
           </select>
           <p class = "error-msg" id="errGender">Error Message</p>
 
