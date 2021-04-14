@@ -6,6 +6,7 @@
         background: none;
         border: none;
         width: 19%;
+        transition: 2s;
     }
 
     .star img

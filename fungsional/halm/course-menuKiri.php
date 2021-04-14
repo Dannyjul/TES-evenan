@@ -182,16 +182,22 @@ foreach ($kelasCari as $kel) {
 
                     if ($idPkt == $paketan) {
                         $dis = "disabled";
+                        $logoMenu = "./img/Lock.png";
+                        $atrLogo = "width='48' height='48'";
                         $spanUp = "<span class='badge badge-warning'>Upgrade</span>";
                         $link = "href='#' class='btn' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
                     } else {
                         $dis = "";
+                        $logoMenu="./img/Circled Play.png";
+                        $atrLogo="";
                         $spanUp = "";
                         $link = "?hal=course-detail&pl=$idKursus&k=$kelas&p=$paket&pilid=$idPilar";
                     }
                 }
             } else {
                 $dis = "";
+                $logoMenu="./img/Circled Play.png";
+                $atrLogo="";
                 $spanUp = "";
                 $link = "?hal=course-detail&pl=$idKursus&k=$kelas&p=$paket&pilid=$idPilar";
             }
@@ -201,7 +207,7 @@ foreach ($kelasCari as $kel) {
             echo
             "        
                 <a id='gem$idPilar' class='drop-item $dis $bgKursus' href='$link'>
-                    <img src='./img/Circled Play.png'>
+                    <img src='$logoMenu' $atrLogo>
                     <div class='drop-text'>
                         <p class='drop-item-title'>$nmPilar $spanUp</p>
                         <p class='drop-item-desc'>$nmKursus</p>
