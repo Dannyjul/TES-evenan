@@ -620,10 +620,12 @@ body{
     z-index: 100;
 }
 
+/*MODIFIED BY EVA 14-04-2021*/
 .close{
     position: absolute;
-    top: 15px;
-    right: 30px;
+    top: 5px;
+    right: 20px;
+    height: 30px
 }
 
 .col-gambar{
@@ -633,12 +635,14 @@ body{
     flex: 1 0 30%;
     max-width: 30%;
     background-image: url('../img/Banner.png');
+    border-radius: 15px 0 0 15px;
 }
 
 .col-login{
     flex: 1 0 70%;
     max-width: 70%;
     padding-left: 0;
+    border-radius: 15px 15px 0 0;
 }
 
 .container-form{
@@ -647,6 +651,7 @@ body{
     padding-right: 5em;
     padding-left: 5em;
     background: #FFFFFF;
+    border-radius: 0 15px 15px 0;
 }
 
 .container-form h1{
