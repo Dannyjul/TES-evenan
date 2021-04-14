@@ -1,25 +1,25 @@
-body{
+body {
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
     color: #FFFFFF;
 }
 
-.container{
+.container {
     position: relative;
-    top:110px;
+    top: 110px;
     padding: 50px 100px;
-
     display: block;
     max-width: 1519px;
     margin: auto;
-
     background: rgba(0, 0, 0, 0.9);
 }
 
+
 /*NAVBAR*/
-.container-navbar{
+
+.container-navbar {
     position: fixed;
-    top:0;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 100;
@@ -28,175 +28,230 @@ body{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-.navbar{
+.navbar {
     padding: 0;
 }
 
-.logo img{
+.logo img {
     width: 180px;
     height: 60px;
 }
 
-.nav-list .btn{
+.nav-list .btn {
     font-size: 18px;
     text-align: center;
     color: white;
 }
 
-.nav-list .btn-login{
+.nav-list .btn-login {
     color: #fff;
     font-weight: 600;
 }
 
-.nav-list .btn-daftar{
+.nav-list .btn-daftar {
     width: 145px;
     height: 58px;
     margin-left: 75px;
     line-height: 42px;
-
     font-size: 18px;
     color: #fff;
     background: #E73A63;
     border-radius: 5px;
 }
 
-.nav-list .btn-daftar:hover{
+.nav-list .btn-daftar:hover {
     background: #B2002B;
-
     font-weight: bold;
     font-size: 18px;
 }
 
-.nav-list .profile-pict img{
+.nav-list .profile-pict img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
 }
 
-.nav-link{
+.nav-link {
     display: inline;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     position: absolute;
     top: 60px;
     left: 1000px;
     background-color: #2f2f2f;
 }
 
-.dropdown-item{
+.dropdown-item {
     color: white;
     background-color: #2f2f2f;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
     color: white;
     background-color: #2f2f2f;
     text-decoration: underline;
 }
 
-@media only screen and (max-width: 1400px){
-   .dropdown-menu{
-       left: 850px;
-   }
+@media only screen and (max-width: 1400px) {
+    .dropdown-menu {
+        left: 850px;
+    }
 }
 
-@media only screen and (max-width: 1300px){
-    .dropdown-menu{
+@media only screen and (max-width: 1300px) {
+    .dropdown-menu {
         left: 720px;
     }
-    
 }
 
-@media only screen and (max-width: 1200px){
-    .dropdown-menu{
+@media only screen and (max-width: 1200px) {
+    .dropdown-menu {
         left: 650px;
     }
 }
 
+
 /*BANNER*/
-.carousel-item img{
+
+#carouselExampleIndicators {
     width: 100%;
-    height: 365px;
+    /*ratio 7 : 2*/
+    padding-top: 28.57%;
+    position: relative;
 }
 
-.carousel-indicators li{
+.carousel-inner {
+    position: absolute;
+    top: 0;
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-indicators li {
     width: 15px;
     height: 15px;
     border-radius: 50%;
 }
 
-.carousel-indicators .active{
+.carousel-indicators .active {
     width: 30px;
     height: 15px;
     border-radius: 50%;
     background-color: #C89E35;
 }
 
+@media only screen and (max-width: 480px) {
+    .container {
+        position: relative;
+        top: 110px;
+        padding: 50px 10px;
+        display: block;
+        max-width: 1519px;
+        margin: auto;
+        background: rgba(0, 0, 0, 0.9);
+    }
+    .carousel-indicators {
+        top: 70px;
+    }
+    .carousel-indicators li {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+    }
+    .carousel-indicators .active {
+        width: 14px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #C89E35;
+    }
+}
+
+
 /* GRID SYSTEM */
+
+
 /*Judul Status Kelas*/
-.title-status{
+
+.title-status {
     font-weight: bold;
     font-size: 36px;
-
     margin-bottom: 25px;
 }
-/*Container grid system*/ 
-.container-grid{
+
+
+/*Container grid system*/
+
+.container-grid {
     padding: 50px;
     border-radius: 5px;
-
-   background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.45);
 }
 
+
 /*Judul kelas di dalam grid system*/
-.col-title{
+
+.col-title {
     padding-top: 20px;
     padding-left: 0;
     flex: 1 0 15%;
     max-width: 15%;
 }
 
-.title-class{
+.title-class {
     font-weight: bold;
     font-size: 24px;
     line-height: 30px;
 }
 
-.title-icon{
+.title-icon {
     margin-bottom: 50px;
 }
 
-.title-link{
+.title-link {
     font-weight: 600;
     font-size: 14px;
     line-height: 50px;
     color: #FFFFFF;
-
     position: absolute;
     left: 0px;
     bottom: 20px;
 }
 
-.title-link:hover{
+.title-link:hover {
     text-decoration: none;
     color: #FFFFFF;
 }
 
+
 /*Card*/
-.col-slick{
+
+.col-slick {
     flex: 1 0 85%;
     max-width: 85%;
 }
 
-.row-slick{
+.row-slick {
     width: 1000px;
     display: inline-block;
-
     margin-left: 10px;
 }
 
-.card{
+.card {
     background-color: #2f2f2f;
     border: unset;
     height: 330px;
@@ -205,227 +260,220 @@ body{
     margin-right: 20px;
 }
 
-.card-title{
+.card-title {
     font-weight: 600;
     font-size: 18px;
     line-height: 30px;
 }
 
-.card .btn{
+.card .btn {
     position: absolute;
     bottom: 20px;
     width: 85%;
-
     font-weight: bold;
     font-size: 18px;
-
     color: white;
-
     background: #E73A63;
     border-radius: 5px;
 }
 
-/*Belom responsive di HP (Ini hanya untuk grid system*/ 
-@media only screen and (max-width: 1400px){
-    .container-grid{
+
+/*Belom responsive di HP (Ini hanya untuk grid system*/
+
+@media only screen and (max-width: 1400px) {
+    .container-grid {
         padding-top: 40px;
         padding-bottom: 40px;
     }
-
-    .title-status{
+    .title-status {
         font-size: 30px;
     }
-
-    .row-slick{
+    .row-slick {
         width: 850px;
     }
-
-    .card{
+    .card {
         width: 250px;
         height: 310px;
     }
-
-    .card-body{
+    .card-body {
         padding: 15px;
     }
-    
 }
 
-@media only screen and (max-width: 1300px){
-    .container-grid{
+@media only screen and (max-width: 1300px) {
+    .container-grid {
         padding-top: 30px;
         padding-bottom: 30px;
     }
-    
-    .title-status{
+    .title-status {
         font-size: 28px;
     }
-
-    .row-slick{
+    .row-slick {
         width: 750px;
     }
-
-    .card{
+    .card {
         width: 230px;
         height: 300px;
     }
-
-    .card .btn{
+    .card .btn {
         font-size: 14px;
         width: 83%;
-        
     }
-
-    .card-body{
+    .card-body {
         padding: 15px;
     }
 }
 
-@media only screen and (max-width: 1200px){
-    .title-status{
+@media only screen and (max-width: 1200px) {
+    .title-status {
         font-size: 26px;
     }
-
-    .title-icon{
+    .title-icon {
         width: 70px;
         height: auto;
     }
-
-    .title-class{
+    .title-class {
         font-size: 20px;
     }
-
-    .title-link{
+    .title-link {
         font-size: 10px;
     }
-    
-    .row-slick{
+    .row-slick {
         width: 650px;
     }
-
-    .card{
+    .card {
         width: 175px;
         height: 250px;
     }
-
-    .card-title{
+    .card-title {
         font-size: 14px;
     }
-
-    .card .btn{
+    .card .btn {
         font-size: 12px;
     }
 }
 
+
 /*Container Premium Color*/
-.container-grid-premium{
+
+.container-grid-premium {
     background: linear-gradient(180deg, #FECC5D 0%, #FDE3BD 53.12%, #F0A148 100%);
 }
 
+
 /*UPCOMING EVENT*/
+
+
 /*Ini link buat lihat semua*/
-.event-link{
+
+.event-link {
     font-weight: 600;
     font-size: 14px;
     line-height: 50px;
-
     position: relative;
     top: 0px;
     left: 900px;
-
 }
 
-/*Buat ngatur cardnya*/ 
-.event .card{
+
+/*Buat ngatur cardnya*/
+
+.event .card {
     padding: 40px;
     height: 500px;
     margin-right: 25px;
     margin-left: 25px;
 }
 
-.inner-card{
-    background-color:rgba(0, 0, 0, 0.25);
+.inner-card {
+    background-color: rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     height: 500px;
 }
 
+
 /*Ngatur Ukuran gambar*/
-.event .inner-card img{
+
+.event .inner-card img {
     width: 100%;
     height: 200px;
 }
 
-/*Ngatur Price tagnya*/ 
-.price-tag{
+
+/*Ngatur Price tagnya*/
+
+.price-tag {
     position: absolute;
-    top:190px;
+    top: 190px;
     right: 40px;
     padding: 5px;
-
     background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
     border-radius: 5px 0px 0px 5px;
     color: black;
 }
 
-.price-tag p{
+.price-tag p {
     margin-bottom: 0px;
     font-weight: bold;
     font-size: 16px;
 }
 
-.price-tag span{
+.price-tag span {
     text-decoration: line-through;
     opacity: 0.25;
     margin-left: 5px;
 }
 
-/*Card Body*/ 
-.card-body{
+
+/*Card Body*/
+
+.card-body {
     padding-bottom: 25px;
 }
 
-.event .card-body p{
+.event .card-body p {
     margin-bottom: 0px;
 }
 
-.event .card-title{
+.event .card-title {
     font-weight: bold;
     font-size: 18px;
     line-height: 30px;
     margin-bottom: 0;
 }
 
-.card-body .hari{
+.card-body .hari {
     font-weight: 600;
     font-size: 14px;
     line-height: 30px;
 }
 
-.card-body .online{
+.card-body .online {
     font-weight: normal;
     font-size: 12px;
     line-height: 30px;
 }
 
-.event .btn{
+.event .btn {
     position: absolute;
     width: 70%;
     bottom: 70px;
 }
 
+
 /*Speaker*/
 
-.speaker{
+.speaker {
     display: inline-flex;
     margin-top: 15px;
 }
 
-.speaker-name{
+.speaker-name {
     padding-top: 15px;
     padding-left: 10px;
 }
 
-.speaker-name .name{
+.speaker-name .name {
     display: inline-block;
     font-weight: bold;
     font-size: 14px;
@@ -433,7 +481,7 @@ body{
     margin-bottom: 0;
 }
 
-.speaker-name .status{
+.speaker-name .status {
     display: inline-flex;
     font-weight: normal;
     font-size: 14px;
@@ -441,174 +489,158 @@ body{
     margin-bottom: 0;
 }
 
-.speaker img{
+.speaker img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
 }
 
+
 /*Responsive untuk Card Deck*/
-@media only screen and (max-width: 1400px){
-    .price-tag{
+
+@media only screen and (max-width: 1400px) {
+    .price-tag {
         top: 180px;
     }
-
-    .event-link{
+    .event-link {
         left: 800px
     }
-
-    .event .card{
+    .event .card {
         height: 520px;
-
     }
-
-    .event .btn{
+    .event .btn {
         width: 65%;
     }
-    
-    .inner-card{
+    .inner-card {
         height: 470px;
     }
-
 }
 
-@media only screen and (max-width: 1300px){
-    .event .card{
+@media only screen and (max-width: 1300px) {
+    .event .card {
         height: 450px;
         padding: 30px;
     }
-
-    .event .btn{
+    .event .btn {
         bottom: 50px;
         width: 65%;
     }
-    
-    .inner-card{
+    .inner-card {
         height: 450px;
     }
-    
-    .event-link{
+    .event-link {
         left: 700px
     }
-
-    .price-tag p{
+    .price-tag p {
         font-size: 14px;
     }
 }
 
-@media only screen and (max-width: 1200px){
-    .event-link{
+@media only screen and (max-width: 1200px) {
+    .event-link {
         left: 550px
     }
-    
-    .event .btn{
+    .event .btn {
         bottom: 40px;
         width: 65%;
     }
-
-    .event .card{
+    .event .card {
         height: 350px;
         padding: 25px;
     }
-
-    .event .card-title{
+    .event .card-title {
         font-size: 14px;
     }
-
-    .event .hari{
+    .event .hari {
         font-size: 12px;
     }
-
-    .price-tag{
+    .price-tag {
         top: 120px;
         right: 25px;
     }
-
-    .event .inner-card img{
+    .event .inner-card img {
         width: 100%;
         height: 150px;
     }
-
-    .speaker-name{
+    .speaker-name {
         padding-top: 0;
     }
-    .speaker-name .name{
+    .speaker-name .name {
         font-size: 10px;
     }
-    
-    .speaker-name .status{
+    .speaker-name .status {
         font-size: 10px;
     }
-    
-    .speaker img{
+    .speaker img {
         width: 50px;
         height: 50px;
         border-radius: 50%;
     }
-
-    .price-tag p{
+    .price-tag p {
         font-size: 10px;
     }
-
-    
-    .inner-card{
+    .inner-card {
         height: 370px;
     }
-
-    
 }
 
+
 /*Bottom Banner*/
-.container-bottom{
+
+.container-bottom {
     background: linear-gradient(180deg, #C89E35 0%, #FE9E32 100%), #C89E35;
     text-align: center;
 }
 
-.banner-title{
+.banner-title {
     font-weight: bold;
     font-size: 2rem;
     line-height: 2.5rem;
 }
 
-.container-bottom .btn{
+.container-bottom .btn {
     width: 30%;
     margin-top: 2rem;
-
     font-weight: bold;
     font-size: 1.2rem;
     color: white;
-
     background: #E73A63;
     border-radius: 5px;
 }
 
+
 /*Footer*/
-.container-footer{
+
+.container-footer {
     text-align: center;
 }
-.navfooter li{
+
+.navfooter li {
     display: inline;
     margin-right: 1rem;
     margin-left: 1rem;
-
     font-weight: 600;
     font-size: 1.5rem;
     line-height: 50px;
 }
 
-.navfooter ul{
+.navfooter ul {
     padding: 0px;
 }
 
-.copy{
+.copy {
     font-weight: normal;
     font-size: 1.5rem;
     line-height: 1.5rem;
 }
 
+
 /*Modal*/
+
+
 /*Modal Login*/
-.modal{
+
+.modal {
     background: #000;
     width: 100%;
     height: 100%;
@@ -620,13 +652,13 @@ body{
     z-index: 100;
 }
 
-.close{
+.close {
     position: absolute;
     top: 15px;
     right: 30px;
 }
 
-.col-gambar{
+.col-gambar {
     padding-left: 2em;
     padding-top: 8em;
     padding-bottom: 8em;
@@ -635,13 +667,13 @@ body{
     background-image: url('../img/Banner.png');
 }
 
-.col-login{
+.col-login {
     flex: 1 0 70%;
     max-width: 70%;
     padding-left: 0;
 }
 
-.container-form{
+.container-form {
     padding-top: 3em;
     padding-bottom: 3em;
     padding-right: 5em;
@@ -649,20 +681,19 @@ body{
     background: #FFFFFF;
 }
 
-.container-form h1{
+.container-form h1 {
     font-weight: bold;
     font-size: 1.5em;
     line-height: 1.5em;
-
     color: black;
 }
 
-.container-form span{
+.container-form span {
     margin-left: 0.5em;
     color: #F1B213;
 }
 
-.container-form p{
+.container-form p {
     font-weight: normal;
     font-size: 1em;
     line-height: 1em;
@@ -670,17 +701,16 @@ body{
     margin-bottom: 2em;
 }
 
-.container-form label{
+.container-form label {
     display: block;
-
     font-style: normal;
     font-weight: 600;
     font-size: 1em;
     line-height: 1em;
-    color:black;
+    color: black;
 }
 
-.container-form .text-input{
+.container-form .text-input {
     display: block;
     width: 100%;
     height: 2.5em;
@@ -691,65 +721,66 @@ body{
     padding-left: 0.4em;
 }
 
-.container-form .input-alamat{
+.container-form .input-alamat {
     width: 100%;
     height: 5em;
 }
 
-.container-form .remember{
+.container-form .remember {
     display: inline;
     margin-right: 15em;
 }
 
-.container-form .btn{
+.container-form .btn {
     display: block;
     width: 100%;
     margin-top: 1em;
     margin-bottom: 1em;
-
     background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     border-radius: 0.4em;
     color: #fff;
 }
 
+
 /*Modal Daftar*/
-.alamat-text{
+
+.alamat-text {
     margin-bottom: 1.2em;
 }
 
-.container-form select{
+.container-form select {
     display: block;
     width: 100%;
     height: 3em;
     border: none;
     border-radius: 0.4em;
     background: #EFEFEF;
-
-
     margin-bottom: 1.2em;
 }
 
-.container-form .tc{
+.container-form .tc {
     display: inline;
 }
 
-.tc span{
+.tc span {
     color: red;
     margin-left: 0.5em;
 }
 
-.modal-daftar .container-form{
+.modal-daftar .container-form {
     height: 30rem;
     overflow-y: auto;
 }
 
-.tampilPassword{
+.tampilPassword {
     margin-bottom: 20px;
 }
 
+
 /*Under Maintenance*/
-.under-maintenance{
+
+.under-maintenance {
     background: #FFFFFF;
     width: 100%;
     height: 100%;
@@ -761,19 +792,22 @@ body{
     z-index: 100;
 }
 
-.under-maintenance img{
+.under-maintenance img {
     height: 400px;
     width: auto;
     margin-right: 10px;
 }
 
-.under-maintenance h1{
+.under-maintenance h1 {
     color: black;
     font-size: 36px;
 }
 
-@media only screen and (max-width: 1100px){
-    .under-maintenance{
+@media only screen and (max-width: 1100px) {
+    .under-maintenance {
         display: flex;
     }
 }
+
+
+/* responsive css */
