@@ -662,6 +662,14 @@ body{
     color: #F1B213;
 }
 
+/*CREATED BY EVA 13-04-2021*/
+.container-form .error-msg{
+    color: #B2002B;
+    display: none;
+    font-size: small;
+    margin-top: 14px;
+}
+
 .container-form p{
     font-weight: normal;
     font-size: 1em;
@@ -678,6 +686,18 @@ body{
     font-size: 1em;
     line-height: 1em;
     color:black;
+}
+
+/*MODIFIED BY EVA 13-04-2021*/
+.container-form .text-input{
+    display: block;
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: 1.5em;
+    border: unset;
+    background: #EFEFEF;
+    border-radius: 0.4em;
+    padding-left: 0.4em;
 }
 
 .container-form .text-input{
@@ -715,6 +735,18 @@ body{
 
 /*Modal Daftar*/
 .alamat-text{
+    margin-bottom: 1.2em;
+}
+
+/*MODIFIED BY EVA 13-04-2021*/
+.container-form select{
+    display: block;
+    width: 100%;
+    height: 3em;
+    border: none;
+    border-radius: 0.4em;
+    background: #EFEFEF;
+
     margin-bottom: 1.2em;
 }
 
