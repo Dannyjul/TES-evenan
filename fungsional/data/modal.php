@@ -1,5 +1,5 @@
 <style>
-  #pesanAwal, #pesanUpgrade
+  #pesanAwal, #pesanUpgrade, #setujuan
   {
     display: none;
     width: 700px;
@@ -7,15 +7,25 @@
     color: white;
   }
 
-  #pesanAwal img, #pesanUpgrade img
+  #pesanAwal img, #pesanUpgrade img, #setujuan img
   {
     display: block;
     margin: auto;
   }
 
-  #pesanAwal a, #pesanUpgrade a
+  #pesanAwal a, #pesanUpgrade a, #setujuan a
   {
     width: 100%;
+  }
+
+  #setujuan
+  {
+    width: 500px;
+  }
+
+  #setujuan p
+  {
+    margin-top: 25px;
   }
 </style>
 
@@ -37,53 +47,6 @@
     <p align="center">Anda harus Upgrade Status terlebih dahulu...</p>
  
   <a href='?hal=akun-membership&tuj=profile' id="tombolUpg" class="btn btn-warning text-white"><h4>Upgrade</h4></a>
-</div>
-
-
-
-
-<div class="modal fade" id="editUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edit Profil</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-
-        <form method="post" action="?hal=akun-respon&mode=edit" enctype="multipart/form-data">
-          <p>
-            <input value="<?php echo $namauser; ?>" class="form-control" type="text" name="nama" placeholder="Nama Lengkap" required>
-          </p>
-          <p>
-            <textarea id="my-textarea" class="form-control" name="alamat" placeholder="Alamat" rows="3"><?php echo $alamat; ?></textarea>
-          </p>
-          <p>
-            <input value="<?php echo $nohp; ?>" class="form-control" type="number" name="nohp" placeholder="No. Handphone" required>
-          </p>
-          <p>
-            <input value="<?php echo $email; ?>" class="form-control" type="email" name="email" placeholder="E-Mail" required>
-          </p>
-
-
-
-          <p>
-            <input value="<?php echo $passw; ?>" class="form-control tampilinPass" type="password" name="password" placeholder="Password" required>
-            &nbsp;<input type="checkbox" class="tampilPassword"> <small>Tampilkan Password</small> <br>
-          </p>
-
-
-          <p>
-            <input type="submit" value="SIMPAN" class="btn btn-primary">
-          </p>
-        </form>
-
-      </div>
-
-    </div>
-  </div>
 </div>
 
 <div class="modal modal-daftar">
@@ -131,7 +94,7 @@
           <small class="text-danger passTaksama">Password yang diketikkan tidak sama</small>
 
           <input type="checkbox" name="setujuan" id="tc" required>
-          <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-toggle="modal" data-target="#Setujuan" href="#">Syarat dan Ketentuan</a></span></label>
+          <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-fancybox data-src='#setujuan' href='javascript:;'>Syarat dan Ketentuan</a></span></label>
           <button type="submit" class="btn">Daftar</button>
         </form>
 
@@ -173,3 +136,67 @@
         </div>
     </div>
 </div>
+
+
+<?php
+
+    $perintah = $crud->eksekusiSQl("SELECT *FROM info 
+                                    INNER JOIN user
+                                        ON user.id_user= info.id_user
+                                    WHERE info.jenis_info='Term and Condition'
+                                    ");
+    $hitung   = $crud->hitungData($perintah);
+
+
+    foreach($perintah as $a)
+    {
+        $idinfo= $a['id_info'];
+        $jenis = $a['jenis_info'];
+        $foto  = $a['foto_info'];
+        $tgl   = $a['tgl_info'];
+        $desk  = $a['deskripsi'];
+        
+
+        $nus    = $a['nama_user'];
+
+        if ($foto=='Kosong') 
+        {
+            //$gambar = "<img class='rounded-circle' src='./img/nofoto.png' width='50' height='50'>";
+            $box = "";
+        } 
+        else 
+        {
+            $tujuan = "./foto/info/$foto";
+           /* $gambar = 
+            "   <a data-fancybox='gallery' href='$tujuan' data-caption='$jenis'>
+                    <img src='$tujuan' width='50' height='50'>
+                </a>
+            ";*/
+            $box = 
+            "
+                <center>
+                <img src='$tujuan' width='70%' height='200'>
+                </center>
+            ";
+        }
+    }
+                                
+                 
+                                
+
+?>
+<div id="setujuan">
+
+  <center>
+    <h4><?php echo $jenis; ?></h4>
+  </center>
+	
+  <?php
+      echo
+      "
+          $box
+          $desk
+      ";
+  ?>
+</div>
+
