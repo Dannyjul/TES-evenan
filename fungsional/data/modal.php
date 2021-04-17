@@ -86,6 +86,8 @@
   </div>
 </div>
 
+<!-- MODIFIED BY EVA 13-04-2021 -->
+<!-- Modal Daftar --> 
 <div class="modal modal-daftar">
   <div class="row">
     <div class="col col-gambar">
@@ -99,40 +101,48 @@
 
         <form action="?hal=daftar-respon" method="post">
           <label class="nama" for="nama">Nama Lengkap</label>
-          <input type="text" name="nama" id="nama" class="text-input" placeholder="Masukan nama lengkap anda" required>
+          <input type="text" name="nama" id="nama" class="text-input" placeholder="Masukan nama lengkap anda">
+          <p class = "error-msg" id="errNama">Error Message</p>
 
           <label class="alamat" for="alamat">Alamat Lengkap</label>
-          <textarea class="text-input input-alamat" name="alamat" id="alamat" required></textarea>
+          <textarea class="text-input input-alamat" name="alamat" id="alamat"></textarea>
+          <p class = "error-msg" id="errAlamat">Error Message</p>
 
           <label class="tgl-lahir" for="tgl-lahir">Tanggal Lahir</label>
-          <input type="date" name="tglahir" id="tgl-lahir" class="text-input" required>
+          <input type="date" name="tglahir" id="tgl-lahir" class="text-input">
+          <p class = "error-msg" id="errTgl">Error Message</p>
 
           <label class="gender" for="gender">Jenis Kelamin</label>
           <select class="text-input" id="gender" name="jekel" required>
-            <option selected="true" disabled="disabled">Pilih</option>
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
+            <option value ="none" selected="true" disabled="disabled">Pilih</option>
+            <option value ="Laki-laki">Laki-laki</option>
+            <option value ="Perempuan">Perempuan</option>
           </select>
+          <p class = "error-msg" id="errGender">Error Message</p>
 
           <label class="no-hp" for="no-hp">Nomor Handphone</label>
-          <input type="number" name="nohp" id="no-hp" class="text-input" placeholder="Tuliskan nomor handphone aktif anda" required>
+          <input type="number" name="nohp" id="no-hp" class="text-input" placeholder="Masukan nomor handphone aktif anda">
+          <p class = "error-msg" id="errPhone">Error Message</p>
 
           <label class="email" for="email">E-mail</label>
-          <input type="email" name="email" id="no-hp" class="text-input" placeholder="Masukkan E-mail" required>
+          <input type="email" name="email" id="email" class="text-input" placeholder="Masukkan E-mail">
+          <p class = "error-msg" id="errEmail">Error Message</p>
 
           <label class="pass" for="pass">Kata Sandi</label>
-          <input type="password" name="password" id="pass" class="text-input tampilinPass" style="margin-bottom: 5px;" placeholder="Masukan kata sandi yang terdaftar" required>
+          <input type="password" name="password" id="pass" class="text-input tampilinPass" style="margin-bottom: 5px;" placeholder="Masukan kata sandi yang terdaftar">
+          <p class = "error-msg" id="errPass">Error Message</p>
           
-          &nbsp;<input type="checkbox" class="tampilPassword"> <small style="color: black;">Tampilkan Password</small> <br>
-                <small class="text-danger passTaksama">Password yang diketikkan tidak sama</small>
+          &nbsp;<input type="checkbox" class="tampilPassword"> <small style="color: black;">Tampilkan Password</small> 
 
           <label class="pass" for="pass-conf">Konfirmasi Kata Sandi</label>
-          <input type="password" name="pass-conf" id="pass2" class="text-input" placeholder="Tuliskan ulang kata sandi yang terdaftar" required>
-          <small class="text-danger passTaksama">Password yang diketikkan tidak sama</small>
+          <input type="password" name="pass-conf" id="confirm-pass" class="text-input" placeholder="Tuliskan ulang kata sandi yang terdaftar">
+          <p class = "error-msg" id="errPassConf">Error Message</p>
 
-          <input type="checkbox" name="setujuan" id="tc" required>
+          <input type="checkbox" name="setujuan" id="tc">
           <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-toggle="modal" data-target="#Setujuan" href="#">Syarat dan Ketentuan</a></span></label>
-          <button type="submit" class="btn">Daftar</button>
+          <p class = "error-msg" id="errCheckBox">Error Message</p>
+          <button type="submit" class="btn" id="btn-modal-daftar">Daftar</button>
+          
         </form>
 
         
@@ -142,7 +152,9 @@
   </div>
 </div>
 
-<!--MODAL-->
+
+<!-- MODIFIED BY EVA 13-04-2021 -->
+<!--Modal  Login-->
 <div class="modal modal-login">
     <div class="row">
         <div class="col col-gambar">
@@ -167,8 +179,6 @@
                     <button type="submit" class="btn">Login</button>
                     <p>Belum punya akun Elites?<span><a class="modal-trigger-daftar" href="#">Daftar</a></span></p>
                 </form>
-
-                
             </div>
         </div>
     </div>

@@ -6,6 +6,7 @@
         background: none;
         border: none;
         width: 19%;
+        transition: 2s;
     }
 
     .star img
@@ -51,7 +52,7 @@ include './fungsional/konfig/header.php';
                     
                         <label for=''>Berikan Komentar</label>
                         <textarea name='komentar' required></textarea>
-                        <input type='submit' class='btn btn-warning btn-lg text-white' value='Kirim Rating dan Komentar'>
+                        <input type='submit' class='btn-form-rating' value='Kirim Rating dan Komentar'>
                     </form>
                 </div>
             </center>
