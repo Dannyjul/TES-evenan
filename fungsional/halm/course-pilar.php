@@ -4,13 +4,7 @@ include './fungsional/konfig/header.php';
 
     $pilid = @$_GET['pilid'];
 
-    $pilarData = $crud->eksekusiSQL("SELECT *FROM pilar WHERE id_pilar='$pilid'");
-
-    foreach ($pilarData as $pd) 
-    {
-        $nmPilar  = $pd['nama_pilar'];
-        $deskPilar = $pd['desk_pilar'];
-    }
+    
 
 ?>
 
@@ -44,6 +38,16 @@ include './fungsional/konfig/header.php';
                 </a>
             </div>
         </div> -->
+
+        <?php
+            $pilarData = $crud->eksekusiSQL("SELECT *FROM pilar WHERE id_pilar='$pilid'");
+
+            foreach ($pilarData as $pd) 
+            {
+                $nmPilar  = $pd['nama_pilar'];
+                $deskPilar = $pd['desk_pilar'];
+            }
+        ?>
 
         <div class='card'>
             <div class='card-header'>

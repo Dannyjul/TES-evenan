@@ -71,11 +71,12 @@
             $no =$mulai+1;
 
                   
-            $perintah = $crud->eksekusiSQl("SELECT *FROM paket_kelas 
+            /*$perintah = $crud->eksekusiSQl("SELECT *FROM paket_kelas 
                                             INNER JOIN kelas ON kelas.id_kelas = paket_kelas.id_kelas
                                             WHERE paket_kelas.id_paket = '$idpaket'
                                             ");
-            $hitung   = $crud->hitungData($perintah);
+            */
+            $hitung   = $crud->hitungData($result);
 
             if ($hitung==0) 
             {
@@ -88,7 +89,7 @@
               // $tampilin = $crud->tampilData("user");
 
               $no=1;
-              foreach($perintah as $a)
+              foreach($result as $a)
               {
                   $idkel = $a['id_kelas'];
                   $nama  = $a['nama_kelas'];
