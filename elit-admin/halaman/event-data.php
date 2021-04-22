@@ -22,7 +22,7 @@
 
                  <div class="card-body">
                      
-                    <a class='btn btn-primary' href='?hal=event-tambah'>Tambah</a>
+                    <a class='btn btn-primary btn-sm' href='?hal=event-tambah'>Tambah</a>
                     <br><br>
                      <?php
                 
@@ -50,7 +50,7 @@
                                             <th>Jumlah Peserta</th>
                                             <th>Tanggal Posting</th>
                                             <th>Penulis</th>
-                                
+                                            <th>Keterangan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -67,6 +67,7 @@
                                 $tgl  = $a['tanggal_post'];
                                 $autor= $a['nama_user'];
                                 $idev = $a['id_event'];
+                                $ket  = $a['keterangan'];
                                 
                                 $tanggal = date('d F Y', strtotime($tgl));
                                 
@@ -101,8 +102,18 @@
                                     ";
                                 }
 
+                                if ($ket=='POSTING') 
+                                {
+                                    $badge = "<span class='badge badge-pill badge-success'>$ket</span>";
+                                } 
+                                else 
+                                {
+                                    $badge = "<span class='badge badge-pill badge-warning'>$ket</span>";
+                                }
                                 
-                 
+
+                                
+                                $linkView = "../index.php?hal=event-preview&k=$idev";
                                 
                                 echo
                                 "
@@ -122,11 +133,11 @@
                                             </td>
                                             <td align='center'>$tanggal</td>
                                             <td align='center'>$autor</td>
-                                            
+                                            <td align='center'>$badge</td>
                                             
                                             <td>
                                                 <center>
-                                                    <a class='btn btn-success btn-sm' target='_blank' href='../index.php?hal=preview&view=$idev&target=event'>View</a>
+                                                    <a class='btn btn-success btn-sm' target='_blank' href='$linkView'>View</a>
                                                     <a class='btn btn-warning btn-sm' href='?hal=event-edit&ide=$idev&mau=edit&f=$foto'>Edit</a>
                                                     <a class='btn btn-danger btn-sm' onclick='return hapus()' href='?hal=event-respon&ide=$idev&mau=hapus'>Hapus</a>
                                                 </center>

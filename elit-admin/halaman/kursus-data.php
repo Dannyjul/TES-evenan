@@ -24,7 +24,7 @@
 
                  <div class="card-body">
                      
-                    <a class='btn btn-primary' href='?hal=kursus-tambah'>Tambah</a>
+                    <a class='btn btn-primary btn-sm' href='?hal=kursus-tambah'>Tambah</a>
                     <br><br>
                      <?php
                 
@@ -55,6 +55,7 @@
                                             <th>Nama Paket</th>
                                             <th>Kelas</th>
                                             <th>Pilar</th>
+                                            <th>Keterangan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -73,20 +74,31 @@
                                 $napak= $a['nama_paket'];
                                 $namak= $a['nama_kelas'];
                                 $namap= $a['nama_pilar'];
+                                $idpil= $a['id_pilar'];
+                                $idpak= $a['id_paket'];
+                                $idkel= $a['id_kelas'];
+                                $kondisi = $a['keterangan'];
 
                                 $foto = $a['foto_kursus'];
 
 
                                 
-                                    $tamnel ="../foto/kursus/$foto";
-                                    $lokfile= $tamnel;
-                               
+                                $tamnel ="../foto/kursus/$foto";
+                                $lokfile= $tamnel;
+                            
 
+                                if ($kondisi=='POSTING') 
+                                {
+                                    $tampilnya ="<span class='badge badge-success'>$kondisi</span>";
+                                } 
+                                else 
+                                {
+                                    $tampilnya ="<span class='badge badge-warning'>$kondisi</span>";
+                                }
+                            
 
-                                
-
-            
-                                
+                                $linkView = "../index.php?hal=course-previewCourse&pl=$idk&k=$idkel&p=$idpak&pilid=$idpil";
+                            
                  
                                 
                                 echo
@@ -106,10 +118,11 @@
                                            
                                             <td align='center'>$namak</td>
                                             <td>$namap</td>
+                                            <td align='center'>$tampilnya</td>
                                             
                                             <td>
                                                 <center>
-                                                    <a class='btn btn-success btn-sm' target='_blank' href='../index.php?hal=preview&view=$idk&target=course'>View</a>
+                                                    <a class='btn btn-success btn-sm' target='_blank' href='$linkView'>View</a>
                                                     <a class='btn btn-warning btn-sm' href='?hal=kursus-edit&ide=$idk&mau=edit&f=$foto'>Edit</a>
                                                     <a class='btn btn-danger btn-sm' onclick='return hapus()' href='?hal=kursus-respon&ide=$idk&mau=hapus&ft=$foto'>Hapus</a>
                                                 </center>

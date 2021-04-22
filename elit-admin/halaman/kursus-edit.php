@@ -4,12 +4,19 @@
 
     $f  = $_GET['f'];
     
-    $y = $isi->eksekusiSQL("SELECT *FROM kursus 
-                                INNER JOIN pilar ON pilar.id_pilar = kursus.id_pilar 
-                                INNER JOIN kelas ON kelas.id_kelas = kursus.id_kelas 
-                                INNER JOIN paket_member ON paket_member.id_paket = kursus.id_paket 
+    $y = $isi->eksekusiSQL("SELECT 
+                                kursus.id_kursus, kursus.nama_kursus, 
+                                kursus.id_pilar, kursus.id_kelas, 
+                                kursus.id_paket, kursus.deskripsi, 
+                                kursus.foto_kursus, pilar.id_pilar, 
+                                pilar.nama_pilar, 
+                                kelas.id_kelas, kelas.nama_kelas, 
+                                paket_member.id_paket, 
+                                paket_member.nama_paket 
+                            FROM kursus INNER JOIN pilar ON pilar.id_pilar = kursus.id_pilar INNER JOIN kelas ON 
+                                kelas.id_kelas = kursus.id_kelas INNER JOIN paket_member ON paket_member.id_paket = kursus.id_paket WHERE kursus.id_kursus='$id'
                             
-                                WHERE kursus.id_kursus='$id'");
+                             ");
 
     foreach($y as $a)
     {
@@ -225,7 +232,7 @@
 
                         <center>
                             <input type="submit" value="POSTING" class="btn btn-primary" name="simpan">
-                            <!--<input type="submit" value="DRAFT" class="btn btn-secondary">-->
+                            <input type="submit" value="DRAFT" class="btn btn-secondary" name="simpan">
                         </center>
 
                     </div>

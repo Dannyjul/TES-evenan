@@ -11,7 +11,7 @@ include './fungsional/konfig/header.php';
 <div class="container container-course-info">
     
     <?php
-        include 'course-menuKiri.php';
+        include 'course-menuPreview.php';
     ?>
 
     <div class="course-content content">

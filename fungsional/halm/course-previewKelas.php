@@ -2,16 +2,12 @@
 <?php
 include './fungsional/konfig/header.php';
 
-    $pilid = @$_GET['pilid'];
-
-    
-
 ?>
 
 <div class="container container-course-info">
     
     <?php
-        include 'course-menuKiri.php';
+        include 'course-menuPreview.php';
     ?>
 
     <div class="course-content content">
@@ -39,27 +35,20 @@ include './fungsional/konfig/header.php';
             </div>
         </div> -->
 
-        <?php
-            $pilarData = $crud->eksekusiSQL("SELECT *FROM pilar WHERE id_pilar='$pilid'");
-
-            foreach ($pilarData as $pd) 
-            {
-                $nmPilar  = $pd['nama_pilar'];
-                $deskPilar = $pd['desk_pilar'];
-            }
-        ?>
-
         <div class='card'>
             <div class='card-header'>
-                <?php echo $nmPilar; ?>
+                <?php echo $nmKel; ?>
             </div>
             <div class='card-body'>
 
 
-                
+                <br>
+                <center>
+                    <img src='<?php echo $folderFotoKel; ?>' alt='<?php echo $nmKel; ?>' width='55%'>
+                </center>
 
                 <div class='drop-text-content'>
-                    <?php echo $deskPilar; ?>
+                    <?php echo $desKel; ?>
                 </div>
 
             </div>
@@ -68,7 +57,6 @@ include './fungsional/konfig/header.php';
         <div class="footer-content-btn">
             <!--<a class="btn btn-next-content" href="">&lt; Sebelumnya</a>-->
             <?php
-            /*
                 $kelasPrev = $crud->eksekusiSQL("SELECT *FROM kelas WHERE id_kelas<$kelas ORDER BY id_kelas DESC LIMIT 1");
                 $cariPrev  = $crud->hitungData($kelasPrev);
 
@@ -90,7 +78,6 @@ include './fungsional/konfig/header.php';
                     $tombolPrev = "";
                 }
                 echo $tombolPrev;
-
             ?>
 
             <!--
@@ -106,11 +93,29 @@ include './fungsional/konfig/header.php';
                     {
                         $idKelNext = $nextClass['id_kelas'];
 
+                        $paketNext = $crud->eksekusiSQL("SELECT *FROM paket_kelas 
                         
+                                        WHERE id_kelas='$idKelNext' ORDER BY id_paketkelas ASC LIMIT 1");
 
-                        $linkNext = "course-info&k=$idKelNext&p=$paket";
+                        foreach ($paketNext as $pn) 
+                        {
+                            $idPakNext = $pn['id_paket'];
+                        }
 
-                        $tombolNext = "<a class='btn btn-prev-content' href='?hal=$linkNext'>Selanjutnya &gt;</a>";
+                        if ($idPakNext>$paket) 
+                        {
+                            $atrNext ="href='#' class='btn btn-prev-content' data-fancybox data-src='#pesanUpgrade' href='javascript:;'";
+                        } 
+                        else 
+                        {
+                            $linkNext = "course-info&k=$idKelNext&p=$paket";
+                            $atrNext  = "class='btn btn-prev-content' href='?hal=$linkNext'";
+                        }
+
+                       
+                        
+                        
+                        $tombolNext = "<a $atrNext>Selanjutnya &gt;</a>";
                     }
                 }
                 else
@@ -118,7 +123,6 @@ include './fungsional/konfig/header.php';
                     $tombolNext = "";
                 }
                 echo $tombolNext;
-            */
             ?>
             
         </div>

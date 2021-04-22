@@ -13,6 +13,12 @@
     {
         width: 100%;
     }
+
+    .komen
+    {
+        width: 100%;
+        box-sizing: border-box;
+    }
 </style>
 <?php
 include './fungsional/konfig/header.php';
@@ -51,7 +57,7 @@ include './fungsional/konfig/header.php';
                     <!--<h3 class='status-bintang'>Buruk/Kurang Baik/Cukup Baik/Baik/Sangat Baik</h3>-->
                     
                         <label for=''>Berikan Komentar</label>
-                        <textarea name='komentar' required></textarea>
+                        <textarea class='komen form-control' name='komentar' required></textarea>
                         <input type='submit' class='btn-form-rating' value='Kirim Rating dan Komentar'>
                     </form>
                 </div>

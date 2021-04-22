@@ -22,7 +22,7 @@
 
                  <div class="card-body">
                      
-                    <a class='btn btn-primary' href='?hal=pilar-tambah'>Tambah</a>
+                    <a class='btn btn-primary btn-sm' href='?hal=pilar-tambah'>Tambah</a>
                     <br><br>
                      <?php
                 
@@ -48,7 +48,7 @@
                                             <th>Kelas</th>
                                             <th>Jumlah Pelajaran</th>
                                             
-
+                                            <th>Keterangan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -64,16 +64,22 @@
                                 $nama  = $a['nama_pilar'];
                                 //$foto  = $a['foto_pilar'];
                                 $kelas = $a['nama_kelas'];
+                                $idkel = $a['id_kelas'];
                                 
 
                                 
                                 
 
-                                //$kondisi = $a['kondisi'];
+                                $kondisi = $a['ket_pilar'];
                                 
                                 
                                 $pel = $isi->eksekusiSQl("SELECT *FROM kursus WHERE id_pilar='$idpil'");
                                 $hit = $isi->hitungData($pel);
+
+                                foreach ($pel as $kur) 
+                                {
+                                    $idpaket = $kur['id_paket'];
+                                }
                                 /*
                                 if ($foto=="Kosong") 
                                 {
@@ -111,6 +117,16 @@
                                     $kursus = "<a href='?hal=kursus-kelas&idk=$idpil'>$hit Pelajaran</a>";
                                 }
 
+                                $linkView="../index.php?hal=course-previewPilar&pilid=$idpil&k=$idkel";
+
+                                if ($kondisi=='POSTING') 
+                                {
+                                    $tampilnya ="<span class='badge badge-success'>$kondisi</span>";
+                                } 
+                                else 
+                                {
+                                    $tampilnya ="<span class='badge badge-warning'>$kondisi</span>";
+                                }
                                 
                                 echo
                                 "
@@ -134,10 +150,16 @@
                                                     $kursus
                                                 </center>
                                             </td>
+
+                                            <td>
+                                                <center>
+                                                    $tampilnya
+                                                </center>
+                                            </td>
                                             
                                             <td>
                                                 <center>
-                                                   
+                                                    <a target='_blank' class='btn btn-success btn-sm' href='$linkView'>View</a>
                                                     <a class='btn btn-warning btn-sm' href='?hal=pilar-edit&idp=$idpil&mau=edit'>Edit</a>
                                                     <a class='btn btn-danger btn-sm' onclick='return hapus()' href='?hal=pilar-respon&mau=hapus&idp=$idpil'>Hapus</a>
                                                 </center>
