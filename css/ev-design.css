@@ -620,10 +620,12 @@ body{
     z-index: 100;
 }
 
+/*MODIFIED BY EVA 14-04-2021*/
 .close{
     position: absolute;
-    top: 15px;
-    right: 30px;
+    top: 5px;
+    right: 20px;
+    height: 30px
 }
 
 .col-gambar{
@@ -633,12 +635,14 @@ body{
     flex: 1 0 30%;
     max-width: 30%;
     background-image: url('../img/Banner.png');
+    border-radius: 15px 0 0 15px;
 }
 
 .col-login{
     flex: 1 0 70%;
     max-width: 70%;
     padding-left: 0;
+    border-radius: 15px 15px 0 0;
 }
 
 .container-form{
@@ -647,6 +651,7 @@ body{
     padding-right: 5em;
     padding-left: 5em;
     background: #FFFFFF;
+    border-radius: 0 15px 15px 0;
 }
 
 .container-form h1{
@@ -660,6 +665,14 @@ body{
 .container-form span{
     margin-left: 0.5em;
     color: #F1B213;
+}
+
+/*CREATED BY EVA 13-04-2021*/
+.container-form .error-msg{
+    color: #B2002B;
+    display: none;
+    font-size: small;
+    margin-top: 14px;
 }
 
 .container-form p{
@@ -678,6 +691,18 @@ body{
     font-size: 1em;
     line-height: 1em;
     color:black;
+}
+
+/*MODIFIED BY EVA 13-04-2021*/
+.container-form .text-input{
+    display: block;
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: 1.5em;
+    border: unset;
+    background: #EFEFEF;
+    border-radius: 0.4em;
+    padding-left: 0.4em;
 }
 
 .container-form .text-input{
@@ -715,6 +740,18 @@ body{
 
 /*Modal Daftar*/
 .alamat-text{
+    margin-bottom: 1.2em;
+}
+
+/*MODIFIED BY EVA 13-04-2021*/
+.container-form select{
+    display: block;
+    width: 100%;
+    height: 3em;
+    border: none;
+    border-radius: 0.4em;
+    background: #EFEFEF;
+
     margin-bottom: 1.2em;
 }
 

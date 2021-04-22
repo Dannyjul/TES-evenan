@@ -89,7 +89,6 @@
         }
         else
         {
-            pesanAlert("Gagal");
             echo
             "
                 <script>

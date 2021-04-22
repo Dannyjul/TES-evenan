@@ -49,6 +49,56 @@
   <a href='?hal=akun-membership&tuj=profile' id="tombolUpg" class="btn btn-warning text-white"><h4>Upgrade</h4></a>
 </div>
 
+
+
+
+
+<div class="modal fade" id="editUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profil</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <form method="post" action="?hal=akun-respon&mode=edit" enctype="multipart/form-data">
+          <p>
+            <input value="<?php echo $namauser; ?>" class="form-control" type="text" name="nama" placeholder="Nama Lengkap" required>
+          </p>
+          <p>
+            <textarea id="my-textarea" class="form-control" name="alamat" placeholder="Alamat" rows="3"><?php echo $alamat; ?></textarea>
+          </p>
+          <p>
+            <input value="<?php echo $nohp; ?>" class="form-control" type="number" name="nohp" placeholder="No. Handphone" required>
+          </p>
+          <p>
+            <input value="<?php echo $email; ?>" class="form-control" type="email" name="email" placeholder="E-Mail" required>
+          </p>
+
+
+
+          <p>
+            <input value="<?php echo $passw; ?>" class="form-control tampilinPass" type="password" name="password" placeholder="Password" required>
+            &nbsp;<input type="checkbox" class="tampilPassword"> <small>Tampilkan Password</small> <br>
+          </p>
+
+
+          <p>
+            <input type="submit" value="SIMPAN" class="btn btn-primary">
+          </p>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- MODIFIED BY EVA 13-04-2021 -->
+<!-- Modal Daftar --> 
 <div class="modal modal-daftar">
   <div class="row">
     <div class="col col-gambar">
@@ -62,36 +112,43 @@
 
         <form action="?hal=daftar-respon" method="post">
           <label class="nama" for="nama">Nama Lengkap</label>
-          <input type="text" name="nama" id="nama" class="text-input" placeholder="Masukan nama lengkap anda" required>
+          <input type="text" name="nama" id="nama" class="text-input" placeholder="Masukan nama lengkap anda">
+          <p class = "error-msg" id="errNama">Error Message</p>
 
           <label class="alamat" for="alamat">Alamat Lengkap</label>
-          <textarea class="text-input input-alamat" name="alamat" id="alamat" required></textarea>
+          <textarea class="text-input input-alamat" name="alamat" id="alamat"></textarea>
+          <p class = "error-msg" id="errAlamat">Error Message</p>
 
           <label class="tgl-lahir" for="tgl-lahir">Tanggal Lahir</label>
-          <input type="date" name="tglahir" id="tgl-lahir" class="text-input" required>
+          <input type="date" name="tglahir" id="tgl-lahir" class="text-input">
+          <p class = "error-msg" id="errTgl">Error Message</p>
 
           <label class="gender" for="gender">Jenis Kelamin</label>
           <select class="text-input" id="gender" name="jekel" required>
-            <option selected="true" disabled="disabled">Pilih</option>
-            <option value="Laki-laki">Laki-laki</option>
-            <option value="Perempuan">Perempuan</option>
+            <option value ="none" selected="true" disabled="disabled">Pilih</option>
+            <option value ="Laki-laki">Laki-laki</option>
+            <option value ="Perempuan">Perempuan</option>
           </select>
+          <p class = "error-msg" id="errGender">Error Message</p>
 
           <label class="no-hp" for="no-hp">Nomor Handphone</label>
-          <input type="number" name="nohp" id="no-hp" class="text-input" placeholder="Tuliskan nomor handphone aktif anda" required>
+          <input type="number" name="nohp" id="no-hp" class="text-input" placeholder="Masukan nomor handphone aktif anda">
+          <p class = "error-msg" id="errPhone">Error Message</p>
 
           <label class="email" for="email">E-mail</label>
-          <input type="email" name="email" id="no-hp" class="text-input" placeholder="Masukkan E-mail" required>
+          <input type="email" name="email" id="email" class="text-input" placeholder="Masukkan E-mail">
+          <p class = "error-msg" id="errEmail">Error Message</p>
 
           <label class="pass" for="pass">Kata Sandi</label>
-          <input type="password" name="password" id="pass" class="text-input tampilinPass" style="margin-bottom: 5px;" placeholder="Masukan kata sandi yang terdaftar" required>
+          <input type="password" name="password" id="pass" class="text-input tampilinPass" style="margin-bottom: 5px;" placeholder="Masukan kata sandi yang terdaftar">
+          <p class = "error-msg" id="errPass">Error Message</p>
           
-          &nbsp;<input type="checkbox" class="tampilPassword"> <small style="color: black;">Tampilkan Password</small> <br>
-                <small class="text-danger passTaksama">Password yang diketikkan tidak sama</small>
+          &nbsp;<input type="checkbox" class="tampilPassword"> <small style="color: black;">Tampilkan Password</small> 
 
           <label class="pass" for="pass-conf">Konfirmasi Kata Sandi</label>
-          <input type="password" name="pass-conf" id="pass2" class="text-input" placeholder="Tuliskan ulang kata sandi yang terdaftar" required>
-          <small class="text-danger passTaksama">Password yang diketikkan tidak sama</small>
+          <input type="password" name="pass-conf" id="confirm-pass" class="text-input" placeholder="Tuliskan ulang kata sandi yang terdaftar">
+          <p class = "error-msg" id="errPassConf">Error Message</p>
+
 
           <input type="checkbox" name="setujuan" id="tc" required>
           <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-fancybox data-src='#setujuan' href='javascript:;'>Syarat dan Ketentuan</a></span></label>
@@ -105,7 +162,9 @@
   </div>
 </div>
 
-<!--MODAL-->
+
+<!-- MODIFIED BY EVA 13-04-2021 -->
+<!--Modal  Login-->
 <div class="modal modal-login">
     <div class="row">
         <div class="col col-gambar">
@@ -130,8 +189,6 @@
                     <button type="submit" class="btn">Login</button>
                     <p>Belum punya akun Elites?<span><a class="modal-trigger-daftar" href="#">Daftar</a></span></p>
                 </form>
-
-                
             </div>
         </div>
     </div>
