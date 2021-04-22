@@ -4,12 +4,14 @@
  */
 
 CKEDITOR.editorConfig = function( config ) {
-	config.filebrowserBrowseUrl = 'http://localhost/projekan/elites/elit-admin/ckeditor/kcfinder/browse.php?opener=ckeditor&type=files';
-    config.filebrowserImageBrowseUrl = 'http://localhost/projekan/elites/elit-admin/ckeditor/kcfinder/browse.php?opener=ckeditor&type=images';
-    config.filebrowserFlashBrowseUrl = 'http://localhost/projekan/elites/elit-admin/ckeditor/kcfinder/browse.php?opener=ckeditor&type=flash';
-    config.filebrowserUploadUrl = 'http://localhost/projekan/elites/elit-admin/ckeditor/kcfinder/upload.php?opener=ckeditor&type=files';
-    config.filebrowserImageUploadUrl = 'http://localhost/projekan/elites/elit-admin/ckeditor/kcfinder/upload.php?opener=ckeditor&type=images';
-    config.filebrowserFlashUploadUrl = 'http://localhost/projekan/elites/elit-admin/ckeditor/kcfinder/upload.php?opener=ckeditor&type=flash';
+    //var halaman = 'http://evenan.trendyfashion.id/elit-admin/ckeditor/kcfinder/';
+    var halaman = 'http://evenan.trendyfashion.id/elit-admin/ckeditor/kcfinder/';
+	config.filebrowserBrowseUrl = halaman+'browse.php?opener=ckeditor&type=files';
+    config.filebrowserImageBrowseUrl = halaman+'browse.php?opener=ckeditor&type=images';
+    config.filebrowserFlashBrowseUrl = halaman+'browse.php?opener=ckeditor&type=flash';
+    config.filebrowserUploadUrl = halaman+'upload.php?opener=ckeditor&type=files';
+    config.filebrowserImageUploadUrl = halaman+'upload.php?opener=ckeditor&type=images';
+    config.filebrowserFlashUploadUrl = halaman+'upload.php?opener=ckeditor&type=flash';
     config.filebrowserUploadMethod = 'form';
 
     /*

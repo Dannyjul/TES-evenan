@@ -1,5 +1,5 @@
 <style>
-  #pesanAwal, #pesanUpgrade
+  #pesanAwal, #pesanUpgrade, #setujuan
   {
     display: none;
     width: 700px;
@@ -7,15 +7,25 @@
     color: white;
   }
 
-  #pesanAwal img, #pesanUpgrade img
+  #pesanAwal img, #pesanUpgrade img, #setujuan img
   {
     display: block;
     margin: auto;
   }
 
-  #pesanAwal a, #pesanUpgrade a
+  #pesanAwal a, #pesanUpgrade a, #setujuan a
   {
     width: 100%;
+  }
+
+  #setujuan
+  {
+    width: 500px;
+  }
+
+  #setujuan p
+  {
+    margin-top: 25px;
   }
 </style>
 
@@ -38,6 +48,7 @@
  
   <a href='?hal=akun-membership&tuj=profile' id="tombolUpg" class="btn btn-warning text-white"><h4>Upgrade</h4></a>
 </div>
+
 
 
 
@@ -138,11 +149,10 @@
           <input type="password" name="pass-conf" id="confirm-pass" class="text-input" placeholder="Tuliskan ulang kata sandi yang terdaftar">
           <p class = "error-msg" id="errPassConf">Error Message</p>
 
-          <input type="checkbox" name="setujuan" id="tc">
-          <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-toggle="modal" data-target="#Setujuan" href="#">Syarat dan Ketentuan</a></span></label>
-          <p class = "error-msg" id="errCheckBox">Error Message</p>
-          <button type="submit" class="btn" id="btn-modal-daftar">Daftar</button>
-          
+
+          <input type="checkbox" name="setujuan" id="tc" required>
+          <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-fancybox data-src='#setujuan' href='javascript:;'>Syarat dan Ketentuan</a></span></label>
+          <button type="submit" class="btn">Daftar</button>
         </form>
 
         
@@ -183,3 +193,67 @@
         </div>
     </div>
 </div>
+
+
+<?php
+
+    $perintah = $crud->eksekusiSQl("SELECT *FROM info 
+                                    INNER JOIN user
+                                        ON user.id_user= info.id_user
+                                    WHERE info.jenis_info='Term and Condition'
+                                    ");
+    $hitung   = $crud->hitungData($perintah);
+
+
+    foreach($perintah as $a)
+    {
+        $idinfo= $a['id_info'];
+        $jenis = $a['jenis_info'];
+        $foto  = $a['foto_info'];
+        $tgl   = $a['tgl_info'];
+        $desk  = $a['deskripsi'];
+        
+
+        $nus    = $a['nama_user'];
+
+        if ($foto=='Kosong') 
+        {
+            //$gambar = "<img class='rounded-circle' src='./img/nofoto.png' width='50' height='50'>";
+            $box = "";
+        } 
+        else 
+        {
+            $tujuan = "./foto/info/$foto";
+           /* $gambar = 
+            "   <a data-fancybox='gallery' href='$tujuan' data-caption='$jenis'>
+                    <img src='$tujuan' width='50' height='50'>
+                </a>
+            ";*/
+            $box = 
+            "
+                <center>
+                <img src='$tujuan' width='70%' height='200'>
+                </center>
+            ";
+        }
+    }
+                                
+                 
+                                
+
+?>
+<div id="setujuan">
+
+  <center>
+    <h4><?php echo $jenis; ?></h4>
+  </center>
+	
+  <?php
+      echo
+      "
+          $box
+          $desk
+      ";
+  ?>
+</div>
+
