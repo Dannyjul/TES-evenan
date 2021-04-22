@@ -111,48 +111,74 @@
         <p>Daftar Akun Elites Kamu!</p>
 
         <form action="?hal=daftar-respon" method="post">
-          <label class="nama" for="nama">Nama Lengkap</label>
-          <input type="text" name="nama" id="nama" class="text-input" placeholder="Masukan nama lengkap anda">
-          <p class = "error-msg" id="errNama">Error Message</p>
-
-          <label class="alamat" for="alamat">Alamat Lengkap</label>
-          <textarea class="text-input input-alamat" name="alamat" id="alamat"></textarea>
-          <p class = "error-msg" id="errAlamat">Error Message</p>
-
-          <label class="tgl-lahir" for="tgl-lahir">Tanggal Lahir</label>
-          <input type="date" name="tglahir" id="tgl-lahir" class="text-input">
-          <p class = "error-msg" id="errTgl">Error Message</p>
-
-          <label class="gender" for="gender">Jenis Kelamin</label>
-          <select class="text-input" id="gender" name="jekel" required>
-            <option value ="none" selected="true" disabled="disabled">Pilih</option>
-            <option value ="Laki-laki">Laki-laki</option>
-            <option value ="Perempuan">Perempuan</option>
-          </select>
-          <p class = "error-msg" id="errGender">Error Message</p>
-
-          <label class="no-hp" for="no-hp">Nomor Handphone</label>
-          <input type="number" name="nohp" id="no-hp" class="text-input" placeholder="Masukan nomor handphone aktif anda">
-          <p class = "error-msg" id="errPhone">Error Message</p>
-
-          <label class="email" for="email">E-mail</label>
-          <input type="email" name="email" id="email" class="text-input" placeholder="Masukkan E-mail">
-          <p class = "error-msg" id="errEmail">Error Message</p>
-
-          <label class="pass" for="pass">Kata Sandi</label>
-          <input type="password" name="password" id="pass" class="text-input tampilinPass" style="margin-bottom: 5px;" placeholder="Masukan kata sandi yang terdaftar">
-          <p class = "error-msg" id="errPass">Error Message</p>
+          <div class="container-input-field">
+            <label class="nama" for="nama">Nama Lengkap</label>
+            <input type="text" name="nama" id="nama" class="text-input" placeholder="Masukan nama lengkap anda">
+            <p class = "error-msg" id="errNama">Error Message</p>
+          </div>
+         
+          <div class="container-input-field">
+            <label class="alamat" for="alamat">Alamat Lengkap</label>
+            <textarea class="text-input input-alamat" name="alamat" id="alamat" placeholder="Masukkan alamat anda"></textarea>
+            <p class = "error-msg" id="errAlamat">Error Message</p>
+          </div>
           
-          &nbsp;<input type="checkbox" class="tampilPassword"> <small style="color: black;">Tampilkan Password</small> 
+          <div class="container-input-field">
+            <label class="tgl-lahir" for="tgl-lahir">Tanggal Lahir</label>
+            <input type="date" name="tgl-lahir" id="tgl-lahir" class="text-input">
+            <p class = "error-msg" id="errTgl">Error Message</p>
+          </div>
+         
+          <div class="container-input-field">
+            <label class="gender" for="gender">Jenis Kelamin</label>
+            <select class="text-input" id="gender" name="jekel" required>
+              <option value ="none" selected="true" disabled="disabled">Pilih</option>
+              <option value ="Laki-laki">Laki-laki</option>
+              <option value ="Perempuan">Perempuan</option>
+            </select>
+            <p class = "error-msg" id="errGender">Error Message</p>
+          </div>
+          
+          <div class="container-input-field">
+            <label class="no-hp" for="no-hp">Nomor Handphone</label>
+            <input type="number" name="nohp" id="no-hp" class="text-input" placeholder="Masukan nomor handphone aktif anda">
+            <p class = "error-msg" id="errPhone">Error Message</p>
+          </div>
+         
+          <div class="container-input-field">
+            <label class="email" for="email">E-mail</label>
+            <input type="email" name="email" id="email" class="text-input" placeholder="Masukkan E-mail">
+            <p class = "error-msg" id="errEmail">Error Message</p>
+          </div>
+       
+          <div class="container-input-field">
+            <label class="pass" for="pass">Kata Sandi</label>
+            <input type="password" name="password" id="pass" class="text-input show-pass" placeholder="Masukan kata sandi yang terdaftar">
+            <img class="show-pass-icon toggle-show-pass" src="./img/show_pass_icon.png">
+            <p class = "error-msg" id="errPass">Error Message</p>
+          </div>
+          
+          <!-- &nbsp;<input type="checkbox" class="tampilPassword"> <small style="color: black;">Tampilkan Password</small> -->
 
-          <label class="pass" for="pass-conf">Konfirmasi Kata Sandi</label>
-          <input type="password" name="pass-conf" id="confirm-pass" class="text-input" placeholder="Tuliskan ulang kata sandi yang terdaftar">
-          <p class = "error-msg" id="errPassConf">Error Message</p>
+          <div class="container-input-field">
+            <label class="pass" for="pass-conf">Konfirmasi Kata Sandi</label>
+            <input type="password" name="pass-conf" id="confirm-pass" class="text-input" placeholder="Tuliskan ulang kata sandi yang terdaftar">
+            <img class="show-pass-icon toggle-show-conf-pass" src="./img/show_pass_icon.png">
+            <p class = "error-msg" id="errPassConf">Error Message</p>
+          </div>
+     
+          <div class="container-input-field">
+            <input type="checkbox" name="setujuan" id="tc">
+            <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-toggle="modal" data-target="#Setujuan" href="#">Syarat dan Ketentuan</a></span></label>
+            <p class = "error-msg" id="errCheckBox">Error Message</p>
+          </div>
+
 
 
           <input type="checkbox" name="setujuan" id="tc" required>
           <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-fancybox data-src='#setujuan' href='javascript:;'>Syarat dan Ketentuan</a></span></label>
           <button type="submit" class="btn">Daftar</button>
+
         </form>
 
         
@@ -163,7 +189,7 @@
 </div>
 
 
-<!-- MODIFIED BY EVA 13-04-2021 -->
+<!-- MODIFIED BY EVA 18-04-2021 -->
 <!--Modal  Login-->
 <div class="modal modal-login">
     <div class="row">
@@ -177,22 +203,29 @@
                 <p>Masuk ke Akun Elites Kamu!</p>
 
                 <form action="?hal=login-respon" method="post">
-                    <label class="email" for="email">Alamat Email</label>
-                    <input type="email" name="email" id="email" class="text-input" placeholder="Masukan alamat email yang terdaftar">
-                    <label class="pass" for="pass">Kata Sandi</label>
-                    <input type="password" name="password" id="pass" class="text-input" placeholder="Masukan kata sandi yang terdaftar">
-                    <!--<input type="checkbox" name="remember" id="remember">
-                    <label class="remember" for="remember">Ingatkan Saya</label>
-                    -->
-                    <!--<a href="#">Lupa Kata Sandi?</a>-->
-                   
-                    <button type="submit" class="btn">Login</button>
-                    <p>Belum punya akun Elites?<span><a class="modal-trigger-daftar" href="#">Daftar</a></span></p>
+                  <div class="container-input-field">
+                    <label class="email" for="email-login">Alamat Email</label>
+                    <input type="email" name="email" id="email-login" class="text-input" placeholder="Masukan alamat email yang terdaftar">
+                    <p class = "error-msg" id="errEmailLogin">Error Message</p>
+                  </div>
+
+                  <div class="container-input-field">
+                    <label class="pass" for="pass-login">Kata Sandi</label>
+                    <input type="password" name="password" id="pass-login" class="text-input" placeholder="Masukan kata sandi yang terdaftar">
+                    <p class = "error-msg" id="errPassLogin">Error Message</p>
+                  </div>
+                                       
+                  <button type="submit" class="btn" id="btn-modal-login">Login</button>
+                  <p>Belum punya akun Elites?<span><a class="modal-trigger-daftar" href="#">Daftar</a></span></p>
+
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+
+<script src="./vendor/tambahan/modal.js"></script>
 
 
 <?php
