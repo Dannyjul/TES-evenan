@@ -21,7 +21,7 @@
                  </div>
 
                  <div class="card-body">
-                     <a class='btn btn-primary' href='?hal=member-tambah'>Tambah</a>
+                     <a class='btn btn-primary btn-sm' href='?hal=member-tambah'>Tambah</a>
                      <br><br>
 
                      <?php
@@ -311,8 +311,8 @@
                                                         <dd><b>No. Handphone</b> : $nohp</dd>
                                                         <dd><b>Status Membership</b> : $namaPaket</dd>
                                                         <dd>
-                                                            <a class='btn btn-warning' href='?hal=member-edit&id=$ius&mau=edit'>Edit Profil Member</a>
-                                                            <a class='btn btn-danger' href='?hal=member-respon&id=$ius&mau=hapus'>Hapus Member</a>
+                                                            <a class='btn btn-warning btn-sm' href='?hal=member-edit&id=$ius&mau=edit'>Edit Profil Member</a>
+                                                            <a class='btn btn-danger btn-sm' href='?hal=member-respon&id=$ius&mau=hapus'>Hapus Member</a>
                                                         </dd>
                                                     </dl>
                         

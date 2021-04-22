@@ -18,7 +18,16 @@
 
         
         
+        $simpan = $_POST['simpan'];
 
+        if ($simpan=='POSTING') 
+        {
+            $kondisi = 'POSTING';
+        }
+        else
+        {
+            $kondisi = 'DRAFT';
+        }
 
 
 
@@ -82,6 +91,18 @@
         
         $simpan = $_POST['simpan'];
         $pesan = $_POST['pesan'];
+
+
+        $simpan = $_POST['simpan'];
+
+        if ($simpan=='POSTING') 
+        {
+            $kondisi = 'POSTING';
+        }
+        else
+        {
+            $kondisi = 'DRAFT';
+        }
 
         
 

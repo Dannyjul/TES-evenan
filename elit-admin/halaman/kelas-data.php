@@ -22,7 +22,7 @@
 
                  <div class="card-body">
                      
-                    <a class='btn btn-primary' href='?hal=kelas-tambah'>Tambah</a>
+                    <a class='btn btn-primary btn-sm' href='?hal=kelas-tambah'>Tambah</a>
                     <br><br>
                      <?php
                 
@@ -46,7 +46,7 @@
                                             
                                             <th>Jumlah Pelajaran</th>
                                             
-                                
+                                            <th>Keterangan</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -72,10 +72,20 @@
                                 $pel = $isi->eksekusiSQl("SELECT *FROM kursus 
                                                 INNER JOIN pilar ON
                                                 pilar.id_pilar = kursus.id_pilar
+                                                INNER JOIN paket_member ON
+                                                paket_member.id_paket = kursus.id_paket
                                                 INNER JOIN kelas ON
                                                 kelas.id_kelas = pilar.id_kelas
                                                 WHERE kelas.id_kelas='$idkel'");
                                 $hit = $isi->hitungData($pel);
+
+
+                                foreach ($pel as $c) 
+                                {
+                                    $idPaket = $c['id_paket'];
+                                }
+
+                                $linkView="../index.php?hal=course-previewKelas&k=$idkel&p=$idPaket";
 
                                 if ($foto=="Kosong") 
                                 {
@@ -93,14 +103,14 @@
 
                                 if ($kondisi=='DRAFT') 
                                 {
-                                    $warna ="gainsboro";
+                                    $tampilnya ="<span class='badge badge-warning'>$kondisi</span>";
                                 }
                                 else
                                 {
-                                    $warna = "white";
+                                    $tampilnya ="<span class='badge badge-success'>$kondisi</span>";
                                 }
 
-
+                                
                                 if($hit>0)
                                 {
                                     $kursus = "<a href='?hal=kursus-kelas&idk=$idkel'>$hit Pelajaran</a>";
@@ -113,7 +123,7 @@
                                 echo
                                 "
                                     
-                                        <tr style='background-color:$warna;'>
+                                        <tr>
                                             <td align='center'>$no</td>
                                             <td>
                                                 <center>
@@ -127,10 +137,16 @@
                                                     $kursus 
                                                 </center>
                                             </td>
+
+                                            <td>
+                                                <center>
+                                                    $tampilnya
+                                                </center>
+                                            </td>
                                             
                                             <td>
                                                 <center>
-                                                
+                                                    <a target='_blank' class='btn btn-success btn-sm' href='$linkView'>View</a>
                                                     <a class='btn btn-warning btn-sm' href='?hal=kelas-edit&ide=$idkel&mau=edit&f=$foto'>Edit</a>
                                                     <a class='btn btn-danger btn-sm' onclick='return hapus()' href='?hal=kelas-respon&ide=$idkel&mau=hapus&f=$foto'>Hapus</a>
                                                 </center>

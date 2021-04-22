@@ -49,7 +49,7 @@
                  </div>
 
                  <div class="card-body">
-                    <a class='btn btn-primary' href='?hal=member-tambah&ingin=<?php echo $ingin;?>'>Tambah</a>
+                    <a class='btn btn-primary btn-sm' href='?hal=member-tambah&ingin=<?php echo $ingin;?>'>Tambah</a>
                     <br><br>
 
                      <?php

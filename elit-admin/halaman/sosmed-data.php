@@ -143,7 +143,7 @@
     
 
                                                 <center>
-                                                    <a class='btn btn-primary' href='?hal=sosmed-edit&id=$idsos&mau=$mau'>Edit</a>
+                                                    <a class='btn btn-warning btn-sm' href='?hal=sosmed-edit&id=$idsos&mau=$mau'>Edit</a>
                                                 </center>
                                             </td>
                                         </tr>

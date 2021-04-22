@@ -35,7 +35,7 @@
                  </div>
 
                  <div class="card-body">
-                    <a class='btn btn-primary' href='?hal=membership-tambah'>Tambah</a>
+                    <a class='btn btn-primary btn-sm' href='?hal=membership-tambah'>Tambah</a>
                     <br><br>
                      <?php
                 
@@ -92,7 +92,7 @@
                                             <td>
                                                 <center>
                                                     
-                                                    <a class='btn btn-danger' href='?hal=kontak-respon&mau=hapus&id=$idk'>Hapus</a>
+                                                    <a class='btn btn-danger btn-sm' href='?hal=kontak-respon&mau=hapus&id=$idk'>Hapus</a>
                                                 </center>
                                             </td>
                                         </tr>
