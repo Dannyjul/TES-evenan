@@ -35,13 +35,13 @@
                 $limit = 3;
                 $page = isset($_GET["page"]) ? (int)$_GET["page"] : 1;
                 $mulai = ($page>1) ? ($page * $limit) - $limit : 0;
-                $result = $crud->eksekusiSQL("SELECT * FROM event");
+                $result = $crud->eksekusiSQL("SELECT * FROM event WHERE keterangan='POSTING'");
                 $total = $crud->hitungData($result);
                 $pages = ceil($total/$limit);            
                 //$query = mysql_query("select * from tb_masjid LIMIT $mulai, $limit")or die(mysql_error);
                 $no =$mulai+1;
                                 
-                $perintah = $crud->eksekusiSQl("SELECT *FROM event 
+                $perintah = $crud->eksekusiSQl("SELECT *FROM event WHERE keterangan='POSTING' 
                                                 ORDER BY id_event DESC LIMIT $mulai, $limit");
                 $hitung   = $crud->hitungData($perintah);
         
@@ -199,7 +199,7 @@
             <?php
         
             // Buat query untuk menghitung semua jumlah data
-                $sql2 = $crud->eksekusiSQL("SELECT COUNT(*) AS jumlah FROM event");
+                $sql2 = $crud->eksekusiSQL("SELECT COUNT(*) AS jumlah FROM event WHERE keterangan='POSTING'");
                 //$sql2->execute(); // Eksekusi querynya
                 //$get_jumlah = $crud->hitungData($sql2);
                 foreach ($sql2 as $s) 

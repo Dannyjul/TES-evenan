@@ -13,10 +13,21 @@
 
         $idk  = $_POST['idkelas'];
 
+        $simpan = $_POST['simpan'];
+
+        if ($simpan=='POSTING') 
+        {
+            $kondisi = 'POSTING';
+        }
+        else
+        {
+            $kondisi = 'DRAFT';
+        }
+
 
        
 
-        $isian     = "NULL, '$nama', '$desk', '$idk'";
+        $isian     = "NULL, '$nama', '$desk', '$idk', '$kondisi'";
         
         
 
@@ -72,7 +83,17 @@
     
 
     
-            
+        $simpan = $_POST['simpan'];
+
+        if ($simpan=='POSTING') 
+        {
+            $kondisi = 'POSTING';
+        }
+        else
+        {
+            $kondisi = 'DRAFT';
+        }
+
         
 
        // $idUser = $userIdnya;
@@ -83,7 +104,7 @@
         //$lokasi = $_FILES['foto']['tmp_name'];
 
        
-        $isian = "nama_pilar='$nama', desk_pilar='$desk', id_kelas='$idk'";
+        $isian = "nama_pilar='$nama', desk_pilar='$desk', id_kelas='$idk', ket_pilar='$kondisi'";
         
         
         

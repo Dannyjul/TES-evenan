@@ -232,7 +232,7 @@
 
                         <center>
                             <input type="submit" value="POSTING" class="btn btn-primary" name="simpan">
-                            <!--<input type="submit" value="DRAFT" class="btn btn-secondary">-->
+                            <input type="submit" value="DRAFT" class="btn btn-secondary" name="simpan">
                         </center>
 
                     </div>

@@ -123,7 +123,7 @@ foreach ($kelasCari as $kel) {
         "
                         
                             
-                <a id='gem$idPilar' class='drop-item $detailPilar' href='?hal=course-pilar&pilid=$idPilar&k=$kelas&p=$paket&pilSus=$idPilar'>
+                <a id='gem$idPilar' class='drop-item $detailPilar' href='#'>
                     <img src='./img/Circled Play.png'>
                     <div class='drop-text'>
                         <p class='drop-item-title'>$nmPilar</p>
@@ -135,7 +135,7 @@ foreach ($kelasCari as $kel) {
                 
             ";
 
-        $sqlPel = "SELECT * FROM `kursus` WHERE kursus.id_pilar='$idPilar' AND keterangan='POSTING'";
+        $sqlPel = "SELECT * FROM `kursus` WHERE kursus.id_pilar='$idPilar'";
 
         $pelajaran = $crud->eksekusiSQL($sqlPel);
 
@@ -206,7 +206,7 @@ foreach ($kelasCari as $kel) {
 
             echo
             "        
-                <a id='gem$idPilar' class='drop-item $dis $bgKursus' href='$link'>
+                <a id='gem$idPilar' class='drop-item $dis $bgKursus' href='#'>
                     <img src='$logoMenu' $atrLogo>
                     <div class='drop-text'>
                         <p class='drop-item-title'>$nmPilar $spanUp</p>
@@ -227,7 +227,7 @@ foreach ($kelasCari as $kel) {
     //include './fungsional/konfig/jq-sidebar-course.php';
     //untuk cari pilar ===============================
 
-    $linkRating = "?hal=course-rating&k=$kelas&p=$paket";
+    $linkRating = "#";
 
     ?>
 

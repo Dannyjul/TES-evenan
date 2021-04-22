@@ -21,7 +21,7 @@
                  </div>
 
                  <div class="card-body">
-                    <a class='btn btn-primary' href='?hal=membership-tambah'>Tambah</a>
+                    <a class='btn btn-primary btn-sm' href='?hal=membership-tambah'>Tambah</a>
                     <br><br>
                      <?php
                 
@@ -87,11 +87,11 @@
                                
                                 if ($kondisi=='POSTING') 
                                 {
-                                    $tampilnya ="<span class='badge badge-primary'>$kondisi</span>";
+                                    $tampilnya ="<span class='badge badge-success'>$kondisi</span>";
                                 } 
                                 else 
                                 {
-                                    $tampilnya ="<span class='badge badge-secondary'>$kondisi</span>";
+                                    $tampilnya ="<span class='badge badge-warning'>$kondisi</span>";
                                 }
 
                                 if ($foto=='Kosong') 

@@ -57,13 +57,17 @@
 
             $filterKelasPaket = "SELECT * FROM paket_kelas
                                   INNER JOIN kelas On kelas.id_kelas = paket_kelas.id_kelas
-                                  WHERE paket_kelas.id_paket='$idpaket'";
+                                  WHERE paket_kelas.id_paket='$idpaket'
+                                  AND
+                                  kelas.kondisi='POSTING'";
             $limit = 3;
             $page = isset($_GET["page"]) ? (int)$_GET["page"] : 1;
             $mulai = ($page>1) ? ($page * $limit) - $limit : 0;
             $result = $crud->eksekusiSQL("SELECT * FROM paket_kelas
                               INNER JOIN kelas On kelas.id_kelas = paket_kelas.id_kelas
                               WHERE paket_kelas.id_paket='$idpaket'
+                              AND
+                              kelas.kondisi='POSTING'
                               LIMIT $mulai, $limit");
             $total = $crud->hitungData($result);
             $pages = ceil($total/$limit);            
@@ -117,7 +121,8 @@
                                               INNER JOIN kelas ON
                                               kelas.id_kelas = pilar.id_kelas
                                               WHERE 
-                                              pilar.id_kelas='$idkel'");
+                                              pilar.id_kelas='$idkel'
+                                              AND kelas.kondisi='POSTING'");
                   $hit = $crud->hitungData($pel);
 
                   if ($foto=="Kosong") 
@@ -238,6 +243,8 @@
         $sql2 = $crud->eksekusiSQL("SELECT COUNT(*) AS jumlah FROM paket_kelas
                                     INNER JOIN kelas On kelas.id_kelas = paket_kelas.id_kelas
                                     WHERE paket_kelas.id_paket='$idpaket'
+                                    AND
+                                    kelas.kondisi='POSTING'
                                   ");
         //$sql2->execute(); // Eksekusi querynya
         //$get_jumlah = $crud->hitungData($sql2);

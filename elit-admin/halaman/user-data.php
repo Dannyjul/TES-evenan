@@ -21,7 +21,7 @@
                  </div>
 
                  <div class="card-body">
-                     <a class='btn btn-primary' href='?hal=user-tambah&untuk=admin'>Tambah</a>
+                     <a class='btn btn-primary btn-sm' href='?hal=user-tambah&untuk=admin'>Tambah</a>
                      <br><br>
 
                      <?php

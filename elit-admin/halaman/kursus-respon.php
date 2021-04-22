@@ -18,11 +18,22 @@
         $fotonm = @$_FILES['foto']['name'];
         $lokasi = @$_FILES['foto']['tmp_name'];
 
+        $simpan = $_POST['simpan'];
+
+        if ($simpan=='POSTING') 
+        {
+            $kondisi = 'POSTING';
+        }
+        else
+        {
+            $kondisi = 'DRAFT';
+        }
+
     
             
         $newe = uploadKursus("kursus", $lokasi);
 
-        $isian     = "NULL, '$nama', '$desk', '$newe', '$idpil', '$idpak', '$idkel'";
+        $isian     = "NULL, '$nama', '$desk', '$newe', '$idpil', '$idpak', '$idkel', '$kondisi'";
         
         
 
@@ -83,6 +94,17 @@
         $fotonm = @$_FILES['foto']['name'];
         $lokasi = @$_FILES['foto']['tmp_name'];
 
+        $simpan = $_POST['simpan'];
+
+        if ($simpan=='POSTING') 
+        {
+            $kondisi = 'POSTING';
+        }
+        else
+        {
+            $kondisi = 'DRAFT';
+        }
+
     
             
         
@@ -102,12 +124,12 @@
             $tujuan = "../foto/kursus/$k";
             unlink($tujuan);
             $newe = uploadKursus("kursus", $lokasi);
-            $isian = "nama_kursus='$nama', deskripsi='$desk', foto_kursus='$newe', id_pilar='$idpil', id_paket='$idpak', id_kelas='$idkel' ";
+            $isian = "nama_kursus='$nama', deskripsi='$desk', foto_kursus='$newe', id_pilar='$idpil', id_paket='$idpak', id_kelas='$idkel', keterangan='$kondisi' ";
 
         } 
         else 
         {
-            $isian = "nama_kursus='$nama', deskripsi='$desk', id_pilar='$idpil', id_paket='$idpak', id_kelas='$idkel' ";
+            $isian = "nama_kursus='$nama', deskripsi='$desk', id_pilar='$idpil', id_paket='$idpak', id_kelas='$idkel', keterangan='$kondisi' ";
         }
         
         
@@ -126,7 +148,3 @@
             //pindahHal('?hal=event-tambah');
         }
     }
-
-
-
-?>

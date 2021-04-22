@@ -22,7 +22,7 @@
 
                  <div class="card-body">
                      
-                    <a class='btn btn-primary' href='?hal=slider-tambah'>Tambah</a>
+                    <a class='btn btn-primary btn-sm' href='?hal=slider-tambah'>Tambah</a>
                     <br><br>
                      <?php
                 
