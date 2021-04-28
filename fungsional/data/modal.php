@@ -17,7 +17,6 @@
   {
     width: 100%;
   }
-
   #setujuan
   {
     width: 500px;
@@ -48,7 +47,6 @@
  
   <a href='?hal=akun-membership&tuj=profile' id="tombolUpg" class="btn btn-warning text-white"><h4>Upgrade</h4></a>
 </div>
-
 
 
 
@@ -169,15 +167,11 @@
      
           <div class="container-input-field">
             <input type="checkbox" name="setujuan" id="tc">
-            <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-toggle="modal" data-target="#Setujuan" href="#">Syarat dan Ketentuan</a></span></label>
+            <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-fancybox data-src='#setujuan' href='javascript:;'>Syarat dan Ketentuan</a></span></label>
             <p class = "error-msg" id="errCheckBox">Error Message</p>
           </div>
 
-
-
-          <input type="checkbox" name="setujuan" id="tc" required>
-          <label class="tc" for="tc">Saya telah membaca dan menyetujui<span><a data-fancybox data-src='#setujuan' href='javascript:;'>Syarat dan Ketentuan</a></span></label>
-          <button type="submit" class="btn">Daftar</button>
+          <button type="submit" class="btn" id="btn-modal-daftar">Daftar</button>
 
         </form>
 
@@ -223,8 +217,6 @@
         </div>
     </div>
 </div>
-
-
 <script src="./vendor/tambahan/modal.js"></script>
 
 
@@ -245,7 +237,7 @@
         $foto  = $a['foto_info'];
         $tgl   = $a['tgl_info'];
         $desk  = $a['deskripsi'];
-        
+
 
         $nus    = $a['nama_user'];
 
@@ -270,9 +262,9 @@
             ";
         }
     }
-                                
-                 
-                                
+
+
+
 
 ?>
 <div id="setujuan">
@@ -280,7 +272,7 @@
   <center>
     <h4><?php echo $jenis; ?></h4>
   </center>
-	
+
   <?php
       echo
       "
@@ -289,4 +281,3 @@
       ";
   ?>
 </div>
-
