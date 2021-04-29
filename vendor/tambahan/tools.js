@@ -330,12 +330,12 @@ $(document).ready(function(){
     confirm_pass != "" && pass == confirm_pass)
     {
       $('#btn-modal-daftar').prop('disabled', false);
-    }else{
+    }
+    else
+    {
       $('#btn-modal-daftar').prop('disabled', true);
     }
   });
-  
 
-  
 
 });
