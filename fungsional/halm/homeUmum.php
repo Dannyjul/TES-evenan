@@ -126,7 +126,7 @@ include './fungsional/konfig/slider.php';
 <div class="container container-card-res">
   <div class="d-flex justify-content-between">
     <h1 class="caption-heavy title-class-status">Kelas Gratis </h1>
-    <span class="lihat-semua-res">Lihat Semua ></span>
+    <span class="lihat-semua-res"><a href = "">Lihat Semua></a></span>
   </div>
   <div class="row row-cols-1">
     <div class="col">
@@ -289,7 +289,7 @@ include './fungsional/konfig/slider.php';
 <div class="container container-card-res">
   <div class="d-flex justify-content-between">
     <h1 class="caption-heavy title-class-status">Kelas Premium</h1>
-    <span class="lihat-semua-res">Lihat Semua ></span>
+    <span class="lihat-semua-res"><a href = "">Lihat Semua></a></span>
   </div>
   <div class="row row-cols-1">
     <div class="col">
@@ -404,7 +404,7 @@ include './fungsional/konfig/slider.php';
 <div class="container container-card-res">
   <div class="d-flex justify-content-between">
     <h1 class="caption-heavy title-class-status">Event Mendatang</h1>
-    <span class="lihat-semua-res">Lihat Semua ></span>
+    <span class="lihat-semua-res"><a href = "">Lihat Semua></a></span>
   </div>
   <div class="row row-cols-1">
     <div class="col">

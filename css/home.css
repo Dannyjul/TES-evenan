@@ -131,7 +131,10 @@
 }
 
 .card-home-event .card-img-top{
-    height: 175px;
+    width: 100%;
+    height: 41.67%;
+    /* object-position: 50% 50%; */
+    object-fit: cover;
 }
 
 .card-home-event .card-title{
@@ -272,12 +275,6 @@
 
     .banner-img {
         height: 100px;
-        object-position: 50% 50%;
-    }
-
-    .card-home-res .card-img-top{
-        object-fit: cover;
-        height: 110px;
         object-position: 50% 50%;
     }
 
