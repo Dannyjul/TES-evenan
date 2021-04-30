@@ -1,34 +1,34 @@
 function uploadFoto(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
-        reader.onload = function(e) {
-            $('#gambarTampil').attr('src', e.target.result);
-        }
+      reader.onload = function(e) {
+          $('#gambarTampil').attr('src', e.target.result);
+      }
 
-        reader.readAsDataURL(input.files[0]); // convert to base64 string
-    }
+      reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
 }
 
 $("#gambarAmbil").change(function() {
-    uploadFoto(this).fadeIn();
+  uploadFoto(this).fadeIn();
 });
 
 
 function uploadUsaha(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+  if (input.files && input.files[0]) {
+      var reader = new FileReader();
 
-        reader.onload = function(e) {
-            $('#gambarUsaha').attr('src', e.target.result);
-        }
+      reader.onload = function(e) {
+          $('#gambarUsaha').attr('src', e.target.result);
+      }
 
-        reader.readAsDataURL(input.files[0]); // convert to base64 string
-    }
+      reader.readAsDataURL(input.files[0]); // convert to base64 string
+  }
 }
 
 $("#gambarAmbUsaha").change(function() {
-    uploadUsaha(this).fadeIn();
+  uploadUsaha(this).fadeIn();
 });
 
 
