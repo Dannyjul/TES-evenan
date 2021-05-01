@@ -126,29 +126,61 @@ include './fungsional/konfig/slider.php';
 <div class="container container-card-res">
   <div class="d-flex justify-content-between">
     <h1 class="caption-heavy title-class-status">Kelas Gratis </h1>
-    <span class="lihat-semua-res"><a href = "">Lihat Semua></a></span>
+    <span class="lihat-semua-res"><a href="">Lihat Semua></a></span>
   </div>
   <div class="row row-cols-1">
-    <div class="col">
-      <div class="card card-home-res">
-        <img src="./img/Logo_Header.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title small-heavy">GEM 00</h5>
-          <p class="card-text small-light">This is a short card.</p>
-          <a href="#" class="btn btn-pri-normal btn-mulai-res">Mulai Kelas</a>
-        </div>
+
+
+    <?php
+    $listFree = $crud->eksekusiSQl("SELECT * FROM `kursus` 
+                                                                  INNER JOIN paket_member ON paket_member.id_paket = kursus.id_paket
+                                                                  INNER JOIN pilar ON pilar.id_pilar = kursus.id_pilar
+                                                                  INNER JOIN kelas ON kelas.id_kelas = pilar.id_kelas
+                                                              WHERE paket_member.nama_paket LIKE '%FREE USER%' 
+                                                              ORDER BY kursus.nama_kursus LIMIT 2
+                                                              ");
+    $hitungListF = $crud->hitungData($listFree);
+    if ($hitungListF == 0) {
+      pesanKosong();
+    } else {
+      foreach ($listFree as $free) {
+        $idkel = $free['id_kelas'];
+        $namaKursus = $free['nama_kursus'];
+        $idkur = $free['id_kursus'];
+        $paketFree = $free['id_paket'];
+        $pilarFree = $free['id_pilar'];
+
+        $fotoK = $free['foto_kursus'];
+
+        $folKfree = "./foto/kursus/$fotoK";
+
+        if (empty($userId)) {
+          //href='#' data-fancybox data-src='#pesanAwal' href='javascript:;'
+          //$atrKelas = "href='#' data-toggle='modal' class='btn modal-trigger-daftar'";
+          $atrKelas = "href='#' data-fancybox data-src='#pesanAwal'";
+        } else {
+          $atrKelas = "href='?hal=course-detail&pl=$idkur&k=$idkel&p=$paketFree&pilid=$pilarFree'";
+        }
+
+        echo
+        "
+                                  
+    <div class='col'>
+    <div class='card card-home-res'>
+      <img src='$folKfree' class='card-img-top' alt='Image'>
+      <div class='card-body'>
+        <h5 class='card-title small-heavy'>$namaKursus</h5>
+        <p class='card-text small-light'>This is a short card.</p>
+        <a $atrKelas class='btn btn-pri-normal btn-mulai-res'>Mulai Kelas</a>
       </div>
     </div>
-    <div class="col">
-      <div class="card card-home-res">
-        <img src="./img/Logo_Header.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title small-heavy">GEM 01</h5>
-          <p class="card-text small-light">This is a short card.</p>
-          <a href="#" class="btn btn-pri-normal btn-mulai-res">Mulai Kelas</a>
-        </div>
-      </div>
-    </div>
+  </div>
+      
+                                  ";
+      }
+    }
+    ?>
+
   </div>
 </div>
 
@@ -289,7 +321,7 @@ include './fungsional/konfig/slider.php';
 <div class="container container-card-res">
   <div class="d-flex justify-content-between">
     <h1 class="caption-heavy title-class-status">Kelas Premium</h1>
-    <span class="lihat-semua-res"><a href = "">Lihat Semua></a></span>
+    <span class="lihat-semua-res"><a href="">Lihat Semua></a></span>
   </div>
   <div class="row row-cols-1">
     <div class="col">
@@ -404,7 +436,7 @@ include './fungsional/konfig/slider.php';
 <div class="container container-card-res">
   <div class="d-flex justify-content-between">
     <h1 class="caption-heavy title-class-status">Event Mendatang</h1>
-    <span class="lihat-semua-res"><a href = "">Lihat Semua></a></span>
+    <span class="lihat-semua-res"><a href="">Lihat Semua></a></span>
   </div>
   <div class="row row-cols-1">
     <div class="col">
