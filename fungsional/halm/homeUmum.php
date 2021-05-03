@@ -17,7 +17,6 @@ include './fungsional/konfig/slider.php';
 
 ?>
 
-
 <!-- NON RESPONSIVE FREE -->
 <div class="container container-home container-card-non-res">
   <h1 class="display-heavy title-class-status">Kelas Gratis</h1>
@@ -170,7 +169,6 @@ include './fungsional/konfig/slider.php';
       <img src='$folKfree' class='card-img-top' alt='Image'>
       <div class='card-body'>
         <h5 class='card-title small-heavy'>$namaKursus</h5>
-        <p class='card-text small-light'>This is a short card.</p>
         <a $atrKelas class='btn btn-pri-normal btn-mulai-res'>Mulai Kelas</a>
       </div>
     </div>
@@ -392,17 +390,11 @@ include './fungsional/konfig/slider.php';
           $gambar = "$tujuan";
         }
 
-
-
-
-
         if (empty($userId)) {
           $eAtr = "href='#' class='btn mt-auto btn-pri-normal btn-daftar-event modal-trigger-daftar'";
         } else {
           $eAtr = "href='?hal=event-info&k=$idev' class='btn mt-auto btn-pri-normal btn-daftar-event'";
         }
-
-
 
         echo
         "
@@ -439,28 +431,64 @@ include './fungsional/konfig/slider.php';
     <span class="lihat-semua-res"><a href="">Lihat Semua></a></span>
   </div>
   <div class="row row-cols-1">
-    <div class="col">
-      <div class="card card-home-res">
-        <img src="./img/image 34.png" class="card-img-top" alt="...">
-        <div class="price-event-res xs-heavy">IDR 75000</div>
-        <div class="card-body">
-          <h5 class="card-title small-heavy">Webminar: </h5>
-          <p class="card-text small-light">This is a short card.</p>
-          <a href="#" class="btn btn-pri-normal btn-mulai-res">Mulai Kelas</a>
+  <?php
+
+    $perintah = $crud->eksekusiSQl("SELECT *FROM event 
+                                    ORDER BY id_event DESC LIMIT 2");
+    $hitung   = $crud->hitungData($perintah);
+
+    if ($hitung == 0) {
+      pesanKosong();
+    } else {
+
+      $no = 1;
+      foreach ($perintah as $a) {
+        $nama = $a['nama_event'];
+        $foto = $a['foto_event'];
+        $tgl  = $a['tanggal_post'];
+        $idev = $a['id_event'];
+        $desk = $a['deskripsi'];
+        $tanggal = date('d F Y', strtotime($tgl));
+        $harga = $a['harga_event'];
+        $biaya = "Rp. " . formatRupiah($harga) . ",00";
+
+        if ($foto == "Kosong") {
+          $gambar = "'img/nofoto.png'";
+        } else {
+          $tujuan = "foto/event/$foto";
+          $gambar = "$tujuan";
+        }
+
+        if (empty($userId)) {
+          $eAtr = "href='#' class='btn btn-pri-normal btn-mulai-res' data-fancybox data-src='#pesanAwal'";
+        } else {
+          $eAtr = "href='?hal=event-info&k=$idev' class='btn btn-pri-normal btn-mulai-res'";
+        }
+
+        echo
+        "
+        <div class='col'>
+          <div class='card card-home-res'>
+            <img src='$gambar' class='card-img-top' alt='...'>
+            <div class='price-event-res xs-heavy'>
+                $biaya
+            </div>
+            <div class='card-body'>
+              <h5 class='card-title small-heavy'>$nama</h5>
+              <p class='card-text small-light'>$tanggal</p>
+              
+              
+              <a $eAtr>Daftar</a>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col">
-      <div class="card card-home-res">
-        <img src="./img/image 34.png" class="card-img-top" alt="...">
-        <div class="price-event-res xs-heavy">IDR 75000</div>
-        <div class="card-body">
-          <h5 class="card-title small-heavy">Webminar: </h5>
-          <p class="card-text small-light">This is a short card.</p>
-          <a href="#" class="btn btn-pri-normal btn-mulai-res">Mulai Kelas</a>
-        </div>
-      </div>
-    </div>
+                        
+        ";
+
+        $no++;
+      }
+    }
+  ?>
   </div>
 </div>
 
