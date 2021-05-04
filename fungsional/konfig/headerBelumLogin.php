@@ -1,23 +1,24 @@
+<link rel="stylesheet" href="./css/header-non-login.css">
+
 <!-- Navigation -->
-<section id="navigation-bar">
-    <div class="container-navbar">
-        <nav class="navbar">
-            <a class="logo" href="./index.php">
-                <img src="./img/logoElites.png"
-                    alt="logo">
-            </a>
-            <div class="nav-list">
-                <a class="btn btn-login modal-trigger-login" href="#">Login</a>
-                <a class="btn btn-daftar modal-trigger-daftar" href="#">Daftar</a>
-            </div>
-        </nav>
-    </div>
-</section>
-
-
-
-
-
+<div class='container header-non-login'>
+    <nav class='navbar navbar-expand-md navbar-custom'>
+        <img class="header-logo" src='./img/LogoPutih.png'>
+        <div>
+            <ul class='navbar-nav ml-auto'>
+                <li class='nav-item nav-item-non-res'>
+                    <a class='btn subheader-heavy btn-login modal-trigger-login' href='#'>Login</a>
+                </li>
+                <li class='nav-item nav-item-non-res'>
+                    <a class='btn btn-pri-normal btn-daftar modal-trigger-daftar' href='#'>Daftar</a>
+                </li>
+                <li class='nav-item nav-item-res'>
+                    <a class='btn small-light btn-pri-normal btn-login-res modal-trigger-login' href='#'>Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="Daftar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -50,7 +51,7 @@
                         <input name="jekel" class="form-check-input" type="radio" id="inlineCheckbox2" value="Perempuan">
                         <label class="form-check-label" for="inlineCheckbox2">Perempuan</label>
                     </div>
-                
+
                     <p>
                         <input class="form-control" type="number" name="nohp" placeholder="No. Handphone" required>
                     </p>
@@ -63,8 +64,8 @@
                         <small class="text-danger passTaksama">Password yang diketikkan tidak sama</small>
                     </p>
                     <p>
-                    <input id="pass2" class="form-control" type="password" name="password" placeholder="Password" required>
-                    <small class="text-danger passTaksama">Password yang diketikkan tidak sama</small>
+                        <input id="pass2" class="form-control" type="password" name="password" placeholder="Password" required>
+                        <small class="text-danger passTaksama">Password yang diketikkan tidak sama</small>
                     </p>
                     <p>
                         <input type="checkbox" value="Ya" name="setujuan" required> Saya Menyetujui <a href="#" data-toggle="modal" data-target="#Setujuan">Terms and Condition</a>
@@ -115,49 +116,45 @@
 
 <?php
 
-    $perintah = $crud->eksekusiSQl("SELECT *FROM info 
+$perintah = $crud->eksekusiSQl("SELECT *FROM info 
                                     INNER JOIN user
                                         ON user.id_user= info.id_user
                                     WHERE info.jenis_info='Term and Condition'
                                     ");
-    $hitung   = $crud->hitungData($perintah);
+$hitung   = $crud->hitungData($perintah);
 
 
-    foreach($perintah as $a)
-    {
-        $idinfo= $a['id_info'];
-        $jenis = $a['jenis_info'];
-        $foto  = $a['foto_info'];
-        $tgl   = $a['tgl_info'];
-        $desk  = $a['deskripsi'];
-        
+foreach ($perintah as $a) {
+    $idinfo = $a['id_info'];
+    $jenis = $a['jenis_info'];
+    $foto  = $a['foto_info'];
+    $tgl   = $a['tgl_info'];
+    $desk  = $a['deskripsi'];
 
-        $nus    = $a['nama_user'];
 
-        if ($foto=='Kosong') 
-        {
-            //$gambar = "<img class='rounded-circle' src='./img/nofoto.png' width='50' height='50'>";
-            $box = "";
-        } 
-        else 
-        {
-            $tujuan = "./foto/info/$foto";
-           /* $gambar = 
+    $nus    = $a['nama_user'];
+
+    if ($foto == 'Kosong') {
+        //$gambar = "<img class='rounded-circle' src='./img/nofoto.png' width='50' height='50'>";
+        $box = "";
+    } else {
+        $tujuan = "./foto/info/$foto";
+        /* $gambar = 
             "   <a data-fancybox='gallery' href='$tujuan' data-caption='$jenis'>
                     <img src='$tujuan' width='50' height='50'>
                 </a>
             ";*/
-            $box = 
+        $box =
             "
                 <center>
                 <img src='$tujuan' width='70%' height='200'>
                 </center>
             ";
-        }
     }
-                                
-                 
-                                
+}
+
+
+
 
 ?>
 
@@ -172,13 +169,13 @@
             </div>
             <div class="modal-body">
 
-               <?php
-                    echo
-                    "
+                <?php
+                echo
+                "
                         $box
                         $desk
                     ";
-               ?>
+                ?>
 
             </div>
 

@@ -1,5 +1,3 @@
-
-
 <link rel="stylesheet" href="./css/course-info.css">
 
 <?php

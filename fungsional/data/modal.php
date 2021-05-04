@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="./css/modal-login-daftar.css">
 <style>
   #pesanAwal, #pesanUpgrade, #setujuan
   {

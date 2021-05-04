@@ -1,7 +1,4 @@
-
-
 <link rel="stylesheet" href="./css/course-info.css">
-
 <?php
 include './fungsional/konfig/header.php';
 

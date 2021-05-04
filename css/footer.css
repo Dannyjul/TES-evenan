@@ -1,0 +1,20 @@
+.container-footer {
+    text-align: center;
+}
+
+.navfooter li {
+    display: inline;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    line-height: 50px;
+}
+
+.navfooter ul {
+    padding: 0px;
+}
+
+@media (max-width: 767px) {
+    .contaoner-footer .subheader-heavy{
+        font-size: 8px;
+    }
+}
