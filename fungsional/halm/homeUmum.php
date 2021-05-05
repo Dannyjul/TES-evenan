@@ -370,7 +370,7 @@ include './fungsional/konfig/slider.php';
       foreach ($perintah as $a) {
         $nama = $a['nama_event'];
         $foto = $a['foto_event'];
-        $tgl  = $a['tanggal_post'];
+        $tgl  = $a['waktu'];
 
         $idev = $a['id_event'];
         $desk = $a['deskripsi'];
@@ -445,7 +445,7 @@ include './fungsional/konfig/slider.php';
       foreach ($perintah as $a) {
         $nama = $a['nama_event'];
         $foto = $a['foto_event'];
-        $tgl  = $a['tanggal_post'];
+        $tgl  = $a['waktu'];
         $idev = $a['id_event'];
         $desk = $a['deskripsi'];
         $tanggal = date('d F Y', strtotime($tgl));
