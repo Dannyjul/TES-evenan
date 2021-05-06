@@ -30,9 +30,6 @@ input[type=number] {
     position: relative;
 }
 
-
-/*MODIFIED BY EVA 14-04-2021*/
-
 .close {
     position: absolute;
     top: 5px;
@@ -78,9 +75,6 @@ input[type=number] {
     color: #F1B213;
 }
 
-
-/*CREATED BY EVA 13-04-2021*/
-
 .container-form .error-msg {
     color: #B2002B;
     display: none;
@@ -104,9 +98,6 @@ input[type=number] {
     line-height: 1em;
     color: black;
 }
-
-
-/*MODIFIED BY EVA 13-04-2021*/
 
 .container-form .text-input {
     display: block;
@@ -139,15 +130,9 @@ input[type=number] {
     color: #fff;
 }
 
-
-/*Modal Daftar*/
-
 .alamat-text {
     margin-bottom: 1.2em;
 }
-
-
-/*MODIFIED BY EVA 13-04-2021*/
 
 .container-form select {
     display: block;
@@ -172,13 +157,142 @@ input[type=number] {
     overflow-y: auto;
 }
 
-
-/* .container-form .show-pass {
-    background-image: url(img/show_pass_icon.png);
-} */
-
 .show-pass-icon {
     position: absolute;
     top: 22px;
     right: 10px;
+}
+
+/*MODAL RESPONSIVE*/
+@media (max-width: 767px) {
+    .show-pass-icon {
+        position: absolute;
+        top: 15px;
+        right: 5px;
+
+        width: 45px;
+        height: auto;
+    }
+
+    .close{
+        right: 10px;
+        top:60px;
+    }
+
+    .error-msg{
+        text-align: left;
+        display: none;
+        margin-top: 5px;
+    }
+}
+
+.modal-login-res, .modal-daftar-res{
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.7);
+    color: #14110E;
+    z-index: 100;
+
+    padding-top: 60px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container-content-modal{
+    background-color: #FFFFFF;
+    padding: 20px 10px;
+}
+
+.title-heavy-res span{
+    color: #E0AB33;
+}
+
+.modal-toggle-res{
+    display: inline-block;
+    margin-right: 32px;
+    margin-left: 32px;
+    margin-bottom: 25px;
+    padding: 15px;
+    padding-bottom: 5px;
+}
+
+.modal-toggle-res.active{
+    border-bottom: solid 3px #E0AB33;
+}
+
+.input-field-res{
+    margin-bottom: 12px;
+}
+
+.modal-login-res label{
+    display: block;
+    text-align: left;
+}
+
+.modal-daftar-res label{
+    display: block;
+    text-align: left;
+}
+
+.xs-light span{
+    color: #E0AB33;
+    text-decoration: underline;
+}
+
+.modal-login-res input{
+    background: #EFEFEF;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+
+.modal-daftar-res input{
+    background: #EFEFEF;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+
+.modal-daftar-res select{
+    background: #EFEFEF;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    width: 100%;
+}
+
+.bottom-form input{
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.bottom-form{
+    text-align: left;
+}
+
+.bottom-form .caption-light{
+    display: inline-block;
+}
+
+.btn-gold-sec-normal{
+    padding: 5px;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 22px;
+}
+
+.btn-gold-sec-normal:disabled{
+    opacity: 0.65;
+}
+
+.form-daftar-part2{
+    position: relative;
+    display: none;
+}
+
+.form-daftar-part1{
+    display: block;
 }

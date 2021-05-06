@@ -41,10 +41,22 @@ body {
     line-height: 28px;
 }
 
+.title-heavy-res {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+}
+
 .title-light {
     font-weight: normal;
     font-size: 20px;
     line-height: 28px;
+}
+
+.title-light-res {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 25px;
 }
 
 .subheader-heavy {
@@ -137,6 +149,21 @@ body {
 .btn-pri-normal {
     background: #E73A63;
     border-radius: 15px;
+}
+
+.btn-gold-pri-normal{
+    background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border: none;
+}
+
+.btn-gold-sec-normal{
+    background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    border: none;
+    color: white;
 }
 
 .btn-pri-press {
