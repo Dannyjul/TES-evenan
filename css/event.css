@@ -1,350 +1,200 @@
-hr{
-    margin: 0;
-    border-color: black;
+hr {
+  margin: 0;
+  border-color: black;
 }
 
 /*FIXED BANNER*/
-
-.top-banner{
-    width: 100%;
-    height: 365px;
+.top-banner {
+  width: 100%;
+  height: 11.23%;
 }
 
-/*FILTER*/ 
-
-.filter{
-    padding-right: 25px;
-    padding-left: 25px;
-    background-color: #fff;
-    
-    border-radius: 5px;
-    vertical-align: middle;
+/* TITLE */
+.status-title {
+  margin-bottom: 30px;
 }
 
-.filter .dropbtn{
-    background-color: #FFFFFF;
-    color: black;
-    height: 60px;
-    width: 180px;
-
-    margin-top: 0;
-    font-weight: 600;
-    font-size: 20px;
-}
-
-.filter p{
-    font-weight: 600;
-    font-size: 20px;
-
-    display: inline-block;
-    margin-bottom: 0;
-    color: #717171;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #FFFFFF;
-    left: 190px;
-    z-index: 1;
-
-    padding-left: 20px;
-    padding-right: 20px;
-}
-  
-/* Links inside the dropdown */
-.dropdown-content label{
-    color: black;
-
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 50px;
-}
-
-.dropdown-content img{
-    width: 77px;
-    height: 38px;
-}
-  
-.dropdown-content .trash{
-    width: 35px;
-    height: 35px;
-}
-
-.dropdown-content .clear-btn{
-    font-size: 20px;
-}
-
-/* Show the dropdown menu on hover */
-.filter:hover .dropdown-content {display: block;}
-
-/*NGATUR ROW DAN COL*/ 
-.row{
-    margin: 0px;
-}
-
-.col{
-    padding: 20px;
-}
-
-/*JUDUL*/ 
-.status-title{
-    margin-bottom: 30px;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 50px;
-}
 /*NGATUR CARD*/
-.card{
-    width: 100%;
+.card-event {
     padding: 40px;
-    height: 500px;
-    background-color: #2F2F2F;
+    background-color: #2f2f2f;
 }
 
-.inner-card{
-    background-color:rgba(0, 0, 0, 0.25);
-    
-    border-radius: 5px;
-    height: 520px;
-}
-
-.inner-card img{
-    width: 100%;
+.card-event .card-img-top{
     height: 200px;
+    border-radius: 5px 5px 0 0;
 }
 
-/*Ngatur Price tagnya*/ 
-.price-tag{
-    position: absolute;
-    top:190px;
-    right: 40px;
-    padding: 5px;
-    padding-right: 15px;
-
-    background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
-    border-radius: 5px 0px 0px 5px;
-    color: black;
+.card-event .card-body{
+    background: rgba(255, 255, 255, 0.25);
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0 0 5px 5px;
 }
 
-.price-tag p{
-    margin-bottom: 0px;
-    font-weight: bold;
-    font-size: 16px;
+/*Ngatur Price tagnya*/
+.price-tag {
+  position: absolute;
+  top: 190px;
+  right: 40px;
+  padding: 5px;
+  padding-right: 15px;
+
+  background: linear-gradient(180deg, #fecc5d 0%, #fe9e32 100%);
+  border-radius: 5px 0px 0px 5px;
+  color: black;
 }
 
-.price-tag span{
-    text-decoration: line-through;
-    opacity: 0.25;
-    margin-left: 5px;
+.price-tag p {
+  margin-bottom: 0px;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-/*Card Body*/ 
-.card-body{
-    padding-bottom: 25px;
+.price-tag span {
+  text-decoration: line-through;
+  opacity: 0.25;
+  margin-left: 5px;
 }
 
-.card-body p{
-    margin-bottom: 0px;
+/*Card Body*/
+.card-body {
+  padding-bottom: 10px 13px;
 }
 
-.card-title{
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 30px;
-    margin-bottom: 0;
-}
-
-.card-body .hari{
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 30px;
-}
-
-
-.card .btn{
-    position: absolute;
-    width: 70%;
-    bottom: 90px;
-}
-
-.card-body a.details{
-    font-weight: normal;
-    font-size: 14px;
-    text-decoration-line: underline;
-    text-align: center;
-
-    display: block;
-    position: absolute;
-    bottom: 60px;
-    width: 70%;
-}
-
-/*Responsive untuk Card Deck*/
-@media only screen and (max-width: 1400px){
-    .status-title{
-        margin-bottom: 20px;
-    }
-
-    .price-tag{
-        top: 170px;
-        right: 30px;
-    }
-
-    .card{
-        height: 500px;
-        width: 350px;
-        padding: 30px;
-    }
-
-    .card .btn, .card-body a.details{
-        width: 75%;
-    }
-}
-
-@media only screen and (max-width: 1300px){
-
-    .status-title{
-        margin-bottom: 10px;
-        font-size: 32px;
-    }
-
-    .card{
-        height: 450px;
-        width: 300px;
-        padding: 30px;
-    }
-
-    .card .btn, .card-body a.details{
-        width: 70%;
-    }
-
-    .price-tag{
-        position: absolute;
-        top:130px;
-        right: 30px;
-    }
-
-    .inner-card img{
-        width: 100%;
-        height: 175px;
-    }
-
-}
-
-@media only screen and (max-width: 1200px){
-    .status-title{
-        margin-bottom: 5px;
-        font-size: 30px;
-    }
-
-    .card{
-        height: 375px;
-        width: 100%;
-        padding: 25px;
-    }
-
-    .inner-card img{
-        width: 100%;
-        height: 150px;
-    }
-
-    .price-tag{
-        position: absolute;
-        top:120px;
-        right: 25px;
-    }
-
-    .price-tag p{
-        font-size: 12px;
-    }
-
-    .card .btn{
-        width: 65%;
-        bottom: 70px
-    }
-    .card-body a.details{
-        width: 65%;
-        bottom: 40px;
-        font-size: 12px;
-    }
-
-    .card-title{
-        font-size: 16px;
-        line-height: 25px;
-    }
-
-    .card-body .hari{
-        font-size: 12px;
-    }
+.btn-daftar-event{
+    background: #E73A63;
+    border-radius: 5px;
+    color: white;
 }
 
 /*Card All Event*/
-.card-all-event{
-    margin-bottom: 2em;
+.card-all-event {
+  margin-bottom: 2em;
 }
 
 /*Pagination*/
-.page{
-    text-align: center;
+.page {
+  text-align: center;
 }
 
 .pagination {
-    display: inline-block;
-    background-color: #2D2D2D;
-    width: 400px;
-    height: 70px;
+  display: inline-block;
+  background-color: #2d2d2d;
+  width: 300px;
+  height: 50px;
 
-    padding-top: 10px;
-    padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-  
+
 .pagination a {
-    color:#FFFFFF;
-    padding: 8px 16px;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 50px;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 28px;
 }
-  
+
+.pagination a:hover{
+   text-decoration: none;
+}
+
 .pagination a.active {
-    background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
-    color: white;
-    border-radius: 5px;
+  background: linear-gradient(180deg, #fecc5d 0%, #fe9e32 100%);
+  color: white;
+  border-radius: 5px;
 }
-  
+
 .pagination a:hover:not(.active) {
-    background-color: #ddd;
-    border-radius: 5px;
+  background-color: #ddd;
+  border-radius: 5px;
+  text-decoration: none;
 }
 
-/*Under Maintenance*/ 
-.under-maintenance{
-    background: #FFFFFF;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0px;
+/* RESPONSIVE */
+.container-card-res {
+  padding: 25px 40px;
+  background: #e5e5e5;
+  background-color: #14110e;
+  display: none;
+}
+.card-event-res {
+  padding: 20px 10px;
+  background: #2f2f2f;
+  margin-bottom: 20px;
+}
+
+.card-event-res .card-title{
+    margin-bottom: 5px;
+  }
+
+.card-event-res .card-body {
+  padding: 5px 15px;
+  background: rgba(255, 255, 255, 0.25);
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 5px 5px;
+}
+
+.price-event-res {
+  height: 20px;
+  width: 150px;
+  background: linear-gradient(180deg, #fecc5d 0%, #fe9e32 100%);
+  border-radius: 5px 0px 0px 0px;
+  text-align: right;
+  padding-right: 8px;
+  line-height: 20px;
+  letter-spacing: 4px;
+
+  position: absolute;
+  right: 10px;
+  bottom: 103px;
+  color: black;
+}
+
+.lihat-semua-res {
+  font-size: 8px;
+  justify-content: space-between;
+}
+
+#lihatSemuaEvent:hover {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  .container-event {
+    padding: 20px 35px;
+  }
+
+  .container-card-non-res {
     display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
+  }
 
-.under-maintenance img{
-    height: 400px;
-    width: auto;
-    margin-right: 10px;
-}
+  .top-banner {
+    height: 41.67%;
+  }
 
-.under-maintenance h1{
-    color: black;
-    font-size: 36px;
-}
+  .page {
+    display: none;
+  }
 
-@media only screen and (max-width: 1100px){
-    .under-maintenance{
-        display: flex;
-    }
+  .container-card-res {
+    display: block;
+  }
+
+  .card .btn {
+    position: unset;
+    border-radius: 5px;
+    height: 15px;
+    font-size: 8px;
+    line-height: 0px;
+    width: 100%;
+    color: white;
+  }
+
+  .price-event-res {
+    bottom: 103px;
+  }
 }
