@@ -30,7 +30,7 @@
 }
 
 .card{
-    width: 955px;
+    width: 80%;
     height: unset;
     margin-left: auto;
     margin-right: auto;
@@ -131,4 +131,67 @@ form{
     margin-bottom: 30px;
 }
 
+@media (max-width: 767px) {
+    .desc-trans h2, .card-header, .title-warning{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .harga{
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .logo-bca{
+        height:45%;
+        width:100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .card-text, .card-body label{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .warning{
+        width: 100%;
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 25px;
+    }
+
+    form{
+        width: 100%;
+    }
+
+    .input-box{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        height: 30px;
+        padding-left: 10px;
+    }
+
+    .card .confirm-pay{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 25px;
+        height: 30px;
+    }
+
+    .upload-gambar{
+        width: 100%;
+    }
+
+    input[type=file]{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+    }
+    
+}
 

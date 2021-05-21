@@ -12,9 +12,9 @@ include './fungsional/konfig/headerUdahLogin.php';
     ?>
 
     <div class="container-content">
-        <div class="akun-navbar">
+        <div class="akun-navbar d-flex justify-content-between ">
             <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
-            <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
+            <a class="title-light <?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
         </div>
 
         <div class="akun-profil">
@@ -27,36 +27,6 @@ include './fungsional/konfig/headerUdahLogin.php';
                 </div>
 
                 <?php
-
-                    /*$tgl = date('Y-m-d');
-
-                        $tglPost = "2020-02-10";
-
-                        $berlaku = date('Y-m-d',strtotime('+30 days', strtotime($tglPost)));
-
-                        $tglExp = date("Y-m-d", $berlaku);
-
-                        $tgl1    = "2018-12-16"; // menentukan tanggal awal
-                        $tgl2    = date('Y-m-d', strtotime('+ 1 years', strtotime($tgl1))); // penjumlahan tanggal sebanyak 7 hari
-                    // echo $tgl2; // cetak tanggal
-
-                    if ($tgl==$tgl2) 
-                    {
-                        $pesan = "Habis";
-                    }
-                    
-
-                        echo
-                        "
-                        <div style='margin-top:100px;'>
-                            $tgl <br>
-                            $tglPost <br>
-                            $berlaku <br>
-                            $tglExp <br>
-                            $tgl2 $pesan
-                        </div>
-                        ";
-                    */
                     $statuser = $crud->eksekusiSQl("SELECT *FROM user_status
                                                                         INNER JOIN paket_member
                                                                         ON user_status.id_paket = paket_member.id_paket
@@ -81,7 +51,7 @@ include './fungsional/konfig/headerUdahLogin.php';
             </div>
 
             <div class="content-row-2">
-                <h2>Atur Profile</h2>
+                <h2 class="headline-heavy">Atur Profile</h2>
                 <form action="?hal=akun-respon&mode=edit" method="post">
                 
                     <label for="nama">Nama Lengkap</label>
@@ -90,10 +60,6 @@ include './fungsional/konfig/headerUdahLogin.php';
                     <label for="alamat">Alamat Lengkap</label>
                     <textarea name="alamat" id="alamat" class="input-data-profile alamat"><?php echo $alamat; ?></textarea>
 
-                    <!--
-                    <label for="tlahir">Tanggal Lahir</label>
-                    <input value="<?php echo $lahir; ?>" name = "tgl-lahir" id="tgl-lahir" class="input-data-profile" type="date">
-                    -->
                     <label for="gender">Jenis Kelamin</label>
                     <select name="jekel" id="gender" class="input-data-profile" required>
                         <option value="<?php echo $jekel; ?>"><?php echo $jekel; ?></option>

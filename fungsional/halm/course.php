@@ -16,7 +16,7 @@ foreach ($kursus as $ev) {
 
 ?>
 
-<div class="container">
+<div class="container container-course">
     <img class="top-banner" src=" <?php echo $tujuanHeader; ?>" />
 </div>
 
@@ -294,7 +294,7 @@ foreach ($kursus as $ev) {
                         <h5 class='card-title caption-heavy'>$nama</h5>
                         <p class='card-text caption-light'>$hit Pelajaran</p>
                         
-                        <a class='btn btn-pri-normal xs-heavy'>Mulai Kelas</a>
+                        <a class='btn btn-pri-normal xs-heavy' href='?hal=course-info&k=$idkel&p=$idpaket'>Mulai Kelas</a>
                     </div>
                     </div>
                 </div>

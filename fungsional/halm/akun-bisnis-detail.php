@@ -75,7 +75,7 @@ $perintah = $crud->eksekusiSQl("SELECT *FROM user_preneur
 ?>
 
 <div class="container-content container-akun-bisnis-detail-non-res">
-    <div class="akun-navbar">
+    <div class="akun-navbar d-flex justify-content-between">
         <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
         <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
     </div>
@@ -109,6 +109,9 @@ $perintah = $crud->eksekusiSQl("SELECT *FROM user_preneur
 
             <h3>Industri</h3>
             <div class="container-data-profile industri"><?php echo $industri;?></div>
+
+            <h3>Provinsi</h3>
+            <div class="container-data-profile"><?php echo $prov;?></div>
 
             <h3>Alamat Bisnis</h3>
             <div class="container-data-profile alamat"><?php echo $alamatBis;?></div>

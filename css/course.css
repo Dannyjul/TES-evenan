@@ -154,7 +154,7 @@
 
 
 @media (max-width: 767px) {
-    .container {
+    .container, .container-course {
       padding: 20px 35px;
     }
 
