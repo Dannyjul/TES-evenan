@@ -16,32 +16,36 @@ hr {
 
 /*NGATUR CARD*/
 .card-event {
-    padding: 40px;
-    background-color: #2f2f2f;
+  padding: 30px 35px;
+  background-color: #2f2f2f;
+  height: 500px;
+  margin-right: auto;
 }
 
-.card-event .card-img-top{
-    height: 200px;
-    border-radius: 5px 5px 0 0;
+.card-event .card-img-top {
+  height: 41.67%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
 }
 
-.card-event .card-body{
-    background: rgba(255, 255, 255, 0.25);
-    mix-blend-mode: normal;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0 0 5px 5px;
+.card-event .card-body {
+  background: rgba(255, 255, 255, 0.25);
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0 0 5px 5px;
 }
 
 /*Ngatur Price tagnya*/
 .price-tag {
-  position: absolute;
-  top: 190px;
-  right: 40px;
-  padding: 5px;
-  padding-right: 15px;
-
   background: linear-gradient(180deg, #fecc5d 0%, #fe9e32 100%);
   border-radius: 5px 0px 0px 5px;
+  line-height: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  position: absolute;
+  right: 35px;
+  top: 32%;
   color: black;
 }
 
@@ -62,10 +66,10 @@ hr {
   padding-bottom: 10px 13px;
 }
 
-.btn-daftar-event{
-    background: #E73A63;
-    border-radius: 5px;
-    color: white;
+.btn-daftar-event {
+  background: #e73a63;
+  border-radius: 5px;
+  color: white;
 }
 
 /*Card All Event*/
@@ -96,8 +100,8 @@ hr {
   line-height: 28px;
 }
 
-.pagination a:hover{
-   text-decoration: none;
+.pagination a:hover {
+  text-decoration: none;
 }
 
 .pagination a.active {
@@ -125,9 +129,9 @@ hr {
   margin-bottom: 20px;
 }
 
-.card-event-res .card-title{
-    margin-bottom: 5px;
-  }
+.card-event-res .card-title {
+  margin-bottom: 5px;
+}
 
 .card-event-res .card-body {
   padding: 5px 15px;

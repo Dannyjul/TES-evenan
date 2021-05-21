@@ -54,7 +54,7 @@ foreach ($y as $a) {
 ?>
 
 <section id="banner">
-        <div class="container">
+        <div class="container container-registration">
             <img  class="top-banner" src=" <?php echo $tujuanHeader; ?>" />
         </div>
 </section>

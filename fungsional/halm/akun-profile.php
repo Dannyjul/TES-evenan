@@ -1,71 +1,58 @@
 <link rel="stylesheet" href="./css/profile.css">
 
 <?php
-include './fungsional/konfig/headerUdahLogin.php';
+    include './fungsional/konfig/headerUdahLogin.php';
 ?>
 
 <div class="container container-profile">
     <?php
-
-    include './fungsional/data/membership.php';
-
+        include './fungsional/data/membership.php';
     ?>
-
 
     <?php
 
+        $mau = @$_GET['mod'];
 
-    $mau = @$_GET['mod'];
-
-    $ekse= @$_GET['mau'];
+        $ekse= @$_GET['mau'];
 
 
-    if ($ekse=='tambah') 
-    {
-    
-        $bisnis = "active";
-        $profil = "";
+        if ($ekse=='tambah') 
+        {
+        
+            $bisnis = "active";
+            $profil = "";
+        ?>
+
+        <div class="container-content"> 
+            <div class="akun-navbar">
+                <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
+                <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
+            </div>
+
+                <?php
+                    include './fungsional/halm/akun-bisnis-tambah.php';
+                ?>
+            </div>
+
+        </div>
+    <?php
+        }
+        elseif ($ekse=='editbisnis') 
+        {
+            $bisnis = "active";
+            $profil = "";
     ?>
 
-    <div class="container-content"> 
+    <div class="container container-content"> 
         <div class="akun-navbar">
             <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
             <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
         </div>
 
-        <div class="container-fluid" style="padding: 40px;">
-            <h1 class="bisnis-list-title">Bisnis Aktif Anda</h1>
-            
-            <?php
-                include './fungsional/halm/akun-bisnis-tambah.php';
-            ?>
-        </div>
+        <?php
+            include './fungsional/halm/akun-bisnis-edit.php';
+        ?>
 
-    </div>
-
-
-    <?php
-
-    }
-    elseif ($ekse=='editbisnis') 
-    {
-        $bisnis = "active";
-        $profil = "";
-    ?>
-
-    <div class="container-content"> 
-        <div class="akun-navbar">
-            <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
-            <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
-        </div>
-
-        <div class="container-fluid" style="padding: 40px;">
-            <h1 class="bisnis-list-title">Bisnis Aktif Anda</h1>
-            
-            <?php
-                include './fungsional/halm/akun-bisnis-edit.php';
-            ?>
-        </div>
 
     </div>
 
@@ -80,9 +67,6 @@ include './fungsional/konfig/headerUdahLogin.php';
     else 
     {
         # code...
-    
-
-
     if ($mau == 'akun-bisnis') {
         $bisnis = "active";
         $profil = "";

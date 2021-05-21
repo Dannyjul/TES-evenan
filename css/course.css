@@ -1,152 +1,192 @@
-.top-banner{
-    width: 100%;
-    height: 365px;
-    text-align: center;
+.top-banner {
+  width: 100%;
+  height: 365px;
 }
 
-.status-member{
-    margin-bottom: 40px;
-    font-weight: bold;
-    font-size: 36px;
-    line-height: 50px;
+.status-member {
+  margin-bottom: 30px;
 }
 
-.card-course{
-    background-color: rgb(47, 47, 47);
-    padding: 50px;
-    display: inline-block;
-    border-radius: 15px;
-    margin-bottom: 100px;
-    
+.card-course {
+  background-color: #2f2f2f;
+  padding: 40px;
+  display: inline-block;
+  border-radius: 15px;
+  margin-bottom: 50px;
 }
 
-
-.row-1{
-    vertical-align: top;
-    display: inline-block;
-    width: 35%;
-    height: 340px;
+.row-1 {
+  display: inline-block;
+  width: 30%;
 }
 
-.row-1 img{
-    border-radius: 5px;
-    height: 275px;
-    width: 92%;
+.row-1 img {
+  border-radius: 5px;
+  height: 240px;
+  width: 92%;
 }
 
-.row-1 .btn-mulai{
-    width: 92%;
-    
-    margin-top: 20px;
+.row-1 .btn-mulai {
+  width: 92%;
+  height: 40px;
 
-    color:white;
-    font-weight: bold;
-    font-size: 18px;
-    line-height: 34px;
-    background: #E73A63;
-    border-radius: 5px;
+  margin-top: 60px;
+
+  color: white;
+  background: #e73a63;
+  border-radius: 5px;
 }
 
-.row-2{
-    vertical-align: top;
-    display: inline-block;
-    width: 64%;
-    height: 340px;
+.row-2 {
+  vertical-align: top;
+  display: inline-block;
+  width: 69%;
+  height: 340px;
 
-    background-color: rgba(0,0,0, 0.2);
-    padding: 30px;
-    border-radius: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  mix-blend-mode: normal;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 30px;
+  border-radius: 5px;
 
-    overflow: auto;
-}
-
-/* NGATUR TYPOGRAPHY DI CARD*/
-.card-title{
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
-}
-
-.subcourse{
-    font-weight: 600;
-font-size: 14px;
-line-height: 30px;
-}
-
-.desc-course{
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 30px;
-}
-
-.card-text{
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 30px;
+  overflow: auto;
 }
 
 /*INI YG LOCKED*/
 
-.locked-courses{
-    display: none;
-    text-align: center;
-    padding-top: 100px;
-    padding-bottom: 100px;
+.locked-courses {
+  display: none;
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
 
-    position: absolute;
-    width: 1350px;
-    height: 450px;
-    top: -1px;
-    left:-25px;
-    right: -25px;
-    background-color: rgba(0,0,0,0.8); 
+  position: absolute;
+  width: 1350px;
+  height: 450px;
+  top: -1px;
+  left: -25px;
+  right: -25px;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
-.locked-courses h3{
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 50px;
+.locked-courses h3 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 50px;
 }
 
-.locked-courses .btn-locked{
-    background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
-    width: 345px;
-    height: 55px;
+.locked-courses .btn-locked {
+  background: linear-gradient(180deg, #fecc5d 0%, #fe9e32 100%);
+  width: 345px;
+  height: 55px;
 
-    font-weight: bold;
-    font-size: 18px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-/*Pagination*/
-.page{
-    text-align: center;
+.container.page {
+  text-align: center;
+  padding: unset;
 }
 
 .pagination {
-    display: inline-block;
-    background-color: #2D2D2D;
-    width: 400px;
-    height: 70px;
+  display: inline-block;
+  background-color: #2d2d2d;
+  width: 300px;
+  height: 50px;
 
-    padding-top: 10px;
-    padding-bottom: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-  
+
 .pagination a {
-    color:#FFFFFF;
-    padding: 8px 16px;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 50px;
+  color: #ffffff;
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 28px;
 }
-  
+
+.pagination a:hover {
+  text-decoration: none;
+}
+
 .pagination a.active {
-    background: linear-gradient(180deg, #FECC5D 0%, #FE9E32 100%);
-    color: white;
-    border-radius: 5px;
+  background: linear-gradient(180deg, #fecc5d 0%, #fe9e32 100%);
+  color: white;
+  border-radius: 5px;
 }
-  
+
 .pagination a:hover:not(.active) {
-    background-color: #ddd;
+  background-color: #ddd;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* RESPONSIVE */
+.card-course-res{
+    background-color: #2F2F2F;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.card-course-res .card-body{
+    background: rgba(255, 255, 255, 0.25);
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 10px;
+    border-radius: 2.5px;
+}
+
+.card-course-res .btn{
     border-radius: 5px;
+    width: 100%;
+    color: white;
+}
+
+.container-card-res{
+    display: none;
+}
+
+.container-card-non-res{
+    display: block;
+}
+
+
+@media (max-width: 767px) {
+    .container {
+      padding: 20px 35px;
+    }
+
+    .container-card-non-res{
+        display: none;
+    }
+    .container-card-res{
+        display: block;
+    }
+
+    .top-banner {
+        height: 11.23%;
+        width: 100%;
+    }
+
+    .status-member {
+        margin-bottom: 0;
+    }
+
+    .pagination a {
+        padding: 4px 8px;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .pagination {
+        width: 200px;
+        height: 40px;
+      
+        padding-top: 5px;
+        padding-bottom: 5px;
+      }
+
 }

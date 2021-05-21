@@ -11,8 +11,7 @@ include './fungsional/konfig/headerUdahLogin.php';
     include './fungsional/data/membership.php';
 
     ?>
-
-
+    
     <div class="container-content">
         <!-- AKUN NAVBAR -->
         <div class="akun-navbar">

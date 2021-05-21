@@ -21,7 +21,7 @@ foreach ($event as $ev) {
 </div>
 
 <!-- EVENT NON RESPONSIVE -->
-<div class="container container-event container-card-non-res">
+<div class="container container-card-non-res">
     <h1 class="display-heavy status-title">Semua Events</h1>
 
     <div class="row row-cols-3">
@@ -104,7 +104,7 @@ foreach ($event as $ev) {
                            
                         
                         <div class='col'>
-                            <div class='card card-event'>
+                            <div class='card h-500 card-event'>
                                     <img class='card-img-top' src='$tujuan' alt='$nama' width='100%'>
                                     <div class='price-tag'>
                                         <p>$biaya</p>
@@ -153,7 +153,7 @@ $pages = ceil($total / $limit);
 $no = $mulai + 1;
 
 $perintah = $crud->eksekusiSQl("SELECT *FROM event WHERE keterangan='POSTING' 
-                                        ORDER BY id_event DESC LIMIT $mulai, $limit");
+                                ORDER BY id_event DESC");
 $hitung   = $crud->hitungData($perintah);
 
 if ($hitung == 0) {

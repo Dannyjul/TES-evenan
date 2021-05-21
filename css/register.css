@@ -325,125 +325,57 @@
     border-radius: 50%;
 }
 
-/*Responsive untuk Card Deck*/
-@media only screen and (max-width: 1400px){
-    .price-tag{
-        top: 150px;
+@media (max-width: 767px) {
+    .registration-form-outer{
+        margin-right: 0;
+        margin-left: 0;
+        padding: 20px;
     }
 
-    .card{
-        height: 540px;
-    }
-    
-    .inner-card{
-        height: 490px;
+    .container-registration{
+        padding: 20px 35px;
     }
 
-}
+    .registration-form-outer h2{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+    }
 
-@media only screen and (max-width: 1300px){
-    .card{
-        height: 540px;
-    }
-    
-    .inner-card{
-        height: 490px;
-    }
-    
-    .price-tag p{
+    .registration-form-inner h4{
+        font-weight: 600;
         font-size: 14px;
-    }
-}
-
-@media only screen and (max-width: 1200px){
-    .price-tag{
-        top: 120px;
+        line-height: 20px;
     }
 
-    .speaker-name{
-        padding-top: 0;
-    }
-    .speaker-name .name{
-        font-size: 10px;
-    }
-    
-    .speaker-name .status{
-        font-size: 10px;
-    }
-    
-    .speaker img{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
-
-    .price-tag p{
+    .details h5, .detail-info {
+        font-weight: normal;
         font-size: 12px;
+        line-height: 16px;
     }
 
-    .card{
-        height: 460px;
+    .category h5{
+        width: 40%;
     }
-    
-    .inner-card{
-        height: 410px;
+
+    .category .detail-info {
+        width: 55%;
+        padding-left: 40px;
     }
-    
-}
 
-/*Footer*/
-
-.container-footer{
-    text-align: center;
-}
-.navfooter li{
-    display: inline;
-    margin-right: 1rem;
-    margin-left: 1rem;
-
-    font-weight: 600;
-    font-size: 1.5rem;
-    line-height: 50px;
-}
-
-.navfooter ul{
-    padding: 0px;
-}
-
-.copy{
-    font-weight: normal;
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-}
-    
-/*Under Maintenance*/ 
-.under-maintenance{
-    background: #FFFFFF;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0px;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-
-.under-maintenance img{
-    height: 400px;
-    width: auto;
-    margin-right: 10px;
-}
-
-.under-maintenance h1{
-    color: black;
-    font-size: 36px;
-}
-
-@media only screen and (max-width: 1100px){
-    .under-maintenance{
-        display: flex;
+    .part3 .btn {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 16px;
+        height: 30px;
     }
+
+    .img-fluid{
+        height: 41.67%;
+    }
+
 }
+
+
 
 

@@ -487,40 +487,248 @@
     width: 140px;
 }
 
+/* RESPONSIVE */
+.upload-foto-bisnis{
+    align-items: center;
+    padding-left: 25px;
+}
+
+#upload-foto-bisnis{
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+}
+
 .akun-bisnis-list .card{
     height: unset;
 }
 
-/*Responsive Web*/
-@media only screen and (max-width: 1400px){
-   .akun-bisnis-list .card-body{
-       width: 65%;
-       margin-left: 20px;
-   }
-
-   .akun-bisnis-list .btn-card{
-       margin-right: 250px;
-   }
+.container-akun-bisnis-detail-res{
+    display: none;
 }
 
-@media only screen and (max-width: 1300px){
-    .akun-bisnis-list .card-body{
-        width: 60%;
-        margin-left: 20px;
-    }
- 
-    .akun-bisnis-list .btn-card{
-        margin-right: 200px;
-    }
+.container-akun-bisnis-detail-res .card{
+    width: 100%;
+    padding: unset;
 }
 
- @media only screen and (max-width: 1200px){
-    .akun-bisnis-list .card-body{
-        width: 55%;
-        margin-left: 20px;
+.container-akun-bisnis-detail-res .card-img-top{
+    height: 60%;
+    width: 100%;
+}
+
+.container-akun-bisnis-detail-res h3{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px
+}
+
+.container-akun-bisnis-detail-res label{
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.container-akun-bisnis-detail-res input, .container-akun-bisnis-detail-res select{
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 30px;
+}
+
+.container-akun-bisnis-detail-res .container-data-profile.alamat, .container-akun-bisnis-detail-res .container-data-profile.desc-bisnis{
+    height: 100px;
+}
+
+.container-akun-bisnis-detail-res .container-data-profile.industri{
+    height: 60px;
+}
+
+.container-akun-bisnis-detail-res .container-data-profile{
+    height: 40px;
+    padding-left: 10px;
+    line-height: normal;
+}
+
+.container-akun-bisnis-detail-res .btn-edit{
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px
+}
+
+.container-akun-bisnis-detail-res .btn-simpan{
+    border-radius: 5px;
+    width: 100%;
+    color: white;
+    margin-top: 20px;
+
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+
+}
+
+.input-data-profile.desc-bisnis{
+    height: 100px;
+
+}
+
+@media (max-width: 767px) {
+    .sidebar {
+        display: none;
     }
- 
+
+    .container-content{
+        width: 100%;
+        padding: 20px 35px;
+    }
+
+    .akun-navbar a {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        display: inline-block;
+        margin-right: 20px;
+        margin-left:20px;
+    }
+
+    .akun-navbar .active {
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 16px;
+        display: inline-block;
+    }
+
+    .content-row-2{
+        width: 100%;
+        margin-left: unset;
+        padding: 20px 25px;
+    }
+
+    .akun-data, .status-membership{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .content-row-2 h3, .content-row-2 label{
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .content-row-2 h2{
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 15px;
+    }
+
+    .content-row-2 .btn-non-edit, .content-row-2 .btn-edit{
+        height: 24px;
+        font-size: 12px;
+        line-height: 8px;
+        margin-top: unset;
+    }
+
+    .container-data-profile, .input-data-profile{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .content-row-2 .input-data-profile{
+        height: 25px;
+        padding-left: 8px;
+    }
+
+    .input-data-profile.alamat {
+        padding: 5px;
+        height: 100px;
+        width: 100%;
+    }
+
+    .content-row-1{
+        width: 100%;
+    }
+
+    .akun-bisnis-list .card{
+        width: 100%;
+        padding: 0px;
+        text-align: center;
+        border-radius: 5px;
+
+    }
+
+    .bisnis-list-title{
+        width: 100%;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 14px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .akun-bisnis-list .img-card{
+        width: 100%;
+        height: 80%;
+        border: unset;
+        border-radius: unset;
+    }
+
+
+    .card-title{
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .card-text{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        margin-bottom: 12px;
+    }
+
+    .card-body{
+        text-align: left;
+        width: 100%;
+    }
+
     .akun-bisnis-list .btn-card{
-        margin-right: 100px;
+        width: 80%;
+        font-size: 12px;
+        margin-right: 10px;
     }
+
+    .btn-tambah{
+        width: 100%;
+        height: 24px;
+        font-size: 12px;
+        line-height: 8px;
+    }
+
+    .container-akun-bisnis-detail-non-res{
+        display: none;
+    }
+
+    .container-akun-bisnis-detail-res{
+        display: block;
+    }
+
+    .container-bisnis-edit{
+        padding: unset;
+    }
+
+
 }

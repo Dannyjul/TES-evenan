@@ -6,17 +6,6 @@ $perintah = $crud->eksekusiSQl("SELECT *FROM user_preneur
                             WHERE user.id_user='$iduser'
                             AND user_preneur.id_userpreneur='$idpe'
                             ORDER BY user_preneur.id_userpreneur DESC");
-//$hitung   = $crud->hitungData($perintah);
-
-//$mau = @$_GET['mau'];
-
-
-
-
-
-
-
-
     $no = 1;
     foreach ($perintah as $a) 
     {
@@ -65,10 +54,6 @@ $perintah = $crud->eksekusiSQl("SELECT *FROM user_preneur
             $web = $badge;
           }
 
-
-
-        //$jumset = formatRupiah($omset);
-
         if ($foto=="Kosong") 
         {
             $gambar = "<img src='img/nofoto.png' width='50' height='50'>";
@@ -86,18 +71,10 @@ $perintah = $crud->eksekusiSQl("SELECT *FROM user_preneur
             $imeg = "<img src='$tujuan' width='100%' height='200'>";
         }
     }
-
-
-
-
-
-
-
-
         
 ?>
 
-<div class="container-content">
+<div class="container-content container-akun-bisnis-detail-non-res">
     <div class="akun-navbar">
         <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
         <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
@@ -131,10 +108,10 @@ $perintah = $crud->eksekusiSQl("SELECT *FROM user_preneur
             <div class="container-data-profile"><?php echo $bidang; ?></div>
 
             <h3>Industri</h3>
-            <div class="container-data-profile"><?php echo $industri;?></div>
+            <div class="container-data-profile industri"><?php echo $industri;?></div>
 
             <h3>Alamat Bisnis</h3>
-            <div class="container-data-profile"><?php echo $alamatBis;?></div>
+            <div class="container-data-profile alamat"><?php echo $alamatBis;?></div>
 
             <h3>Email Bisnis</h3>
             <div class="container-data-profile"><?php echo $emailBis;?></div>
@@ -154,5 +131,61 @@ $perintah = $crud->eksekusiSQl("SELECT *FROM user_preneur
             <a class="btn btn-edit" href="?hal=akun-profile&tuj=profile&mod=akun-bisnis&idpe=<?php echo $idUneur; ?>&mau=editbisnis">Ubah Profile Bisnis Anda</a>
             </div>
     </div>
+
+</div>
+
+<div class="container container-content container-akun-bisnis-detail-res">
+    <div class="akun-navbar">
+        <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
+        <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
+    </div>
+        
+        <div class="card">
+            <img src="<?php echo $tujuan; ?>" class="card-img-top" alt="">
+            <div class="card-body">
+                <h3>Nama bisnis Anda</h3>
+                <div class="container-data-profile"><?php echo $namaBis;?></div>
+
+                <h3>Tahun berapa bisnis Anda didirikan?</h3>
+                <div class="container-data-profile"><?php echo $tahun;?></div>
+
+                <h3>Bergerak di bidang apa bisnis anda?</h3>
+                <div class="container-data-profile"><?php echo $bidang; ?></div>
+
+                <h3>Industri</h3>
+                <div class="container-data-profile industri"><?php echo $industri;?></div>
+
+                <h3>Deskripsi Singkat Bisnis Anda</h3>
+                <div class="container-data-profile desc-bisnis">
+                    <?php echo $deskrip;?>
+                </div>
+
+                <h3>Jumlah Karyawan</h3>
+                <div class="container-data-profile"><?php echo $jumkar;?></div>
+
+                <h3>Omset per Bulan</h3>
+                <div class="container-data-profile"><?php echo $omset;?></div>
+
+                <h3>Alamat Bisnis</h3>
+                <div class="container-data-profile alamat"><?php echo $alamatBis;?></div>
+
+                <h3>Email Bisnis</h3>
+                <div class="container-data-profile"><?php echo $emailBis;?></div>
+
+                <h3>No. Telp Bisnis</h3>
+                <div class="container-data-profile"><?php echo $telpBis;?></div>
+
+                <h3>Akun Instagram Bisnis Anda</h3>
+                <div class="container-data-profile"><?php echo $ig;?></div>
+
+                <h3>Page Facebook Bisnis Anda</h3>
+                <div class="container-data-profile"><?php echo $fb;?></div>
+
+                <h3>Website Bisnis anda</h3>
+                <div class="container-data-profile"><?php echo $web;?></div>
+
+                <a class="btn btn-gold-pri-normal btn-edit" href="?hal=akun-profile&tuj=profile&mod=akun-bisnis&idpe=<?php echo $idUneur; ?>&mau=editbisnis">Ubah Profile Bisnis Anda</a>
+            </div>
+        </div>
 
 </div>
