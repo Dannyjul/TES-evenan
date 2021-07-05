@@ -274,6 +274,7 @@
     .category .detail-info {
         width: 55%;
         padding-left: 40px;
+        text-align: right;
     }
 
     .part3 .btn {

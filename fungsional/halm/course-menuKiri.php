@@ -108,8 +108,9 @@ foreach ($kelasCari as $kel) {
         echo
         "
             <div class='pilar-dropdown'>
-                <a class='btn btn-dropdown turunin$idPilar $bgPilar' href='#' id='pilar$idPilar' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
-                    $nmPilar <img class='gambar imeg$idPilar' src='./img/Collapse Arrow Down.png'>
+                <a class='d-flex justify-content-between btn btn-dropdown turunin$idPilar $bgPilar' href='#' id='pilar$idPilar' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                    $nmPilar 
+                    <img class='gambar imeg$idPilar' src='./img/Collapse Arrow Down.png'>
                 </a>
                 <div class='drop-menu tampil$idPilar' aria-labelledby='#pilar$idPilar'>
         ";
@@ -177,9 +178,7 @@ foreach ($kelasCari as $kel) {
             if ($hitungCS > 0) {
                 foreach ($cekSetatus as $c) {
                     $idPkt = $c['id_paket'];
-                    // $pilr  = $c['id_pilar'];
-                    //$kurss = $c['id_kursus'];
-
+                  
                     if ($idPkt == $paketan) {
                         $dis = "disabled";
                         $logoMenu = "./img/Lock.png";
@@ -224,13 +223,9 @@ foreach ($kelasCari as $kel) {
         ";
     }
 
-    //include './fungsional/konfig/jq-sidebar-course.php';
-    //untuk cari pilar ===============================
-
     $linkRating = "?hal=course-rating&k=$kelas&p=$paket";
 
     ?>
-
 
 
     <div class="rating">
