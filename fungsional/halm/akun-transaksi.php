@@ -11,12 +11,11 @@ include './fungsional/konfig/headerUdahLogin.php';
     include './fungsional/data/membership.php';
 
     ?>
-
-
+    
     <div class="container-content">
         <!-- AKUN NAVBAR -->
         <div class="akun-navbar">
-            <a id="profil" class="active" href="">Akun Member Anda</a>
+            <a id="profil" class="title-heavy active" href="">Akun Member Anda</a>
         </div>
 
         <div class="container-card">

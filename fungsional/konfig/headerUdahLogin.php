@@ -293,6 +293,8 @@ if ($go == 'konfirmasi-pembayaran' && $m == 'event') {
         <a class="nav-item nav-link body-heavy" href="?hal=cooming-soon&tuj=forum">Forum</a>
         <a class="nav-item nav-link body-heavy" href="?hal=cooming-soon&tuj=comunity">Community</a>
         <a class="nav-item nav-link body-heavy" href="?hal=akun-profile&tuj=profile">Profile</a>
+        <a class="nav-item nav-link body-heavy" href="?hal=akun-transaksi&tuj=profile">Transaksi</a>
+        <a class="nav-item nav-link body-heavy" href="?hal=akun-membership&tuj=profile">Membership</a>
         <hr>
         <a class="nav-item nav-link body-heavy" href="?hal=logout">Logout</a>
     </div>

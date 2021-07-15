@@ -35,7 +35,7 @@ foreach ($y as $a) {
   $tanggal = date('d F Y', strtotime($tgl));
 
 
-  $biaya = "Rp " . formatRupiah($harga) . ",-";
+  $biaya = "Rp " . formatRupiah($harga) . ",00";
 
   if ($foto == "Kosong") {
     $gambar = "<img src='../img/nofoto.png' width='200' height='150'>";
@@ -54,7 +54,7 @@ foreach ($y as $a) {
 ?>
 
 <section id="banner">
-        <div class="container">
+        <div class="container container-registration">
             <img  class="top-banner" src=" <?php echo $tujuanHeader; ?>" />
         </div>
 </section>
@@ -79,47 +79,37 @@ foreach ($y as $a) {
                         </div>
 
                         <div class="details">
-                          <div class="category">
+                          <div class="d-flex justify-content-between category">
                                 <h5>Lokasi</h5>
                                 <div class="detail-info"><?php echo $lokasinya; ?></div>
                             </div>
     
-                            <div class="category">
+                            <div class="d-flex justify-content-between category">
                                 <h5>Venue</h5>
                                 <div class="detail-info"><?php echo $vanue; ?></div>
                             </div>
     
-                            <div class="category"> 
+                            <div class="d-flex justify-content-between category"> 
                                 <h5>Waktu Pelaksanaan</h5>
                                 <div class="detail-info"><?php echo $waktu; ?></div>
                             </div>
 
-                            <div class="category"> 
+                            <div class="d-flex justify-content-between category"> 
                                 <h5>Kuota Peserta</h5>
                                 <div class="detail-info"><?php echo $kuota; ?> Orang</div>
                             </div>
 
-                            <div class="category"> 
+                            <div class="d-flex justify-content-between category"> 
                                 <h5>Biaya</h5>
                                 <div class="detail-info"><?php echo $biaya; ?></div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="share-banner">
-                    <?php
+                        <?php
                         $isiTrans = $crud->eksekusiSQL("SELECT *FROM transaksi WHERE id_event='$id' AND keterangan='Ok'");
                         $cekHitung = $crud->hitungData($isiTrans);
 
                         $now = date('Y-m-d');
-
-
-
-
-
-
-
-
 
                         if ($cekHitung == $kuota) {
                           $arahin =
@@ -178,13 +168,11 @@ foreach ($y as $a) {
                                 ";
                         }
 
-
-                        //echo "<p>$arahin</p>";
                         ?>
-                        <div class="separate part3">
+                        <div class="btn btn-gold-pri-normal btn-daftar-event-detail">
                           <?php echo $arahin; ?>
                         </div>
-                    </div>
+                    </div>    
                 </div>
             </div>
 

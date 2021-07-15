@@ -1,71 +1,58 @@
 <link rel="stylesheet" href="./css/profile.css">
 
 <?php
-include './fungsional/konfig/headerUdahLogin.php';
+    include './fungsional/konfig/headerUdahLogin.php';
 ?>
 
 <div class="container container-profile">
     <?php
-
-    include './fungsional/data/membership.php';
-
+        include './fungsional/data/membership.php';
     ?>
-
 
     <?php
 
+        $mau = @$_GET['mod'];
 
-    $mau = @$_GET['mod'];
-
-    $ekse= @$_GET['mau'];
+        $ekse= @$_GET['mau'];
 
 
-    if ($ekse=='tambah') 
-    {
-    
-        $bisnis = "active";
-        $profil = "";
+        if ($ekse=='tambah') 
+        {
+        
+            $bisnis = "title-heavy active";
+            $profil = "title-light";
+        ?>
+
+        <div class="container-content"> 
+            <div class="d-flex justify-content-between akun-navbar">
+                <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
+                <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
+            </div>
+
+                <?php
+                    include './fungsional/halm/akun-bisnis-tambah.php';
+                ?>
+            </div>
+
+        </div>
+    <?php
+        }
+        elseif ($ekse=='editbisnis') 
+        {
+            $bisnis = "title-heavy active";
+            $profil = "title-light";
     ?>
 
     <div class="container-content"> 
-        <div class="akun-navbar">
+        <div class="d-flex justify-content-between akun-navbar">
             <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
             <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
         </div>
 
-        <div class="container-fluid" style="padding: 40px;">
-            <h1 class="bisnis-list-title">Bisnis Aktif Anda</h1>
-            
-            <?php
-                include './fungsional/halm/akun-bisnis-tambah.php';
-            ?>
-        </div>
+        <?php
+            include './fungsional/halm/akun-bisnis-edit.php';
+        ?>
 
-    </div>
-
-
-    <?php
-
-    }
-    elseif ($ekse=='editbisnis') 
-    {
-        $bisnis = "active";
-        $profil = "";
-    ?>
-
-    <div class="container-content"> 
-        <div class="akun-navbar">
-            <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
-            <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
-        </div>
-
-        <div class="container-fluid" style="padding: 40px;">
-            <h1 class="bisnis-list-title">Bisnis Aktif Anda</h1>
-            
-            <?php
-                include './fungsional/halm/akun-bisnis-edit.php';
-            ?>
-        </div>
 
     </div>
 
@@ -73,25 +60,22 @@ include './fungsional/konfig/headerUdahLogin.php';
     }
     elseif ($ekse=='detailbisnis') 
     {
-        $bisnis = "active";
-        $profil = "";
+        $bisnis = "title-heavy active";
+        $profil = "title-light";
         include './fungsional/halm/akun-bisnis-detail.php';
     }
     else 
     {
         # code...
-    
-
-
     if ($mau == 'akun-bisnis') {
-        $bisnis = "active";
-        $profil = "";
+        $bisnis = "title-heavy active";
+        $profil = "title-light";
 
         //bersambung
     ?>
 
         <div class="container-content">
-            <div class="akun-navbar">
+            <div class="d-flex justify-content-between akun-navbar">
                 <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
                 <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
             </div>
@@ -109,15 +93,15 @@ include './fungsional/konfig/headerUdahLogin.php';
     <?php
         //sambungan
     } else {
-        $profil = "active";
-        $bisnis = "";
+        $profil = "title-heavy active";
+        $bisnis = "title-light";
 
         //bersambung
 
     ?>
 
         <div class="container-content">
-            <div class="akun-navbar">
+            <div class="d-flex justify-content-between akun-navbar">
                 <a class="<?php echo $profil; ?>" href="?hal=akun-profile&mod=profil&tuj=profile">Akun Profile Anda</a>
                 <a class="<?php echo $bisnis; ?>" href="?hal=akun-profile&mod=akun-bisnis&tuj=profile">Akun Bisnis Anda</a>
             </div>
@@ -133,35 +117,6 @@ include './fungsional/konfig/headerUdahLogin.php';
 
                     <?php
 
-                    /*$tgl = date('Y-m-d');
-
-                        $tglPost = "2020-02-10";
-
-                        $berlaku = date('Y-m-d',strtotime('+30 days', strtotime($tglPost)));
-
-                        $tglExp = date("Y-m-d", $berlaku);
-
-                        $tgl1    = "2018-12-16"; // menentukan tanggal awal
-                        $tgl2    = date('Y-m-d', strtotime('+ 1 years', strtotime($tgl1))); // penjumlahan tanggal sebanyak 7 hari
-                    // echo $tgl2; // cetak tanggal
-
-                    if ($tgl==$tgl2) 
-                    {
-                        $pesan = "Habis";
-                    }
-                    
-
-                        echo
-                        "
-                        <div style='margin-top:100px;'>
-                            $tgl <br>
-                            $tglPost <br>
-                            $berlaku <br>
-                            $tglExp <br>
-                            $tgl2 $pesan
-                        </div>
-                        ";
-                    */
                     $statuser = $crud->eksekusiSQl("SELECT *FROM user_status
                                                                         INNER JOIN paket_member
                                                                         ON user_status.id_paket = paket_member.id_paket

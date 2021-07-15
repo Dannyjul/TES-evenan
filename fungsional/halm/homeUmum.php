@@ -399,7 +399,7 @@ include './fungsional/konfig/slider.php';
         echo
         "
         <div class='col'>
-          <div class='card h-500 card-home-event'>
+          <div class='card card-home-event'>
             <img src='$gambar' class='card-img-top' alt='...'>
             <div class='price-event subheader-heavy'>
                 $biaya

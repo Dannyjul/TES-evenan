@@ -13,7 +13,7 @@
                     <a class='btn btn-pri-normal btn-daftar modal-trigger-daftar' href='#'>Daftar</a>
                 </li>
                 <li class='nav-item nav-item-res'>
-                    <a class='btn small-light btn-pri-normal btn-login-res modal-trigger-login' href='#'>Login</a>
+                    <a class='btn small-light btn-pri-normal btn-login-res modal-trigger-login-res' href='#'>Login</a>
                 </li>
             </ul>
         </div>

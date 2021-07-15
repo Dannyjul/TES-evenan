@@ -86,8 +86,11 @@ foreach ($perintah as $a)
           <p class='card-text'>Didirikan Tahun 2021</p>
           <p class='card-text'>Bergerak di Bidang $bidang</p>
           <p class='card-text'>$industri</p>
+          <div class='d-flex justify-content-between'>
           <a href='?hal=akun-profile&tuj=profile&mod=akun-bisnis&idpe=$idUneur&mau=detailbisnis' class='btn btn-card'>Lihat</a>
           <a href='?hal=akun-profile&tuj=profile&mod=akun-bisnis&idpe=$idUneur&mau=editbisnis' class='btn-edit'><img src='./img/Pencil.png' alt='Edit'></a>
+          </div>
+        
       </div>
   </div>      
   ";

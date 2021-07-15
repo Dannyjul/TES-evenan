@@ -45,14 +45,44 @@ $(document).ready(function() {
         $(".modal-login").css("display", "flex");
     });
 
+    $(".modal-trigger-login-res").on('click', function() {
+        $(".modal-daftar-res").css("display", "none");
+        $(".modal-login-res").css("display", "block");
+    });
+
     $(".modal-trigger-daftar").on('click', function() {
         $(".modal-login").css("display", "none");
         $(".modal-daftar").css("display", "flex");
     });
 
+    $(".modal-trigger-daftar-res").on('click', function() {
+        $(".modal-login-res").css("display", "none");
+        $(".modal-daftar-res").css("display", "block");
+    });
+
     $(".modal-trigger-btn").on('click', function() {
         $(".modal-daftar").css("display", "flex");
     });
+
+    
+    $(".form-daftar-part1").css("display", "block");
+    $(".form-daftar-part2").css("display", "none");
+
+    $("#btn-modal-daftar-next").on('click', function() {
+        $(".form-daftar-part1").css("display", "none");
+        $(".form-daftar-part2").css("display", "block");
+    });
+
+    $("#modal-toggle-login-res").on('click', function() {
+        $(".modal-daftar-res").css("display", "none");
+        $(".modal-login-res").css("display", "block");
+    });
+
+    $("#modal-toggle-daftar-res").on('click', function() {
+        $(".modal-login-res").css("display", "none");
+        $(".modal-daftar-res").css("display", "block");
+    });
+
 
     $(".close").on('click', function() {
         $(".modal").css("display", "none");
@@ -79,28 +109,23 @@ $(document).ready(function() {
 });
 
 //FORM VALIDATION
-//CREATED BY EVA 13-04-2021
 $(document).ready(function() {
 
-    $("body").on('click', '.toggle-show-pass', function() {
-        var input = $("#pass");
-        if (input.attr("type") === "password") {
-            input.attr("type", "text");
-        } else {
-            input.attr("type", "password");
-        }
+    function togglePass(classToggle, idPass){
+        $("body").on('click', classToggle, function() {
+            var input = $(idPass);
+            if (input.attr("type") === "password") {
+                input.attr("type", "text");
+            } else {
+                input.attr("type", "password");
+            }
+    
+        });
+    }
 
-    });
-
-    $("body").on('click', '.toggle-show-conf-pass', function() {
-        var input = $("#confirm-pass");
-        if (input.attr("type") === "password") {
-            input.attr("type", "text");
-        } else {
-            input.attr("type", "password");
-        }
-
-    });
+    togglePass('.toggle-show-pass', '#pass');
+    togglePass('.toggle-show-conf-pass', '#confirm-pass');
+    togglePass('.toggle-show-pass', '#pass-login-res');
 
     function validateFormDaftar() {
         var isNameValid = false;
@@ -113,75 +138,104 @@ $(document).ready(function() {
         var isCPassValid = false;
         var isTnCCheck = false;
 
-
-        isNameValid = validateName();
-        isAlamatValid = validateAlamat();
-        isPhoneValid = validatePhone();
+        isNameValid = validateName('#nama', '#errNama');
+        isAlamatValid = validateAlamat('#alamat', '#errAlamat');
+        isPhoneValid = validatePhone('#no-hp', '#errPhone');
         isEmailValid = validateEmail('#email', '#errEmail');
         isPassValid = validatePass('#pass', '#errPass');
-        isCPassValid = validateCPass();
-        isTnCCheck = validateTnC();
-        isBirthDateValid = validateBirth();
-        isGenderValid = validateGender();
+        isCPassValid = validateCPass('#pass', '#confirm-pass', '#errPassConf');
+        isTnCCheck = validateTnC('#tc', '#errCheckBox');
+        isBirthDateValid = validateBirth('#tgl-lahir', '#errTgl');
+        isGenderValid = validateGender('#gender', '#errGender');
 
 
         $('#btn-modal-daftar').prop('disabled', !(isNameValid && isAlamatValid && isBirthDateValid && isGenderValid && isPhoneValid && isEmailValid && isPassValid && isCPassValid && isTnCCheck));
     }
 
-    function validateFormLogin() {
+    function validateFormDaftarResPart1() {
+        var isNameValid = false;
+        var isAlamatValid = false;
+        var isBirthDateValid = false;
+        var isGenderValid = false;
+
+        isNameValid = validateName('#nama-daftar-res', '#errNamaDaftarRes');
+        isAlamatValid = validateAlamat('#alamat-daftar-res', '#errAlamatDaftarRes');
+        isBirthDateValid = validateBirth('#birth-daftar-res', '#errBirthDaftarRes');
+        isGenderValid = validateGender('#genderRes', '#errGenderRes');
+
+        $('#btn-modal-daftar-next').prop('disabled', !(isNameValid && isAlamatValid && isBirthDateValid && isGenderValid ));
+    }
+
+    function validateFormDaftarResPart2() {
+        var isPhoneValid = false;
+        var isEmailValid = false;
+        var isPassValid = false;
+        var isCPassValid = false;
+        var isTnCCheck = false;
+
+        isPhoneValid = validatePhone('#phone-daftar-res', '#errPhoneDaftarRes');
+        isEmailValid = validateEmail('#email-daftar-res', '#errEmailDaftarRes');
+        isPassValid = validatePass('#pass-daftar-res', '#errPassDaftarRes');
+        isCPassValid = validateCPass('#pass-daftar-res', '#cpass-daftar-res', '#errCPassDaftarRes');
+        isTnCCheck = validateTnC('#tcRes', '#errTCRes');
+
+        $('#btn-modal-daftar-res').prop('disabled', !(isPhoneValid && isEmailValid && isPassValid && isCPassValid && isTnCCheck));
+    }
+
+    function validateFormLogin(idEmail, idPass, idErrEmail, idErrPass, idButton) {
         var isEmailValid = false;
         var isPassValid = false;
 
-        isEmailValid = validateEmail('#email-login', '#errEmailLogin');
-        isPassValid = validatePass('#pass-login', '#errPassLogin');
-        $('#btn-modal-login').prop('disabled', !(isEmailValid && isPassValid));
+        isEmailValid = validateEmail(idEmail, idErrEmail);
+        isPassValid = validatePass(idPass, idErrPass);
+        $(idButton).prop('disabled', !(isEmailValid && isPassValid));
     }
 
-    function validateName() {
-        var nama = $("#nama").val();
+    function validateName(idName, idError) {
+        var nama = $(idName).val();
         var stringPattern = /^[a-zA-Z ]*$/;
 
         if (nama == "") {
-            $('#errNama').css("display", "block");
-            $('#errNama').html("*Please input your name.");
+            $(idError).css("display", "block");
+            $(idError).html("*Please input your name.");
             return false;
         } else if (stringPattern.test(nama) == false) {
-            $('#errNama').css("display", "block");
-            $('#errNama').html("*Your name contains number.");
+            $(idError).css("display", "block");
+            $(idError).html("*Your name contains number.");
             return false;
         } else {
-            $('#errNama').css("display", "none");
+            $(idError).css("display", "none");
             return true;
         }
     }
 
-    function validateAlamat() {
-        var alamat = $("#alamat").val();
+    function validateAlamat(idAlamat, idError) {
+        var alamat = $(idAlamat).val();
 
         if (alamat == "") {
-            $('#errAlamat').css("display", "block");
-            $('#errAlamat').html("*Please input your address.");
+            $(idError).css("display", "block");
+            $(idError).html("*Please input your address.");
             return false;
         } else {
-            $('#errAlamat').css("display", "none");
+            $(idError).css("display", "none");
             return true;
         }
     }
 
-    function validatePhone() {
-        var phone = $("#no-hp").val();
+    function validatePhone(idPhone, idError) {
+        var phone = $(idPhone).val();
         var phonePattern = /^08[0-9]*$/;
 
         if (phone == "") {
-            $('#errPhone').css("display", "block");
-            $('#errPhone').html("*Please input your phone number.");
+            $(idError).css("display", "block");
+            $(idError).html("*Please input your phone number.");
             return false;
         } else if (phonePattern.test(phone) == false || phone.length > 13) {
-            $('#errPhone').css("display", "block");
-            $('#errPhone').html("*Wrong phone number.");
+            $(idError).css("display", "block");
+            $(idError).html("*Wrong phone number.");
             return false;
         } else {
-            $('#errPhone').css("display", "none");
+            $(idError).css("display", "none");
             return true;
         }
     }
@@ -217,92 +271,132 @@ $(document).ready(function() {
         }
     }
 
-    function validateCPass() {
-        var confirm_pass = $("#confirm-pass").val();
-        var pass = $("#pass").val();
+    function validateCPass(idPass, idCPass, idError) {
+        var confirm_pass = $(idCPass).val();
+        var pass = $(idPass).val();
 
         if (confirm_pass == "") {
-            $('#errPassConf').css("display", "block");
-            $('#errPassConf').html("*Please reinput the password.");
+            $(idError).css("display", "block");
+            $(idError).html("*Please reinput the password.");
             return false;
         } else if (pass != confirm_pass) {
-            $('#errPassCon').css("display", "block");
-            $('#errPassConf').html("*Password didn't match.");
+            $(idError).css("display", "block");
+            $(idError).html("*Password didn't match.");
             return false;
         } else {
-            $('#errPassConf').css("display", "none");
+            $(idError).css("display", "none");
             return true;
         }
     }
 
-    function validateTnC() {
-        var tnc_status = $("#tc").prop('checked');
+    function validateTnC(idTnC, idError) {
+        var tnc_status = $(idTnC).prop('checked');
         if (!tnc_status) {
-            $('#errCheckBox').css("display", "block");
-            $('#errCheckBox').html("*Please agree to terms and conditions.");
+            $(idError).css("display", "block");
+            $(idError).html("*Please agree to terms and conditions.");
             return false;
         } else {
-            $('#errCheckBox').css("display", "none");
+            $(idError).css("display", "none");
             return true;
         }
     }
 
-    function validateBirth() {
-        var birth = $('#tgl-lahir').val();
+    function validateBirth(idBirth, idError) {
+        var birth = $(idBirth).val();
         if (!birth) {
-            $('#errTgl').css("display", "block");
-            $('#errTgl').html("*Please input your birthdate.");
+            $(idError).css("display", "block");
+            $(idError).html("*Please input your birthdate.");
             return false;
         } else {
-            $('#errTgl').css("display", "none");
+            $(idError).css("display", "none");
             return true;
         }
     }
 
-    function validateGender() {
-        var gender = $('#gender').val();
+    function validateGender(idGender, idError) {
+        var gender = $(idGender).val();
         if (!gender) {
-            $('#errGender').css("display", "block");
-            $('#errGender').html("*Please select your Gender.");
+            $(idError).css("display", "block");
+            $(idError).html("*Please select your Gender.");
             return false;
         } else {
-            $('#errGender').css("display", "none");
+            $(idError).css("display", "none");
             return true;
         }
     }
 
     $('#btn-modal-daftar').prop('disabled', true);
     $('#btn-modal-login').prop('disabled', true);
+    $('#btn-modal-login-res').prop('disabled', true);
+    $('#btn-modal-daftar-next').prop('disabled', true);
+    $('#btn-modal-daftar-res').prop('disabled', true);
+
+    $('#nama-daftar-res').on('keyup', function(e) {
+        validateFormDaftarResPart1();
+    });
+
     $('#nama').on('keyup', function(e) {
         validateFormDaftar();
+    });
+
+    $('#alamat-daftar-res').on('keyup', function(e) {
+        validateFormDaftarResPart1();
     });
 
     $('#alamat').on('keyup', function(e) {
         validateFormDaftar();
     });
 
+    $('#phone-daftar-res').on('keyup', function(e) {
+        validateFormDaftarResPart2();
+    });
+
     $('#no-hp').on('keyup', function(e) {
         validateFormDaftar();
+    });
+
+    $('#email-daftar-res').on('keyup', function(e) {
+        validateFormDaftarResPart2();
     });
 
     $('#email').on('keyup', function(e) {
         validateFormDaftar();
     });
 
+    $('#pass-daftar-res').on('keyup', function(e) {
+        validateFormDaftarResPart2();
+    });
+
     $('#pass').on('keyup', function(e) {
         validateFormDaftar();
+    });
+
+    $('#cpass-daftar-res').on('keyup', function(e) {
+        validateFormDaftarResPart2();
     });
 
     $('#confirm-pass').on('keyup', function(e) {
         validateFormDaftar();
     });
 
+    $('#tcRes').on('click', function(e) {
+        validateFormDaftarResPart2();
+    });
+
     $('#tc').on('click', function(e) {
         validateFormDaftar();
     });
 
+    $('#birth-daftar-res').on('change', function(e) {
+        validateFormDaftarResPart1();
+    });
+
     $('#tgl-lahir').on('change', function(e) {
         validateFormDaftar();
+    });
+
+    $('#genderRes').on('change', function(e) {
+        validateFormDaftarResPart1();
     });
 
     $('#gender').on('change', function(e) {
@@ -310,11 +404,19 @@ $(document).ready(function() {
     });
 
     $('#email-login').on('keyup', function(e) {
-        validateFormLogin();
+        validateFormLogin('#email-login', '#pass-login', '#errEmailLogin', '#errPassLogin', '#btn-modal-login');
     });
 
     $('#pass-login').on('keyup', function(e) {
-        validateFormLogin();
+        validateFormLogin('#email-login', '#pass-login', '#errEmailLogin', '#errPassLogin', '#btn-modal-login');
+    });
+
+    $('#email-login-res').on('keyup', function(e) {
+        validateFormLogin('#email-login-res', '#pass-login-res', '#errEmailLoginRes', '#errPassLoginRes', '#btn-modal-login-res');
+    });
+
+    $('#pass-login-res').on('keyup', function(e) {
+        validateFormLogin('#email-login-res', '#pass-login-res', '#errEmailLoginRes', '#errPassLoginRes', '#btn-modal-login-res');
     });
 
 });
